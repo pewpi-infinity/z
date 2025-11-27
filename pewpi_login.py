@@ -251,18 +251,7 @@ def main():
 
 
 # ============================================================================
-# Extended Pewpi Login Module
-# ============================================================================
-# pewpi_login.py - Pewpi Infinity Research Portal Login and Token Management
-#
-# This module provides functionality for:
-# 1. JSON-backed token hash reading with category associations
-# 2. Dynamic color-coded button generation based on research categories
-# 3. Toggle view modes (sentence, word, plain text) for content highlighting
-# 4. Comprehensive logging and error handling
-#
-# Usage:
-#     python pewpi_login.py [--sync] [--generate-index] [--validate]
+# Extended Pewpi Login Module - Category Management and View Modes
 # ============================================================================
 
 import os
