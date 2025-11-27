@@ -24,25 +24,16 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pewpi_login import (
     register_user, sign_in, logout, get_user_info,
     update_token_count, add_user_token, add_mega_hash,
-    load_users, save_users, hash_password
+    load_users, save_users, hash_password,
+    PewpiLogin, TokenHashManager, ColorManager,
+    ButtonGenerator, ViewModeManager, ResearchIndexSyncer,
+    CategoryNotFoundError, TokenNotFoundError, InvalidConfigError
 )
 
 from build_token import (
     score_content, calculate_value, format_value,
     build_token, generate_mega_hash, infinity_hash,
     MIN_VALUE, MAX_VALUE
-)
-
-from pewpi_login import (
-    PewpiLogin,
-    TokenHashManager,
-    ColorManager,
-    ButtonGenerator,
-    ViewModeManager,
-    ResearchIndexSyncer,
-    CategoryNotFoundError,
-    TokenNotFoundError,
-    InvalidConfigError
 )
 
 
