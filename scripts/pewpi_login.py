@@ -221,10 +221,18 @@ def get_client_ip(headers: dict, remote_addr: str) -> str:
     """
     Get the client IP address from request headers.
     Prioritizes X-Forwarded-For header, falls back to remote address.
+    
+    SECURITY NOTE: The X-Forwarded-For header can be spoofed by clients.
+    This implementation trusts the header when present, which is appropriate
+    when the server is behind a trusted reverse proxy that sets this header.
+    If exposed directly to the internet without a trusted proxy, consider
+    using only the remote_addr to prevent IP spoofing.
     """
     x_forwarded_for = headers.get('X-Forwarded-For', '')
     if x_forwarded_for:
-        # X-Forwarded-For can contain multiple IPs; take the first one
+        # X-Forwarded-For can contain multiple IPs (client, proxy1, proxy2, ...)
+        # Take the first IP which is typically the original client
+        # Note: This trusts the X-Forwarded-For header; use behind a trusted proxy
         client_ip = x_forwarded_for.split(',')[0].strip()
         logger.debug(f"Client IP from X-Forwarded-For: {client_ip}")
         return client_ip
@@ -267,7 +275,12 @@ class LoginHandler(BaseHTTPRequestHandler):
         """Handle login POST request."""
         try:
             # Read request body
-            content_length = int(self.headers.get('Content-Length', 0))
+            try:
+                content_length = int(self.headers.get('Content-Length', 0))
+            except (ValueError, TypeError):
+                self.send_json_response(400, {"ok": False, "message": "invalid Content-Length header"})
+                return
+            
             if content_length == 0:
                 self.send_json_response(400, {"ok": False, "message": "empty request body"})
                 return

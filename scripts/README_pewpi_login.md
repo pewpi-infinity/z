@@ -107,6 +107,8 @@ The server determines client IP in this order:
 
 When behind a reverse proxy, ensure it sets `X-Forwarded-For`.
 
+⚠️ **Security Note**: The `X-Forwarded-For` header can be spoofed by clients. This implementation trusts the header when present, which is appropriate when running behind a trusted reverse proxy. If exposed directly to the internet without a trusted proxy, attackers could spoof their IP address.
+
 ## Embedding Credentials (Optional)
 
 ⚠️ **SECURITY WARNING** ⚠️

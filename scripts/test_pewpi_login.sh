@@ -88,12 +88,26 @@ log_info "Starting server on port $TEST_PORT..."
 "$PYTHON" "$SCRIPT_DIR/pewpi_login.py" run --host 127.0.0.1 --port "$TEST_PORT" &
 SERVER_PID=$!
 
-# Wait for server to start
-sleep 2
+# Wait for server to be ready (with retry loop)
+log_info "Waiting for server to be ready..."
+MAX_RETRIES=10
+RETRY_COUNT=0
+while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+    if curl -s "http://127.0.0.1:$TEST_PORT/health" > /dev/null 2>&1; then
+        log_info "Server is ready"
+        break
+    fi
+    RETRY_COUNT=$((RETRY_COUNT + 1))
+    if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+        log_error "Server failed to start after $MAX_RETRIES attempts"
+        exit 1
+    fi
+    sleep 0.5
+done
 
-# Check if server is running
+# Check if server process is still running
 if ! kill -0 "$SERVER_PID" 2>/dev/null; then
-    log_error "Server failed to start"
+    log_error "Server process died unexpectedly"
     exit 1
 fi
 
