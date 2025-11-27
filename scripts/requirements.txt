@@ -1,0 +1,13 @@
+# pewpi_login dependencies
+# 
+# Flask is used for the HTTP server functionality.
+# bcrypt is the preferred password hashing library (optional but recommended).
+#
+# If bcrypt is not installed, the script will fall back to SHA256 hashing,
+# which is less secure but functional.
+
+Flask>=2.0.0
+
+# Optional but recommended for secure password hashing
+# Comment out if bcrypt installation fails (e.g., missing build tools)
+bcrypt>=4.0.0
