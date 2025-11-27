@@ -11,7 +11,6 @@
       padding: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-
     body {
       background: radial-gradient(circle at top, #041b3b, #020818 55%, #000000);
       color: #e5f1ff;
@@ -20,20 +19,17 @@
       flex-direction: column;
       align-items: stretch;
     }
-
     .shell {
       max-width: 480px;
       margin: 0 auto;
-      padding: 16px 12px 32px;
+      padding: 16px 12px 40px;
     }
-
     .header-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 18px;
     }
-
     .title {
       font-size: 1.4rem;
       font-weight: 700;
@@ -43,10 +39,7 @@
       align-items: center;
       gap: 6px;
     }
-    .title span.symbol {
-      font-size: 1.5rem;
-    }
-
+    .title span.symbol { font-size: 1.5rem; }
     .badge {
       background: linear-gradient(135deg, #1f5fff, #3f8bff);
       padding: 8px 14px;
@@ -57,7 +50,6 @@
       font-size: 0.95rem;
       box-shadow: 0 0 12px rgba(70, 130, 255, 0.75);
     }
-
     .role-button {
       width: 100%;
       margin: 8px 0;
@@ -75,19 +67,16 @@
         0 0 14px rgba(30, 120, 255, 0.7);
       transition: all 0.15s ease-out;
     }
-
     .role-button span.color-tag {
       opacity: 0.85;
       font-weight: 500;
     }
-
     .role-button:hover {
       transform: translateY(-1px);
       box-shadow:
         0 0 0 1px rgba(0, 0, 0, 1),
         0 0 20px rgba(70, 180, 255, 0.9);
     }
-
     .role-button.active {
       background: radial-gradient(circle at top, #0d1f4a, #020817);
       border-color: #72d6ff;
@@ -95,14 +84,12 @@
         0 0 0 1px rgba(90, 210, 255, 0.7),
         0 0 26px rgba(90, 210, 255, 0.9);
     }
-
     .role-button.active span.color-tag {
       text-decoration: underline;
     }
-
     .panel {
       margin-top: 18px;
-      padding: 16px 16px 18px;
+      padding: 16px 16px 24px;
       border-radius: 18px;
       background: radial-gradient(circle at top left, rgba(67, 132, 255, 0.35), #020818);
       border: 1px solid rgba(70, 150, 255, 0.9);
@@ -112,26 +99,22 @@
       position: relative;
       overflow: hidden;
     }
-
     .panel-title {
       font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: 0.03em;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
-
     .panel-subtitle {
       font-size: 0.9rem;
       opacity: 0.85;
       margin-bottom: 10px;
     }
-
     .loading {
       font-size: 0.9rem;
       opacity: 0.8;
       margin-bottom: 10px;
     }
-
     .dot-pulse {
       display: inline-block;
       width: 4px;
@@ -144,34 +127,53 @@
       animation: dotPulse 1s infinite alternate;
       margin-left: 4px;
     }
-
     @keyframes dotPulse {
       from { transform: scale(0.8); opacity: 0.6; }
       to { transform: scale(1.4); opacity: 1; }
     }
-
     .link-list {
       list-style: none;
       margin-top: 8px;
+      padding-bottom: 42px;
+      max-height: 260px;
+      overflow-y: auto;
     }
-
-    .link-list li {
-      margin-bottom: 8px;
+    .token-card {
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(2, 10, 32, 0.9);
+      border: 1px solid rgba(130, 190, 255, 0.6);
+      box-shadow: 0 0 10px rgba(40, 90, 180, 0.8);
     }
-
-    .link-list a {
+    .token-hash {
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      opacity: 0.9;
+      margin-bottom: 2px;
+    }
+    .token-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .token-meta {
+      font-size: 0.78rem;
+      opacity: 0.75;
+    }
+    .token-actions {
+      margin-top: 4px;
+    }
+    .token-link {
+      font-size: 0.8rem;
       color: #a7d3ff;
       text-decoration: none;
-      font-size: 0.9rem;
-      display: inline-block;
     }
-
-    .link-list a:hover {
+    .token-link:hover {
       text-decoration: underline;
       color: #ffffff;
     }
 
-    /* Chat bubble */
     .chat-fab {
       position: absolute;
       right: 16px;
@@ -187,8 +189,8 @@
         0 0 0 2px rgba(10, 40, 80, 1),
         0 0 24px rgba(120, 200, 255, 0.9);
       cursor: pointer;
+      z-index: 5;
     }
-
     .chat-icon {
       width: 34px;
       height: 34px;
@@ -208,7 +210,6 @@
       gap: 70px;
       opacity: 0.7;
     }
-
     .nav-dot, .nav-square, .nav-arrow {
       width: 40px;
       height: 40px;
@@ -216,21 +217,18 @@
       align-items: center;
       justify-content: center;
     }
-
     .nav-dot-inner {
       width: 14px;
       height: 14px;
       border-radius: 999px;
       border: 2px solid #a0c9ff;
     }
-
     .nav-square-inner {
       width: 16px;
       height: 16px;
       border-radius: 4px;
       border: 2px solid #a0c9ff;
     }
-
     .nav-arrow-inner {
       width: 0;
       height: 0;
@@ -239,10 +237,112 @@
       border-right: 12px solid #a0c9ff;
     }
 
+    /* Chat panel */
+    .chat-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+    }
+    .chat-overlay.open {
+      display: flex;
+    }
+    .chat-panel {
+      width: 92%;
+      max-width: 420px;
+      max-height: 80vh;
+      background: radial-gradient(circle at top, #071736, #020712);
+      border-radius: 20px;
+      border: 1px solid rgba(120, 190, 255, 0.8);
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 1),
+        0 0 30px rgba(100, 180, 255, 0.9);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .chat-header {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(100, 170, 255, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .chat-header-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .chat-close-btn {
+      background: transparent;
+      border: none;
+      color: #d4e3ff;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .chat-body {
+      flex: 1;
+      padding: 10px 12px;
+      overflow-y: auto;
+      font-size: 0.85rem;
+    }
+    .chat-msg {
+      margin-bottom: 8px;
+      max-width: 90%;
+      line-height: 1.3;
+    }
+    .chat-msg.me {
+      text-align: right;
+    }
+    .chat-msg.me span {
+      display: inline-block;
+      background: #2458ff;
+      color: #ffffff;
+      padding: 6px 9px;
+      border-radius: 12px 12px 2px 12px;
+      box-shadow: 0 0 10px rgba(40, 110, 255, 0.9);
+    }
+    .chat-msg.rogers span {
+      display: inline-block;
+      background: #050e24;
+      color: #e7f0ff;
+      padding: 6px 9px;
+      border-radius: 12px 12px 12px 2px;
+      border: 1px solid rgba(110, 180, 255, 0.7);
+      box-shadow: 0 0 10px rgba(40, 90, 170, 0.85);
+    }
+    .chat-footer {
+      padding: 8px 8px 10px;
+      border-top: 1px solid rgba(100, 170, 255, 0.5);
+      display: flex;
+      gap: 6px;
+    }
+    .chat-input {
+      flex: 1;
+      border-radius: 999px;
+      border: 1px solid rgba(110, 180, 255, 0.8);
+      padding: 6px 10px;
+      background: #030814;
+      color: #e5f1ff;
+      font-size: 0.85rem;
+    }
+    .chat-send-btn {
+      border-radius: 999px;
+      border: none;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #2f7bff, #6fd0ff);
+      color: #020713;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(80, 170, 255, 0.9);
+    }
+
     @media (max-width: 360px) {
-      .shell {
-        padding-inline: 8px;
-      }
+      .shell { padding-inline: 8px; }
+      .link-list { max-height: 220px; }
     }
   </style>
 </head>
@@ -260,27 +360,21 @@
     <button class="role-button" data-role="engineer">
       Engineer <span class="color-tag">(Green)</span>
     </button>
-
     <button class="role-button" data-role="ceo">
       CEO <span class="color-tag">(Orange)</span>
     </button>
-
     <button class="role-button" data-role="import">
       Import <span class="color-tag">(Blue)</span>
     </button>
-
     <button class="role-button" data-role="investigate">
       Investigate <span class="color-tag">(Pink)</span>
     </button>
-
     <button class="role-button" data-role="routes">
       Routes <span class="color-tag">(Red)</span>
     </button>
-
     <button class="role-button" data-role="data">
       Data <span class="color-tag">(Yellow)</span>
     </button>
-
     <button class="role-button" data-role="assimilation">
       Assimilation <span class="color-tag">(Purple)</span>
     </button>
@@ -289,171 +383,65 @@
     <div class="panel" id="portal-panel">
       <div class="panel-title" id="panel-title">ENGINEER</div>
       <div class="panel-subtitle" id="panel-subtitle">
-        Role feed: Green channel
+        Role feed: Green channel • <span id="panel-count">0</span> pages
       </div>
       <div class="loading" id="panel-loading">
-        Loading research pages<span class="dot-pulse"></span>
+        Loading research index<span class="dot-pulse"></span>
       </div>
       <ul class="link-list" id="panel-links"></ul>
 
-      <div class="chat-fab" title="Rogers">
+      <div class="chat-fab" id="chat-fab" title="Rogers">
         <div class="chat-icon">💬</div>
       </div>
     </div>
 
-    <!-- Bottom nav shapes (just visual) -->
+    <!-- Bottom nav shapes -->
     <div class="bottom-nav">
-      <div class="nav-arrow">
-        <div class="nav-arrow-inner"></div>
+      <div class="nav-arrow"><div class="nav-arrow-inner"></div></div>
+      <div class="nav-dot"><div class="nav-dot-inner"></div></div>
+      <div class="nav-square"><div class="nav-square-inner"></div></div>
+    </div>
+  </div>
+
+  <!-- Chat overlay -->
+  <div class="chat-overlay" id="chat-overlay">
+    <div class="chat-panel">
+      <div class="chat-header">
+        <div class="chat-header-title">Rogers • Infinity Research Line</div>
+        <button class="chat-close-btn" id="chat-close" aria-label="Close">×</button>
       </div>
-      <div class="nav-dot">
-        <div class="nav-dot-inner"></div>
+      <div class="chat-body" id="chat-body">
+        <div class="chat-msg rogers">
+          <span>Channel online. Pick a role, then tell me what you want to drill into.</span>
+        </div>
       </div>
-      <div class="nav-square">
-        <div class="nav-square-inner"></div>
+      <div class="chat-footer">
+        <input class="chat-input" id="chat-input" type="text" placeholder="Ask Rogers about this channel..." />
+        <button class="chat-send-btn" id="chat-send">Send</button>
       </div>
     </div>
   </div>
 
   <script>
-    // ------- DATA DEFINITIONS (EDIT THESE LINKS IF YOU WANT) ----------
-    const researchConfig = {
-      engineer: {
-        title: "ENGINEER",
-        subtitle: "Role feed: Green channel",
-        links: [
-          {
-            label: "Green engineering protocols",
-            url: "https://www.google.com/search?q=green+engineering+protocols"
-          },
-          {
-            label: "Infrastructure patterns / infinity rigs",
-            url: "https://www.google.com/search?q=infrastructure+design+patterns"
-          },
-          {
-            label: "Quantum / hydrogen gateway theory",
-            url: "https://www.google.com/search?q=hydrogen+portal+quantum+gateway"
-          }
-        ]
-      },
-      ceo: {
-        title: "CEO",
-        subtitle: "Role feed: Orange channel",
-        links: [
-          {
-            label: "High-leverage decision frameworks",
-            url: "https://www.google.com/search?q=ceo+decision+frameworks"
-          },
-          {
-            label: "Market structure / infinity plateau",
-            url: "https://www.google.com/search?q=non+zero+sum+economic+design"
-          },
-          {
-            label: "Capital allocation case studies",
-            url: "https://www.google.com/search?q=capital+allocation+case+study"
-          }
-        ]
-      },
-      import: {
-        title: "IMPORT",
-        subtitle: "Role feed: Blue channel",
-        links: [
-          {
-            label: "Global logistics + ports",
-            url: "https://www.google.com/search?q=global+shipping+logistics+ports"
-          },
-          {
-            label: "Customs + trade lanes",
-            url: "https://www.google.com/search?q=import+export+trade+lanes"
-          },
-          {
-            label: "Supply-chain risk mapping",
-            url: "https://www.google.com/search?q=supply+chain+risk+mapping"
-          }
-        ]
-      },
-      investigate: {
-        title: "INVESTIGATE",
-        subtitle: "Role feed: Pink channel",
-        links: [
-          {
-            label: "Forensic accounting / money trails",
-            url: "https://www.google.com/search?q=forensic+accounting+case+studies"
-          },
-          {
-            label: "Open-source intel (OSINT)",
-            url: "https://www.google.com/search?q=osint+techniques"
-          },
-          {
-            label: "Radionics / fringe research map",
-            url: "https://www.google.com/search?q=scalar+field+theory+radionics"
-          }
-        ]
-      },
-      routes: {
-        title: "ROUTES",
-        subtitle: "Role feed: Red channel",
-        links: [
-          {
-            label: "Shipping routes + chokepoints",
-            url: "https://www.google.com/search?q=global+shipping+chokepoints"
-          },
-          {
-            label: "Humanitarian corridors",
-            url: "https://www.google.com/search?q=humanitarian+aid+corridors"
-          },
-          {
-            label: "Migration / movement patterns",
-            url: "https://www.google.com/search?q=global+migration+routes"
-          }
-        ]
-      },
-      data: {
-        title: "DATA",
-        subtitle: "Role feed: Yellow channel",
-        links: [
-          {
-            label: "Large-scale scraping strategy",
-            url: "https://www.google.com/search?q=large+scale+web+scraping+architecture"
-          },
-          {
-            label: "Vector stores / embeddings",
-            url: "https://www.google.com/search?q=vector+database+embeddings"
-          },
-          {
-            label: "Tokenization + hashing theory",
-            url: "https://www.google.com/search?q=cryptographic+hash+tokens"
-          }
-        ]
-      },
-      assimilation: {
-        title: "ASSIMILATION",
-        subtitle: "Role feed: Purple channel",
-        links: [
-          {
-            label: "Knowledge distillation pipelines",
-            url: "https://www.google.com/search?q=knowledge+distillation+pipeline"
-          },
-          {
-            label: "Human-AI interface design",
-            url: "https://www.google.com/search?q=human+ai+collaboration+interface"
-          },
-          {
-            label: "Infinity OS mental exoskeleton ideas",
-            url: "https://www.google.com/search?q=collective+intelligence+exoskeleton"
-          }
-        ]
-      }
-    };
-
-    // ------- WIRING ----------
+    const researchUrl = "research_index.json";
     const buttons = document.querySelectorAll(".role-button");
     const panelTitle = document.getElementById("panel-title");
     const panelSubtitle = document.getElementById("panel-subtitle");
+    const panelCount = document.getElementById("panel-count");
     const panelLoading = document.getElementById("panel-loading");
     const panelLinks = document.getElementById("panel-links");
 
-    function setActiveRole(roleKey) {
+    const chatOverlay = document.getElementById("chat-overlay");
+    const chatFab = document.getElementById("chat-fab");
+    const chatClose = document.getElementById("chat-close");
+    const chatBody = document.getElementById("chat-body");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+
+    let allRecords = [];
+    let currentRole = "engineer";
+
+    function setActiveButton(roleKey) {
       buttons.forEach(btn => {
         if (btn.dataset.role === roleKey) {
           btn.classList.add("active");
@@ -461,40 +449,172 @@
           btn.classList.remove("active");
         }
       });
+    }
 
-      const cfg = researchConfig[roleKey];
-      if (!cfg) return;
+    function roleSubtitle(roleKey) {
+      const map = {
+        engineer: "Green channel",
+        ceo: "Orange channel",
+        import: "Blue channel",
+        investigate: "Pink channel",
+        routes: "Red channel",
+        data: "Yellow channel",
+        assimilation: "Purple channel"
+      };
+      return map[roleKey] || "Channel";
+    }
 
-      panelTitle.textContent = cfg.title;
-      panelSubtitle.textContent = cfg.subtitle;
+    function renderRole(roleKey) {
+      currentRole = roleKey;
+      setActiveButton(roleKey);
+
+      const upper = roleKey.toUpperCase();
+      panelTitle.textContent = upper;
+
+      const sub = "Role feed: " + roleSubtitle(roleKey) + " • ";
+      panelSubtitle.innerHTML = sub + '<span id="panel-count">0</span> pages';
+      // refresh count reference
+      const countSpan = document.getElementById("panel-count");
+
       panelLoading.style.display = "block";
       panelLinks.innerHTML = "";
 
-      // Fake short loading, then print links
+      const filtered = allRecords.filter(r => (r.role || "data") === roleKey);
+      const count = filtered.length;
+      countSpan.textContent = count.toString();
+
+      if (count === 0) {
+        setTimeout(() => {
+          panelLoading.style.display = "none";
+          const empty = document.createElement("li");
+          empty.textContent = "No research pages found for this role yet.";
+          panelLinks.appendChild(empty);
+        }, 200);
+        return;
+      }
+
       setTimeout(() => {
         panelLoading.style.display = "none";
-        cfg.links.forEach(item => {
+        filtered.forEach(rec => {
           const li = document.createElement("li");
-          const a = document.createElement("a");
-          a.href = item.url;
-          a.target = "_blank";
-          a.rel = "noopener noreferrer";
-          a.textContent = item.label;
-          li.appendChild(a);
+          const card = document.createElement("div");
+          card.className = "token-card";
+
+          const hashLine = document.createElement("div");
+          hashLine.className = "token-hash";
+          hashLine.textContent = "HASH: " + (rec.hash || "").toString();
+
+          const titleLine = document.createElement("div");
+          titleLine.className = "token-title";
+          titleLine.textContent = rec.title || "Untitled";
+
+          const meta = document.createElement("div");
+          meta.className = "token-meta";
+          const ts = rec.timestamp || "";
+          const src = rec.source_url || "";
+          const bits = [];
+          if (ts) bits.push(ts);
+          if (src) bits.push(src);
+          meta.textContent = bits.join(" • ");
+
+          const actions = document.createElement("div");
+          actions.className = "token-actions";
+          const link = document.createElement("a");
+          link.className = "token-link";
+          link.textContent = "Open research file";
+          link.href = rec.url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          actions.appendChild(link);
+
+          card.appendChild(hashLine);
+          card.appendChild(titleLine);
+          if (meta.textContent) card.appendChild(meta);
+          card.appendChild(actions);
+
+          li.appendChild(card);
           panelLinks.appendChild(li);
         });
-      }, 260); // quick, but you still see "Loading..."
+      }, 220);
+    }
+
+    function loadIndex() {
+      panelLoading.style.display = "block";
+      fetch(researchUrl, { cache: "no-store" })
+        .then(resp => {
+          if (!resp.ok) throw new Error("HTTP " + resp.status);
+          return resp.json();
+        })
+        .then(data => {
+          if (!Array.isArray(data)) throw new Error("Index must be an array");
+          allRecords = data;
+          renderRole(currentRole);
+        })
+        .catch(err => {
+          panelLoading.textContent = "Failed to load research index (" + err.message + ")";
+        });
     }
 
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
         const roleKey = btn.dataset.role;
-        setActiveRole(roleKey);
+        renderRole(roleKey);
       });
     });
 
-    // Default initial state
-    setActiveRole("engineer");
+    // Chat wiring
+    function appendChatMessage(who, text) {
+      const div = document.createElement("div");
+      div.className = "chat-msg " + who;
+      const span = document.createElement("span");
+      span.textContent = text;
+      div.appendChild(span);
+      chatBody.appendChild(div);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function rogersReply(userText) {
+      const short = userText.trim().slice(0, 140);
+      const channelLabel = roleSubtitle(currentRole);
+      const count = allRecords.filter(r => (r.role || "data") === currentRole).length;
+      const reply = [
+        "Channel: " + currentRole.toUpperCase() + " • " + channelLabel,
+        "Indexed pages in this lane: " + count,
+        "You said: \"" + short + "\"",
+        "Use the cards below to open the hashed research directly. Infinity rig stays off-Google."
+      ].join(" • ");
+      appendChatMessage("rogers", reply);
+    }
+
+    function sendChat() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      appendChatMessage("me", text);
+      chatInput.value = "";
+      setTimeout(() => rogersReply(text), 220);
+    }
+
+    chatFab.addEventListener("click", () => {
+      chatOverlay.classList.add("open");
+      setTimeout(() => chatInput.focus(), 80);
+    });
+    chatClose.addEventListener("click", () => {
+      chatOverlay.classList.remove("open");
+    });
+    chatOverlay.addEventListener("click", (e) => {
+      if (e.target === chatOverlay) {
+        chatOverlay.classList.remove("open");
+      }
+    });
+    chatSend.addEventListener("click", sendChat);
+    chatInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        sendChat();
+      }
+    });
+
+    loadIndex();
   </script>
 </body>
 </html>
