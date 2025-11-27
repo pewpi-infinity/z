@@ -1,0 +1,35 @@
+{
+    "hash": "cbe7ab93a8dbbdbdf358489cef1e3f233b078cbc4136c7b2f82fc41297434521",
+    "timestamp": "2025-11-27T09:41:08.796999Z",
+    "source_type": "text",
+    "filename": null,
+    "raw_text": "Hydrogen energy analysis and thermodynamics",
+    "score": 1906.5,
+    "value": 20065.0,
+    "value_formatted": "$20.07K",
+    "vector": {
+        "x": 0.644935,
+        "y": 0.49429,
+        "z": 0.694377
+    },
+    "analysis": {
+        "word_count": 5,
+        "char_count": 43,
+        "keyword_matches": {
+            "hydrogen": {
+                "count": 1,
+                "bonus": 500
+            },
+            "thermodynamics": {
+                "count": 1,
+                "bonus": 300
+            },
+            "analysis": {
+                "count": 1,
+                "bonus": 75
+            }
+        },
+        "depth_bonus": 0,
+        "complexity_bonus": 1000
+    }
+}

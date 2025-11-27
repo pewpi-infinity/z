@@ -304,6 +304,9 @@ class TestIntegration(unittest.TestCase):
         # Logout
         logout_result = logout(session)
         self.assertTrue(logout_result["success"])
+
+
+from pewpi_login import (
     PewpiLogin,
     TokenHashManager,
     ColorManager,

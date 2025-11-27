@@ -248,6 +248,8 @@ def main():
 
         else:
             print("Unknown command")
+
+"""
 pewpi_login.py - Pewpi Infinity Research Portal Login and Token Management
 
 This module provides functionality for:
