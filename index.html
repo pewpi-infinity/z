@@ -1,491 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Infinity Research Portal</title>
+  <meta charset="UTF-8" />
+  <title>∞ Infinity Research Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-    <!-- === GLOBAL STYLES === -->
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #071a3d;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #d9e6ff;
-            overflow-x: hidden;
-        }
+    body {
+      background: radial-gradient(circle at top, #041b3b, #020818 55%, #000000);
+      color: #e5f1ff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
 
-        .topbar {
-            width: 100%;
-            background: #0d2354;
-            padding: 12px 0;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            color: #7bb9ff;
-            border-bottom: 2px solid #153a83;
-        }
+    .shell {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 16px 12px 32px;
+    }
 
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
 
-        /* OCTAVE BUTTONS */
-        .oct-btn {
-            display: block;
-            width: 92%;
-            margin: 14px auto;
-            padding: 18px;
-            background: linear-gradient(145deg,#113570,#0d244a);
-            border: 2px solid #296dff;
-            border-radius: 14px;
-            color: #d4e6ff;
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-            box-shadow: 0 0 12px #1e4fa8;
-            transition: 0.2s ease-in-out;
-        }
-        .oct-btn:hover {
-            background: linear-gradient(145deg,#1c4fa8,#113570);
-            transform: scale(1.02);
-        }
+    .title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #e5f1ff;
+      text-shadow: 0 0 8px rgba(80, 150, 255, 0.8);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .title span.symbol {
+      font-size: 1.5rem;
+    }
 
-        /* Research container */
-        .research-box {
-            background: #0a1d42;
-            margin: 18px auto;
-            padding: 16px;
-            width: 92%;
-            border-radius: 10px;
-            border: 1px solid #296dff;
-            box-shadow: 0 0 8px #1a3e7f;
-            text-align: left;
-            font-size: 17px;
-            line-height: 1.45;
-            color: #cce0ff;
-        }
+    .badge {
+      background: linear-gradient(135deg, #1f5fff, #3f8bff);
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 0 12px rgba(70, 130, 255, 0.75);
+    }
 
-        /* Sentence / Word / Plain toggles */
-        .toggle-row {
-            width: 92%;
-            margin: 0 auto 18px auto;
-            display: flex;
-            justify-content: space-between;
-        }
+    .role-button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(40, 120, 255, 0.8);
+      background: radial-gradient(circle at top left, rgba(80, 160, 255, 0.35), #041226);
+      color: #f4f7ff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.9),
+        0 0 14px rgba(30, 120, 255, 0.7);
+      transition: all 0.15s ease-out;
+    }
 
-        .toggle-row button {
-            flex: 1;
-            margin: 0 4px;
-            padding: 12px 0;
-            background: #153a83;
-            border: 1px solid #296dff;
-            border-radius: 8px;
-            color: #cce0ff;
-            font-size: 15px;
-            transition: .2s;
-        }
-        .toggle-row button:hover {
-            background: #1f54c9;
-            transform: scale(1.03);
-        }
+    .role-button span.color-tag {
+      opacity: 0.85;
+      font-weight: 500;
+    }
 
-        /* Chat bubble button */
-        #chat-open {
-            position: fixed;
-            bottom: 22px;
-            right: 20px;
-            width: 64px;
-            height: 64px;
-            background: #144aa0;
-            border-radius: 50%;
-            color: white;
-            font-size: 32px;
-            text-align: center;
-            line-height: 64px;
-            cursor: pointer;
-            box-shadow: 0 0 12px rgba(0,0,0,0.6);
-        }
+    .role-button:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 1),
+        0 0 20px rgba(70, 180, 255, 0.9);
+    }
 
-        /* Hidden Chat Window */
-        #chat-window {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 320px;
-            height: 420px;
-            background: #0e214c;
-            border: 2px solid #296dff;
-            border-radius: 14px;
-            display: none;
-            padding: 10px;
-            box-shadow: 0 0 16px #1a3e7f;
-        }
+    .role-button.active {
+      background: radial-gradient(circle at top, #0d1f4a, #020817);
+      border-color: #72d6ff;
+      box-shadow:
+        0 0 0 1px rgba(90, 210, 255, 0.7),
+        0 0 26px rgba(90, 210, 255, 0.9);
+    }
 
-        #chat-log {
-            width: 100%;
-            height: 340px;
-            background: #0b1b3e;
-            border: 1px solid #1b3f91;
-            border-radius: 8px;
-            overflow-y: auto;
-            padding: 8px;
-            color: #d4e6ff;
-            font-size: 14px;
-        }
+    .role-button.active span.color-tag {
+      text-decoration: underline;
+    }
 
-        #chat-input {
-            width: 100%;
-            margin-top: 6px;
-            padding: 10px;
-            background: #0b1c44;
-            border: 1px solid #296dff;
-            border-radius: 6px;
-            color: #d4e6ff;
-        }
+    .panel {
+      margin-top: 18px;
+      padding: 16px 16px 18px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, rgba(67, 132, 255, 0.35), #020818);
+      border: 1px solid rgba(70, 150, 255, 0.9);
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.9),
+        0 0 22px rgba(60, 130, 255, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
 
-        /* Intro modal */
-        #intro-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width:100%;
-            height:100%;
-            background: rgba(0,0,0,0.78);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 5000;
-        }
+    .panel-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 6px;
+    }
 
-        #intro-card {
-            background: #0d2249;
-            width: 88%;
-            max-width: 460px;
-            padding: 24px;
-            border-radius: 14px;
-            border: 2px solid #296dff;
-            color: #d9ecff;
-            text-align: left;
-            box-shadow: 0 0 18px #1a3e7f;
-        }
+    .panel-subtitle {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 10px;
+    }
 
-        #intro-card h2 {
-            margin-top:0;
-            color:#7bb9ff;
-        }
+    .loading {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 10px;
+    }
 
-        .intro-btn {
-            display:block;
-            width:100%;
-            margin-top:20px;
-            padding:12px;
-            background:#153a83;
-            border-radius:10px;
-            color:white;
-            font-weight:bold;
-            text-align:center;
-        }
+    .dot-pulse {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #9fd4ff;
+      box-shadow:
+        0 0 8px rgba(159, 212, 255, 0.9),
+        0 0 18px rgba(159, 212, 255, 0.9);
+      animation: dotPulse 1s infinite alternate;
+      margin-left: 4px;
+    }
 
-    </style>
+    @keyframes dotPulse {
+      from { transform: scale(0.8); opacity: 0.6; }
+      to { transform: scale(1.4); opacity: 1; }
+    }
+
+    .link-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .link-list li {
+      margin-bottom: 8px;
+    }
+
+    .link-list a {
+      color: #a7d3ff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    .link-list a:hover {
+      text-decoration: underline;
+      color: #ffffff;
+    }
+
+    /* Chat bubble */
+    .chat-fab {
+      position: absolute;
+      right: 16px;
+      bottom: 12px;
+      width: 60px;
+      height: 60px;
+      border-radius: 999px;
+      background: radial-gradient(circle at top left, #ffffff, #e0f2ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 0 0 2px rgba(10, 40, 80, 1),
+        0 0 24px rgba(120, 200, 255, 0.9);
+      cursor: pointer;
+    }
+
+    .chat-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.3rem;
+    }
+
+    .bottom-nav {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      opacity: 0.7;
+    }
+
+    .nav-dot, .nav-square, .nav-arrow {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-dot-inner {
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      border: 2px solid #a0c9ff;
+    }
+
+    .nav-square-inner {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 2px solid #a0c9ff;
+    }
+
+    .nav-arrow-inner {
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-right: 12px solid #a0c9ff;
+    }
+
+    @media (max-width: 360px) {
+      .shell {
+        padding-inline: 8px;
+      }
+    }
+  </style>
 </head>
-
-
 <body>
-
-<!-- Intro Modal -->
-<div id="intro-modal">
-    <div id="intro-card">
-        <h2>Welcome to Infinity Portal</h2>
-        <p>This system uses color-coded research logic: Engineer (green), CEO (orange), Import (blue), Investigate (pink), Routes (red), Data (yellow), Assimilation (purple).</p>
-        <p>Your actions create tokens, build pages, grow research, and expand Infinity itself.</p>
-        <label>
-            <input type="checkbox" id="dont-show" />
-            Don’t show again
-        </label>
-        <div id="intro-close" class="intro-btn">Enter</div>
-    </div>
-</div>
-
-
-<div class="topbar">∞ Infinity Research Portal ∞</div>
-
-<div class="container">
-
-    <!-- MAIN BUTTONS -->
-    <div>
-        <button class="oct-btn" onclick="openCategory('engineer')">Engineer (Green)</button>
-        <button class="oct-btn" onclick="openCategory('ceo')">CEO (Orange)</button>
-        <button class="oct-btn" onclick="openCategory('import')">Import (Blue)</button>
-        <button class="oct-btn" onclick="openCategory('investigate')">Investigate (Pink)</button>
-        <button class="oct-btn" onclick="openCategory('routes')">Routes (Red)</button>
-        <button class="oct-btn" onclick="openCategory('data')">Data (Yellow)</button>
-        <button class="oct-btn" onclick="openCategory('assimilation')">Assimilation (Purple)</button>
+  <div class="shell">
+    <div class="header-row">
+      <div class="title">
+        <span class="symbol">∞</span>
+        <span>Infinity Research Portal</span>
+      </div>
+      <div class="badge">Pewpi</div>
     </div>
 
-    <!-- RESEARCH OUTPUT -->
-    <div id="research-area" class="research-box" style="display:none;"></div>
-
-    <!-- Toggle Buttons -->
-    <div id="toggle-section" class="toggle-row" style="display:none;">
-        <button onclick="setMode('sentence')">Sentence</button>
-        <button onclick="setMode('word')">Word</button>
-        <button onclick="setMode('plain')">Plain</button>
-    </div>
-
-</div>
-
-<!-- CHAT BUTTON -->
-<div id="chat-open">💬</div>
-
-<!-- CHAT WINDOW -->
-<div id="chat-window">
-    <div id="chat-log"></div>
-    <input id="chat-input" type="text" placeholder="Write content → generate token…" />
-</div>
-
-
-<!-- LOADING APP.JS -->
-<script src="app.js"></script>
-
-</body>
-<!-- === PEWPI PAT PANEL === -->
-<div id="pewpi-panel"
-     style="position:fixed; top:20px; left:20px; background:#0b1e45; 
-            border:2px solid #296dff; border-radius:10px; padding:14px; 
-            display:none; z-index:9000; width:260px;">
-    <h3 style="margin-top:0; color:#7bb9ff;">Pewpi Login</h3>
-    <p style="font-size:14px; color:#d4e6ff;">
-        Enter your GitHub PAT once.  
-        It will be <b>locally encrypted</b> and saved only on your device.
-    </p>
-
-    <input id="pewpi-input" 
-           type="password"
-           placeholder="Enter PAT…"
-           style="width:100%; padding:8px; margin-bottom:8px; 
-                  background:#0a1c3f; border:1px solid #296dff; 
-                  border-radius:6px; color:#cce0ff;" />
-
-    <button onclick="savePewpiPAT()"
-            style="width:100%; padding:10px; background:#153a83; color:white; 
-                   border:none; border-radius:8px; font-weight:bold;">
-        Save PAT
+    <!-- ROLE BUTTONS -->
+    <button class="role-button" data-role="engineer">
+      Engineer <span class="color-tag">(Green)</span>
     </button>
 
-    <button onclick="closePewpi()"
-            style="width:100%; padding:10px; margin-top:6px; background:#662a2a; color:white; 
-                   border:none; border-radius:8px; font-weight:bold;">
-        Close
+    <button class="role-button" data-role="ceo">
+      CEO <span class="color-tag">(Orange)</span>
     </button>
-</div>
 
-<!-- BUTTON TO OPEN PAT PANEL -->
-<div onclick="openPewpi()"
-     style="position:fixed; top:20px; right:20px; padding:10px 16px; 
-            background:#144aa0; color:white; border-radius:8px; 
-            font-size:14px; cursor:pointer; box-shadow:0 0 8px #0a162f;">
-    Pewpi
-</div>
+    <button class="role-button" data-role="import">
+      Import <span class="color-tag">(Blue)</span>
+    </button>
 
+    <button class="role-button" data-role="investigate">
+      Investigate <span class="color-tag">(Pink)</span>
+    </button>
 
-<script>
-/* ================================
-   INTRO MODAL CONTROL
-===================================*/
-window.onload = function() {
-    if (localStorage.getItem("infinity_intro_hidden") === "yes") {
-        document.getElementById("intro-modal").style.display = "none";
-    }
-};
+    <button class="role-button" data-role="routes">
+      Routes <span class="color-tag">(Red)</span>
+    </button>
 
-document.getElementById("intro-close").onclick = function() {
-    if (document.getElementById("dont-show").checked) {
-        localStorage.setItem("infinity_intro_hidden", "yes");
-    }
-    document.getElementById("intro-modal").style.display = "none";
-};
+    <button class="role-button" data-role="data">
+      Data <span class="color-tag">(Yellow)</span>
+    </button>
 
+    <button class="role-button" data-role="assimilation">
+      Assimilation <span class="color-tag">(Purple)</span>
+    </button>
 
-/* ================================
-   CATEGORY OPEN HANDLER
-===================================*/
-function openCategory(cat) {
-    document.getElementById("research-area").style.display = "block";
-    document.getElementById("toggle-section").style.display = "flex";
+    <!-- OUTPUT PANEL -->
+    <div class="panel" id="portal-panel">
+      <div class="panel-title" id="panel-title">ENGINEER</div>
+      <div class="panel-subtitle" id="panel-subtitle">
+        Role feed: Green channel
+      </div>
+      <div class="loading" id="panel-loading">
+        Loading research pages<span class="dot-pulse"></span>
+      </div>
+      <ul class="link-list" id="panel-links"></ul>
 
-    loadCategory(cat);
-}
+      <div class="chat-fab" title="Rogers">
+        <div class="chat-icon">💬</div>
+      </div>
+    </div>
 
+    <!-- Bottom nav shapes (just visual) -->
+    <div class="bottom-nav">
+      <div class="nav-arrow">
+        <div class="nav-arrow-inner"></div>
+      </div>
+      <div class="nav-dot">
+        <div class="nav-dot-inner"></div>
+      </div>
+      <div class="nav-square">
+        <div class="nav-square-inner"></div>
+      </div>
+    </div>
+  </div>
 
-/* ================================
-   LOAD CATEGORY RESEARCH
-===================================*/
-function loadCategory(cat) {
-    let area = document.getElementById("research-area");
+  <script>
+    // ------- DATA DEFINITIONS (EDIT THESE LINKS IF YOU WANT) ----------
+    const researchConfig = {
+      engineer: {
+        title: "ENGINEER",
+        subtitle: "Role feed: Green channel",
+        links: [
+          {
+            label: "Green engineering protocols",
+            url: "https://www.google.com/search?q=green+engineering+protocols"
+          },
+          {
+            label: "Infrastructure patterns / infinity rigs",
+            url: "https://www.google.com/search?q=infrastructure+design+patterns"
+          },
+          {
+            label: "Quantum / hydrogen gateway theory",
+            url: "https://www.google.com/search?q=hydrogen+portal+quantum+gateway"
+          }
+        ]
+      },
+      ceo: {
+        title: "CEO",
+        subtitle: "Role feed: Orange channel",
+        links: [
+          {
+            label: "High-leverage decision frameworks",
+            url: "https://www.google.com/search?q=ceo+decision+frameworks"
+          },
+          {
+            label: "Market structure / infinity plateau",
+            url: "https://www.google.com/search?q=non+zero+sum+economic+design"
+          },
+          {
+            label: "Capital allocation case studies",
+            url: "https://www.google.com/search?q=capital+allocation+case+study"
+          }
+        ]
+      },
+      import: {
+        title: "IMPORT",
+        subtitle: "Role feed: Blue channel",
+        links: [
+          {
+            label: "Global logistics + ports",
+            url: "https://www.google.com/search?q=global+shipping+logistics+ports"
+          },
+          {
+            label: "Customs + trade lanes",
+            url: "https://www.google.com/search?q=import+export+trade+lanes"
+          },
+          {
+            label: "Supply-chain risk mapping",
+            url: "https://www.google.com/search?q=supply+chain+risk+mapping"
+          }
+        ]
+      },
+      investigate: {
+        title: "INVESTIGATE",
+        subtitle: "Role feed: Pink channel",
+        links: [
+          {
+            label: "Forensic accounting / money trails",
+            url: "https://www.google.com/search?q=forensic+accounting+case+studies"
+          },
+          {
+            label: "Open-source intel (OSINT)",
+            url: "https://www.google.com/search?q=osint+techniques"
+          },
+          {
+            label: "Radionics / fringe research map",
+            url: "https://www.google.com/search?q=scalar+field+theory+radionics"
+          }
+        ]
+      },
+      routes: {
+        title: "ROUTES",
+        subtitle: "Role feed: Red channel",
+        links: [
+          {
+            label: "Shipping routes + chokepoints",
+            url: "https://www.google.com/search?q=global+shipping+chokepoints"
+          },
+          {
+            label: "Humanitarian corridors",
+            url: "https://www.google.com/search?q=humanitarian+aid+corridors"
+          },
+          {
+            label: "Migration / movement patterns",
+            url: "https://www.google.com/search?q=global+migration+routes"
+          }
+        ]
+      },
+      data: {
+        title: "DATA",
+        subtitle: "Role feed: Yellow channel",
+        links: [
+          {
+            label: "Large-scale scraping strategy",
+            url: "https://www.google.com/search?q=large+scale+web+scraping+architecture"
+          },
+          {
+            label: "Vector stores / embeddings",
+            url: "https://www.google.com/search?q=vector+database+embeddings"
+          },
+          {
+            label: "Tokenization + hashing theory",
+            url: "https://www.google.com/search?q=cryptographic+hash+tokens"
+          }
+        ]
+      },
+      assimilation: {
+        title: "ASSIMILATION",
+        subtitle: "Role feed: Purple channel",
+        links: [
+          {
+            label: "Knowledge distillation pipelines",
+            url: "https://www.google.com/search?q=knowledge+distillation+pipeline"
+          },
+          {
+            label: "Human-AI interface design",
+            url: "https://www.google.com/search?q=human+ai+collaboration+interface"
+          },
+          {
+            label: "Infinity OS mental exoskeleton ideas",
+            url: "https://www.google.com/search?q=collective+intelligence+exoskeleton"
+          }
+        ]
+      }
+    };
 
-    // placeholder content until app.js loads dynamic pages
-    area.innerHTML = `
-        <h3 style="color:#7bb9ff; margin-top:0;">${cat.toUpperCase()}</h3>
-        <p>Loading research pages…</p>
-    `;
-}
+    // ------- WIRING ----------
+    const buttons = document.querySelectorAll(".role-button");
+    const panelTitle = document.getElementById("panel-title");
+    const panelSubtitle = document.getElementById("panel-subtitle");
+    const panelLoading = document.getElementById("panel-loading");
+    const panelLinks = document.getElementById("panel-links");
 
-
-/* ================================
-   MODE TOGGLER
-===================================*/
-let currentMode = "sentence";
-
-function setMode(m) {
-    currentMode = m;
-    let area = document.getElementById("research-area");
-    let raw = area.dataset.rawtext || "";
-
-    if (raw.length <= 2) return;
-
-    renderResearch(raw);
-}
-
-
-/* ================================
-   RENDER RESEARCH TEXT
-===================================*/
-let colorLogic = {
-    "engineer": "#00ff7a",
-    "ceo": "#ffa64d",
-    "import": "#4da6ff",
-    "investigate": "#ff66cc",
-    "routes": "#ff4d4d",
-    "data": "#ffeb3b",
-    "assimilation": "#c266ff"
-};
-
-function renderResearch(text) {
-    let area = document.getElementById("research-area");
-    let activeColor = area.dataset.color || "#d4e6ff";
-
-    if (currentMode === "plain") {
-        area.innerHTML = `<pre>${text}</pre>`;
-        return;
-    }
-
-    if (currentMode === "sentence") {
-        let sentences = text.split(".");
-        let html = "";
-
-        sentences.forEach(s => {
-            let trimmed = s.trim();
-            if (trimmed.length === 0) return;
-            html += `<p style="color:${activeColor};">${trimmed}.</p>`;
-        });
-
-        area.innerHTML = html;
-        return;
-    }
-
-    if (currentMode === "word") {
-        let words = text.split(" ");
-        let html = "";
-
-        words.forEach(w => {
-            let cleaned = w.trim();
-            if (cleaned.length === 0) return;
-            html += `<span style="color:${activeColor}; margin-right:6px; cursor:pointer;">${cleaned}</span>`;
-        });
-
-        area.innerHTML = html;
-        return;
-    }
-}
-
-
-/* ================================
-   CHAT BUBBLE LOGIC
-===================================*/
-let chatOpen = false;
-
-document.getElementById("chat-open").onclick = function() {
-    chatOpen = !chatOpen;
-    document.getElementById("chat-window").style.display = chatOpen ? "block" : "none";
-};
-
-document.getElementById("chat-input").addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-        let val = this.value.trim();
-        if (val.length < 1) return;
-        this.value = "";
-        addToChat("You: " + val);
-        generateTokenFromUser(val);
-    }
-});
-
-function addToChat(msg) {
-    let log = document.getElementById("chat-log");
-    log.innerHTML += `<div>${msg}</div>`;
-    log.scrollTop = log.scrollHeight;
-}
-
-
-/* ================================
-   PEWPI CIPHER (LOCAL ONLY)
-===================================*/
-function pewpiEncrypt(str) {
-    let out = "";
-    for (let i = 0; i < str.length; i++) {
-        out += String.fromCharCode(str.charCodeAt(i) + 7);
-    }
-    return btoa(out);
-}
-
-function pewpiDecrypt(str) {
-    try {
-        let decoded = atob(str);
-        let out = "";
-        for (let i = 0; i < decoded.length; i++) {
-            out += String.fromCharCode(decoded.charCodeAt(i) - 7);
+    function setActiveRole(roleKey) {
+      buttons.forEach(btn => {
+        if (btn.dataset.role === roleKey) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
         }
-        return out;
-    } catch {
-        return "";
+      });
+
+      const cfg = researchConfig[roleKey];
+      if (!cfg) return;
+
+      panelTitle.textContent = cfg.title;
+      panelSubtitle.textContent = cfg.subtitle;
+      panelLoading.style.display = "block";
+      panelLinks.innerHTML = "";
+
+      // Fake short loading, then print links
+      setTimeout(() => {
+        panelLoading.style.display = "none";
+        cfg.links.forEach(item => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = item.url;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.textContent = item.label;
+          li.appendChild(a);
+          panelLinks.appendChild(li);
+        });
+      }, 260); // quick, but you still see "Loading..."
     }
-}
 
-function openPewpi() {
-    document.getElementById("pewpi-panel").style.display = "block";
-}
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const roleKey = btn.dataset.role;
+        setActiveRole(roleKey);
+      });
+    });
 
-function closePewpi() {
-    document.getElementById("pewpi-panel").style.display = "none";
-}
-
-function savePewpiPAT() {
-    let raw = document.getElementById("pewpi-input").value.trim();
-    if (raw.length < 5) return alert("Invalid PAT.");
-
-    let encrypted = pewpiEncrypt(raw);
-    localStorage.setItem("pewpi_pat", encrypted);
-
-    alert("PAT saved securely through Pewpi.");
-    closePewpi();
-}
-
-
-/* ================================
-   GITHUB WRITE (CALLS APP.JS)
-===================================*/
-function generateTokenFromUser(raw) {
-    if (typeof generateToken === "function") {
-        generateToken(raw);
-    } else {
-        addToChat("System: app.js not yet loaded.");
-    }
-}
-
-</script>
-
+    // Default initial state
+    setActiveRole("engineer");
+  </script>
 </body>
 </html>
