@@ -1,0 +1,11 @@
+{
+    "hash": "8dba7248a921ce8841058064e8bfe8756776e251d7a17935d1189337bf7d3e3c",
+    "timestamp": "2025-11-27T02:36:34.320344Z",
+    "value": 475979,
+    "vector": {
+        "x": 0.788365,
+        "y": 0.200653,
+        "z": 0.366748
+    },
+    "research": "[\u221e Research Extract]\n\n\n\n\nHelium - Wikipedia\n(function(){var className=\"client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.cookie.match(/(?:^|; )enwikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\\w+$|[^\\w-]+/g,'')+'-clientpref-\\\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={\"wgBreakFrames\":false,\"wgSeparatorTransformTable\":[\"\",\"\"],\"wgDigitTransformTable\":[\"\",\"\"],\"wgDefaultDateFormat\":\"dmy\",\"wgMonthNames\":[\"\",\"January\",\"February\",\"March\",\"April\",\"May\",\"June\",\"July\",\"August\",\"September\",\"October\",\"November\",\"December\"],\"wgRequestId\":\"b9e7f01e-b2ce-4260-a587-aa2b242ef464\",\"wgCanonicalNamespace\":\"\",\"wgCanonicalSpecialPageName\":false,\"wgNamespaceNumber\":0,\"wgPageName\":\"Helium\",\"wgTitle\":\"Helium\",\"wgCurRevisionId\":1322471124,\"wgRevisionId\":1322471124,\"wgArticleId\":13256,\"wgIsArticle\":true,\"wgIsRedirect\":false,\"wgAction\":\"view\",\"wgUserName\":null,\"wgUserGroups\":[\"*\"],\"wgCategories\":[\"Pages using the Phonos extension\",\"Webarchive template wayback links\",\"CS1 French-language sources (fr)\",\"CS1 German-language sources (de)\",\"CS1: long volume value\",\"CS1 maint: DOI inactive as of September 2025\",\"CS1: unfit URL\",\"CS1 Japanese-language sources (ja)\",\"Wi"
+}
