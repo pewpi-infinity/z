@@ -33,6 +33,18 @@ from build_token import (
     MIN_VALUE, MAX_VALUE
 )
 
+from pewpi_login import (
+    PewpiLogin,
+    TokenHashManager,
+    ColorManager,
+    ButtonGenerator,
+    ViewModeManager,
+    ResearchIndexSyncer,
+    CategoryNotFoundError,
+    TokenNotFoundError,
+    InvalidConfigError
+)
+
 
 class TestPewpiLogin(unittest.TestCase):
     """Test user authentication functionality."""
@@ -304,16 +316,6 @@ class TestIntegration(unittest.TestCase):
         # Logout
         logout_result = logout(session)
         self.assertTrue(logout_result["success"])
-    PewpiLogin,
-    TokenHashManager,
-    ColorManager,
-    ButtonGenerator,
-    ViewModeManager,
-    ResearchIndexSyncer,
-    CategoryNotFoundError,
-    TokenNotFoundError,
-    InvalidConfigError
-)
 
 
 class TestColorManager(unittest.TestCase):
