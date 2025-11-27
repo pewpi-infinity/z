@@ -1,0 +1,11 @@
+{
+    "hash": "84778a5a2fa83463704dac3a6532b96f827ea6246175b7edd0aea1abfe88edbe",
+    "timestamp": "2025-11-27T01:08:39.455673Z",
+    "value": 461588,
+    "vector": {
+        "x": 0.295888,
+        "y": 0.314845,
+        "z": 0.91198
+    },
+    "research": "[\u221e Research Extract]\n\n\n\n\nQuantum computing - Wikipedia\n(function(){var className=\"client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.cookie.match(/(?:^|; )enwikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\\w+$|[^\\w-]+/g,'')+'-clientpref-\\\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={\"wgBreakFrames\":false,\"wgSeparatorTransformTable\":[\"\",\"\"],\"wgDigitTransformTable\":[\"\",\"\"],\"wgDefaultDateFormat\":\"dmy\",\"wgMonthNames\":[\"\",\"January\",\"February\",\"March\",\"April\",\"May\",\"June\",\"July\",\"August\",\"September\",\"October\",\"November\",\"December\"],\"wgRequestId\":\"2adcb18f-7983-4f44-ac8c-d6413ac05a63\",\"wgCanonicalNamespace\":\"\",\"wgCanonicalSpecialPageName\":false,\"wgNamespaceNumber\":0,\"wgPageName\":\"Quantum_computing\",\"wgTitle\":\"Quantum computing\",\"wgCurRevisionId\":1323958523,\"wgRevisionId\":1323958523,\"wgArticleId\":25220,\"wgIsArticle\":true,\"wgIsRedirect\":false,\"wgAction\":\"view\",\"wgUserName\":null,\"wgUserGroups\":[\"*\"],\"wgCategories\":[\"CS1 Russian-language sources (ru)\",\"CS1 maint: bot: original URL status unknown\",\"All articles with dead external links\",\"Articles with dead external links from November 2025\",\"Articles with short description\",\"Short description is diff"
+}
