@@ -1,0 +1,13 @@
+# pewpi_login dependencies
+# 
+# bcrypt is the preferred password hashing library (optional but recommended).
+#
+# If bcrypt is not installed, the script will fall back to SHA256 hashing,
+# which is less secure but functional.
+#
+# Note: The HTTP server uses Python's built-in http.server module, so no
+# additional web framework is required.
+
+# Optional but recommended for secure password hashing
+# Comment out if bcrypt installation fails (e.g., missing build tools)
+bcrypt>=4.0.0
