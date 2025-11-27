@@ -1,0 +1,11 @@
+{
+    "hash": "cf5149dc1addc43fa149f4118a2380f7b6c6e81f5b43b17422dc10579a092555",
+    "timestamp": "2025-11-27T02:16:57.999097Z",
+    "value": 400742,
+    "vector": {
+        "x": 0.022066,
+        "y": 0.577488,
+        "z": 0.176039
+    },
+    "research": "[\u221e Research Extract]\n\n\n\n\nCarbon capture - Wikipedia\n(function(){var className=\"client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-not-available\";var cookie=document.cookie.match(/(?:^|; )enwikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\\w+$|[^\\w-]+/g,'')+'-clientpref-\\\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={\"wgBreakFrames\":false,\"wgSeparatorTransformTable\":[\"\",\"\"],\"wgDigitTransformTable\":[\"\",\"\"],\"wgDefaultDateFormat\":\"dmy\",\"wgMonthNames\":[\"\",\"January\",\"February\",\"March\",\"April\",\"May\",\"June\",\"July\",\"August\",\"September\",\"October\",\"November\",\"December\"],\"wgRequestId\":\"c855f442-b1fb-4a4e-a34e-0a39646ea174\",\"wgCanonicalNamespace\":\"\",\"wgCanonicalSpecialPageName\":false,\"wgNamespaceNumber\":0,\"wgPageName\":\"Carbon_capture\",\"wgTitle\":\"Carbon capture\",\"wgCurRevisionId\":1273366266,\"wgRevisionId\":1273366266,\"wgArticleId\":2815108,\"wgIsArticle\":true,\"wgIsRedirect\":false,\"wgAction\":\"view\",\"wgUserName\":null,\"wgUserGroups\":[\"*\"],\"wgCategories\":[\"Short description is different from Wikidata\",\"All article disambiguation pages\",\"All disambiguation pages\",\"Disambiguation pages\"],\"wgPageViewLanguage\":\"en\",\"wgPageContentLanguage\":\"en\",\"wgPageContentModel\":\"wikitext\",\"wgRelevantPageName\""
+}
