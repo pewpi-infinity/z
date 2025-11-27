@@ -1,0 +1,121 @@
+{
+  "categories": {
+    "engineering": {
+      "color": "green",
+      "display_name": "Engineering",
+      "description": "Engineering and technical research",
+      "token_hashes": [
+        "233717f509c3ac2e23c678bbdae62cea120628ad1c0074d0cecc355a1b373f6b"
+      ],
+      "keywords": [
+        "quantum",
+        "physics",
+        "electron",
+        "vector",
+        "tensor",
+        "algorithm",
+        "neural",
+        "lattice"
+      ]
+    },
+    "ceo": {
+      "color": "orange",
+      "display_name": "CEO",
+      "description": "Executive and leadership research",
+      "token_hashes": [],
+      "keywords": [
+        "business",
+        "strategy",
+        "leadership",
+        "management",
+        "executive",
+        "market",
+        "revenue"
+      ]
+    },
+    "import": {
+      "color": "blue",
+      "display_name": "Import",
+      "description": "Import and data acquisition research",
+      "token_hashes": [],
+      "keywords": [
+        "import",
+        "data",
+        "acquisition",
+        "transfer",
+        "source",
+        "stream"
+      ]
+    },
+    "investigate": {
+      "color": "pink",
+      "display_name": "Investigate",
+      "description": "Investigation and analysis research",
+      "token_hashes": [],
+      "keywords": [
+        "analysis",
+        "investigate",
+        "research",
+        "study",
+        "examine",
+        "explore"
+      ]
+    },
+    "routes": {
+      "color": "red",
+      "display_name": "Routes",
+      "description": "Routing and pathway research",
+      "token_hashes": [],
+      "keywords": [
+        "route",
+        "path",
+        "network",
+        "connection",
+        "channel",
+        "pipeline"
+      ]
+    },
+    "data": {
+      "color": "yellow",
+      "display_name": "Data",
+      "description": "Data science and storage research",
+      "token_hashes": [],
+      "keywords": [
+        "data",
+        "storage",
+        "database",
+        "information",
+        "record",
+        "archive"
+      ]
+    },
+    "assimilation": {
+      "color": "purple",
+      "display_name": "Assimilation",
+      "description": "Integration and assimilation research",
+      "token_hashes": [],
+      "keywords": [
+        "integration",
+        "merge",
+        "combine",
+        "assimilate",
+        "synthesis",
+        "fusion"
+      ]
+    }
+  },
+  "color_map": {
+    "green": "#22c55e",
+    "orange": "#f97316",
+    "blue": "#3b82f6",
+    "pink": "#ec4899",
+    "red": "#ef4444",
+    "yellow": "#eab308",
+    "purple": "#a855f7"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-11-27T08:26:52.281902Z",
+    "description": "Category-token mapping for Pewpi Infinity Research Portal"
+  }
+}

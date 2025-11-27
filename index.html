@@ -87,6 +87,68 @@
     .role-button.active span.color-tag {
       text-decoration: underline;
     }
+    /* Dynamic color-coded button borders */
+    .role-button[data-role="engineer"] { border-color: #22c55e; }
+    .role-button[data-role="engineer"].active { border-color: #22c55e; box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.7), 0 0 26px rgba(34, 197, 94, 0.6); }
+    .role-button[data-role="ceo"] { border-color: #f97316; }
+    .role-button[data-role="ceo"].active { border-color: #f97316; box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.7), 0 0 26px rgba(249, 115, 22, 0.6); }
+    .role-button[data-role="import"] { border-color: #3b82f6; }
+    .role-button[data-role="import"].active { border-color: #3b82f6; box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.7), 0 0 26px rgba(59, 130, 246, 0.6); }
+    .role-button[data-role="investigate"] { border-color: #ec4899; }
+    .role-button[data-role="investigate"].active { border-color: #ec4899; box-shadow: 0 0 0 1px rgba(236, 72, 153, 0.7), 0 0 26px rgba(236, 72, 153, 0.6); }
+    .role-button[data-role="routes"] { border-color: #ef4444; }
+    .role-button[data-role="routes"].active { border-color: #ef4444; box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.7), 0 0 26px rgba(239, 68, 68, 0.6); }
+    .role-button[data-role="data"] { border-color: #eab308; }
+    .role-button[data-role="data"].active { border-color: #eab308; box-shadow: 0 0 0 1px rgba(234, 179, 8, 0.7), 0 0 26px rgba(234, 179, 8, 0.6); }
+    .role-button[data-role="assimilation"] { border-color: #a855f7; }
+    .role-button[data-role="assimilation"].active { border-color: #a855f7; box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.7), 0 0 26px rgba(168, 85, 247, 0.6); }
+    /* View Mode Toggle Styles */
+    .view-mode-toggle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: rgba(10, 20, 40, 0.8);
+      border-radius: 12px;
+      border: 1px solid rgba(100, 160, 255, 0.4);
+      margin-bottom: 14px;
+    }
+    .toggle-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #a0c8ff;
+    }
+    .toggle-buttons {
+      display: flex;
+      gap: 6px;
+    }
+    .toggle-btn {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      border: 1px solid rgba(100, 160, 255, 0.5);
+      border-radius: 8px;
+      background: rgba(30, 60, 100, 0.5);
+      color: #d0e0ff;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .toggle-btn:hover {
+      background: rgba(60, 100, 160, 0.6);
+      border-color: rgba(120, 180, 255, 0.7);
+    }
+    .toggle-btn.active {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      border-color: #60a5fa;
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    }
+    .highlight-word {
+      border-radius: 2px;
+      padding: 0 2px;
+    }
+    .highlight-sentence {
+      border-radius: 4px;
+    }
     .panel {
       margin-top: 18px;
       padding: 16px 16px 24px;
@@ -381,6 +443,22 @@
 
     <!-- OUTPUT PANEL -->
     <div class="panel" id="portal-panel">
+      <!-- View Mode Toggle -->
+      <div class="view-mode-toggle" id="view-mode-toggle">
+        <span class="toggle-label">View Mode:</span>
+        <div class="toggle-buttons">
+          <button class="toggle-btn" data-mode="sentence" title="Highlight sentences by category">
+            Sentence
+          </button>
+          <button class="toggle-btn" data-mode="word" title="Highlight words by category">
+            Word
+          </button>
+          <button class="toggle-btn active" data-mode="plain" title="Plain text without highlighting">
+            Plain Text
+          </button>
+        </div>
+      </div>
+      
       <div class="panel-title" id="panel-title">ENGINEER</div>
       <div class="panel-subtitle" id="panel-subtitle">
         Role feed: Green channel • <span id="panel-count">0</span> pages
@@ -388,6 +466,7 @@
       <div class="loading" id="panel-loading">
         Loading research index<span class="dot-pulse"></span>
       </div>
+      <div class="error-message" id="error-message" style="display: none; color: #ff6b6b; padding: 10px; border: 1px solid #ff6b6b; border-radius: 8px; margin-bottom: 10px;"></div>
       <ul class="link-list" id="panel-links"></ul>
 
       <div class="chat-fab" id="chat-fab" title="Rogers">
@@ -423,13 +502,16 @@
   </div>
 
   <script>
+    // ========== PEWPI LOGIN - VIEW MODE TOGGLE & DYNAMIC BUTTONS ==========
     const researchUrl = "research_index.json";
+    const categoryTokensUrl = "category_tokens.json";
     const buttons = document.querySelectorAll(".role-button");
     const panelTitle = document.getElementById("panel-title");
     const panelSubtitle = document.getElementById("panel-subtitle");
     const panelCount = document.getElementById("panel-count");
     const panelLoading = document.getElementById("panel-loading");
     const panelLinks = document.getElementById("panel-links");
+    const errorMessage = document.getElementById("error-message");
 
     const chatOverlay = document.getElementById("chat-overlay");
     const chatFab = document.getElementById("chat-fab");
@@ -440,7 +522,168 @@
 
     let allRecords = [];
     let currentRole = "engineer";
+    let currentViewMode = "plain";
+    let categoryConfig = null;
 
+    // Category keywords for highlighting (loaded from config or defaults)
+    const defaultCategoryKeywords = {
+      engineering: ['quantum', 'physics', 'electron', 'vector', 'tensor', 'algorithm', 'neural', 'lattice', 'atomic', 'photon'],
+      ceo: ['business', 'strategy', 'leadership', 'management', 'executive', 'market', 'revenue', 'growth'],
+      import: ['import', 'data', 'acquisition', 'transfer', 'source', 'stream', 'input'],
+      investigate: ['analysis', 'investigate', 'research', 'study', 'examine', 'explore', 'discover'],
+      routes: ['route', 'path', 'network', 'connection', 'channel', 'pipeline', 'flow'],
+      data: ['data', 'storage', 'database', 'information', 'record', 'archive', 'file'],
+      assimilation: ['integration', 'merge', 'combine', 'assimilate', 'synthesis', 'fusion', 'unity']
+    };
+
+    // Color map for categories
+    const categoryColors = {
+      engineering: '#22c55e',
+      engineer: '#22c55e',
+      ceo: '#f97316',
+      import: '#3b82f6',
+      investigate: '#ec4899',
+      routes: '#ef4444',
+      data: '#eab308',
+      assimilation: '#a855f7'
+    };
+
+    // ========== LOGGING UTILITY ==========
+    const PewpiLogger = {
+      log: function(level, msg, data) {
+        const timestamp = new Date().toISOString();
+        const prefix = `[PewpiLogin ${timestamp}] ${level.toUpperCase()}:`;
+        if (data) {
+          console.log(prefix, msg, data);
+        } else {
+          console.log(prefix, msg);
+        }
+      },
+      info: function(msg, data) { this.log('info', msg, data); },
+      warn: function(msg, data) { this.log('warn', msg, data); },
+      error: function(msg, data) { this.log('error', msg, data); },
+      debug: function(msg, data) { this.log('debug', msg, data); }
+    };
+
+    // ========== ERROR HANDLING ==========
+    function showError(message) {
+      PewpiLogger.error(message);
+      if (errorMessage) {
+        errorMessage.textContent = message;
+        errorMessage.style.display = "block";
+      }
+    }
+
+    function hideError() {
+      if (errorMessage) {
+        errorMessage.style.display = "none";
+      }
+    }
+
+    // ========== VIEW MODE TOGGLE ==========
+    function initViewModeToggle() {
+      const toggleBtns = document.querySelectorAll('.toggle-btn');
+      
+      toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const mode = btn.dataset.mode;
+          setViewMode(mode);
+          
+          // Update button states
+          toggleBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+      
+      PewpiLogger.info('View mode toggle initialized');
+    }
+
+    function setViewMode(mode) {
+      if (!['sentence', 'word', 'plain'].includes(mode)) {
+        PewpiLogger.warn('Invalid view mode, defaulting to plain:', mode);
+        mode = 'plain';
+      }
+      
+      currentViewMode = mode;
+      PewpiLogger.info('View mode changed to:', mode);
+      
+      // Re-render current role to apply highlighting
+      if (allRecords.length > 0) {
+        renderRole(currentRole);
+      }
+    }
+
+    function highlightText(text, mode) {
+      if (mode === 'plain' || !text) {
+        return text;
+      }
+      
+      if (mode === 'word') {
+        return highlightWords(text);
+      } else if (mode === 'sentence') {
+        return highlightSentences(text);
+      }
+      
+      return escapeHtml(text);
+    }
+
+    // HTML escape function to prevent XSS
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function highlightWords(content) {
+      // First escape the content to prevent XSS
+      let result = escapeHtml(content);
+      const keywords = categoryConfig?.categories 
+        ? Object.fromEntries(Object.entries(categoryConfig.categories).map(([k, v]) => [k, v.keywords || []]))
+        : defaultCategoryKeywords;
+      
+      for (const [category, kws] of Object.entries(keywords)) {
+        const color = categoryColors[category] || '#808080';
+        kws.forEach(keyword => {
+          const escapedKeyword = escapeHtml(keyword);
+          const regex = new RegExp('\\b(' + escapedKeyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'gi');
+          result = result.replace(regex, 
+            '<span class="highlight-word" style="background-color: ' + color + '40; border-bottom: 2px solid ' + color + ';">$1</span>');
+        });
+      }
+      return result;
+    }
+
+    function highlightSentences(content) {
+      const sentences = content.split(/(?<=[.!?])\s+/);
+      const keywords = categoryConfig?.categories 
+        ? Object.fromEntries(Object.entries(categoryConfig.categories).map(([k, v]) => [k, v.keywords || []]))
+        : defaultCategoryKeywords;
+      
+      return sentences.map(sentence => {
+        let bestCategory = null;
+        let bestScore = 0;
+        
+        const sentenceLower = sentence.toLowerCase();
+        for (const [category, kws] of Object.entries(keywords)) {
+          const score = kws.filter(kw => sentenceLower.includes(kw.toLowerCase())).length;
+          if (score > bestScore) {
+            bestScore = score;
+            bestCategory = category;
+          }
+        }
+        
+        // Escape the sentence to prevent XSS
+        const escapedSentence = escapeHtml(sentence);
+        
+        if (bestCategory && bestScore > 0) {
+          const color = categoryColors[bestCategory] || '#808080';
+          return '<span class="highlight-sentence" style="border-left: 4px solid ' + color + '; padding-left: 10px; display: block; background-color: ' + color + '15; margin: 4px 0;">' + escapedSentence + '</span>';
+        }
+        return escapedSentence;
+      }).join(' ');
+    }
+
+    // ========== BUTTON & ROLE MANAGEMENT ==========
     function setActiveButton(roleKey) {
       buttons.forEach(btn => {
         if (btn.dataset.role === roleKey) {
@@ -465,6 +708,7 @@
     }
 
     function renderRole(roleKey) {
+      hideError();
       currentRole = roleKey;
       setActiveButton(roleKey);
 
@@ -473,21 +717,32 @@
 
       const sub = "Role feed: " + roleSubtitle(roleKey) + " • ";
       panelSubtitle.innerHTML = sub + '<span id="panel-count">0</span> pages';
-      // refresh count reference
       const countSpan = document.getElementById("panel-count");
 
       panelLoading.style.display = "block";
       panelLinks.innerHTML = "";
 
-      const filtered = allRecords.filter(r => (r.role || "data") === roleKey);
+      // Filter records - handle both 'engineer' and 'engineering' role names
+      const filtered = allRecords.filter(r => {
+        const role = (r.role || "data").toLowerCase();
+        const searchRole = roleKey.toLowerCase();
+        return role === searchRole || 
+               (searchRole === 'engineer' && role === 'engineering') ||
+               (searchRole === 'engineering' && role === 'engineer');
+      });
+      
       const count = filtered.length;
       countSpan.textContent = count.toString();
+
+      PewpiLogger.info(`Rendering role: ${roleKey}, found ${count} records`);
 
       if (count === 0) {
         setTimeout(() => {
           panelLoading.style.display = "none";
           const empty = document.createElement("li");
+          empty.className = "empty-message";
           empty.textContent = "No research pages found for this role yet.";
+          empty.style.cssText = "color: #8899bb; font-style: italic; padding: 10px;";
           panelLinks.appendChild(empty);
         }, 200);
         return;
@@ -499,14 +754,18 @@
           const li = document.createElement("li");
           const card = document.createElement("div");
           card.className = "token-card";
+          card.dataset.originalTitle = rec.title || "Untitled";
 
           const hashLine = document.createElement("div");
           hashLine.className = "token-hash";
           hashLine.textContent = "HASH: " + (rec.hash || "").toString();
 
           const titleLine = document.createElement("div");
-          titleLine.className = "token-title";
-          titleLine.textContent = rec.title || "Untitled";
+          titleLine.className = "token-title research-content";
+          // Apply highlighting based on current mode
+          const titleText = rec.title || "Untitled";
+          titleLine.innerHTML = highlightText(titleText, currentViewMode);
+          titleLine.dataset.originalText = titleText;
 
           const meta = document.createElement("div");
           meta.className = "token-meta";
@@ -538,23 +797,50 @@
       }, 220);
     }
 
-    function loadIndex() {
-      panelLoading.style.display = "block";
-      fetch(researchUrl, { cache: "no-store" })
-        .then(resp => {
-          if (!resp.ok) throw new Error("HTTP " + resp.status);
-          return resp.json();
-        })
-        .then(data => {
-          if (!Array.isArray(data)) throw new Error("Index must be an array");
-          allRecords = data;
-          renderRole(currentRole);
-        })
-        .catch(err => {
-          panelLoading.textContent = "Failed to load research index (" + err.message + ")";
-        });
+    // ========== DATA LOADING ==========
+    async function loadCategoryConfig() {
+      try {
+        const resp = await fetch(categoryTokensUrl, { cache: "no-store" });
+        if (resp.ok) {
+          categoryConfig = await resp.json();
+          PewpiLogger.info('Category config loaded', { categories: Object.keys(categoryConfig.categories || {}).length });
+        }
+      } catch (err) {
+        PewpiLogger.warn('Could not load category config, using defaults:', err.message);
+      }
     }
 
+    async function loadIndex() {
+      panelLoading.style.display = "block";
+      hideError();
+      
+      try {
+        // Load category config first
+        await loadCategoryConfig();
+        
+        // Then load research index
+        const resp = await fetch(researchUrl, { cache: "no-store" });
+        if (!resp.ok) {
+          throw new Error("HTTP " + resp.status);
+        }
+        
+        const data = await resp.json();
+        if (!Array.isArray(data)) {
+          throw new Error("Index must be an array");
+        }
+        
+        allRecords = data;
+        PewpiLogger.info('Research index loaded', { records: allRecords.length });
+        renderRole(currentRole);
+        
+      } catch (err) {
+        PewpiLogger.error('Failed to load research index:', err.message);
+        panelLoading.style.display = "none";
+        showError("Failed to load research index: " + err.message);
+      }
+    }
+
+    // ========== EVENT LISTENERS ==========
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
         const roleKey = btn.dataset.role;
@@ -576,7 +862,13 @@
     function rogersReply(userText) {
       const short = userText.trim().slice(0, 140);
       const channelLabel = roleSubtitle(currentRole);
-      const count = allRecords.filter(r => (r.role || "data") === currentRole).length;
+      const count = allRecords.filter(r => {
+        const role = (r.role || "data").toLowerCase();
+        const searchRole = currentRole.toLowerCase();
+        return role === searchRole || 
+               (searchRole === 'engineer' && role === 'engineering') ||
+               (searchRole === 'engineering' && role === 'engineer');
+      }).length;
       const reply = [
         "Channel: " + currentRole.toUpperCase() + " • " + channelLabel,
         "Indexed pages in this lane: " + count,
@@ -614,7 +906,21 @@
       }
     });
 
+    // ========== INITIALIZATION ==========
+    initViewModeToggle();
     loadIndex();
+    
+    // Export for external use
+    window.PewpiLogin = {
+      setViewMode: setViewMode,
+      getViewMode: () => currentViewMode,
+      renderRole: renderRole,
+      loadIndex: loadIndex,
+      categoryColors: categoryColors,
+      logger: PewpiLogger
+    };
+    
+    PewpiLogger.info('Pewpi Login Portal initialized');
   </script>
 </body>
 </html>
