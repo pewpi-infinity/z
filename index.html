@@ -1,435 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Infinity OS Portal</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinity Research Portal</title>
 
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: #eef4ff;
-        font-family: Arial, sans-serif;
-        color: #001a33;
-    }
+    <!-- === GLOBAL STYLES === -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #071a3d;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #d9e6ff;
+            overflow-x: hidden;
+        }
 
-    /* Core Infinity Colors */
-    :root {
-        --eng: #00a86b;     /* green */
-        --ceo: #ff8c00;     /* orange */
-        --import: #1e90ff;  /* blue */
-        --investigate: #ff69b4; /* pink */
-        --routes: #c40000;  /* red */
-        --data: #ffd700;    /* yellow */
-        --assim: #9b4dff;   /* purple */
-        --neutral: #001a33;
-    }
+        .topbar {
+            width: 100%;
+            background: #0d2354;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #7bb9ff;
+            border-bottom: 2px solid #153a83;
+        }
 
-    /* Page containers */
-    .page {
-        display: none;
-        padding: 20px;
-        max-width: 900px;
-        margin: auto;
-    }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
 
-    .show { display: block; }
+        /* OCTAVE BUTTONS */
+        .oct-btn {
+            display: block;
+            width: 92%;
+            margin: 14px auto;
+            padding: 18px;
+            background: linear-gradient(145deg,#113570,#0d244a);
+            border: 2px solid #296dff;
+            border-radius: 14px;
+            color: #d4e6ff;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 12px #1e4fa8;
+            transition: 0.2s ease-in-out;
+        }
+        .oct-btn:hover {
+            background: linear-gradient(145deg,#1c4fa8,#113570);
+            transform: scale(1.02);
+        }
 
-    /* Two-tone Infinity header */
-    .header {
-        background: linear-gradient(180deg, #004aad, #003370);
-        color: white;
-        padding: 15px;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        border-bottom: 3px solid #002652;
-    }
+        /* Research container */
+        .research-box {
+            background: #0a1d42;
+            margin: 18px auto;
+            padding: 16px;
+            width: 92%;
+            border-radius: 10px;
+            border: 1px solid #296dff;
+            box-shadow: 0 0 8px #1a3e7f;
+            text-align: left;
+            font-size: 17px;
+            line-height: 1.45;
+            color: #cce0ff;
+        }
 
-    .button {
-        width: 100%;
-        padding: 15px;
-        margin: 10px 0;
-        border-radius: 8px;
-        border: none;
-        font-size: 18px;
-        color: white;
-        cursor: pointer;
-        font-weight: bold;
-    }
+        /* Sentence / Word / Plain toggles */
+        .toggle-row {
+            width: 92%;
+            margin: 0 auto 18px auto;
+            display: flex;
+            justify-content: space-between;
+        }
 
-    /* Color Buttons */
-    #btnEng { background: var(--eng); }
-    #btnCEO { background: var(--ceo); }
-    #btnImport { background: var(--import); }
-    #btnInvestigate { background: var(--investigate); }
-    #btnRoutes { background: var(--routes); }
-    #btnData { background: var(--data); color: black; }
-    #btnAssim { background: var(--assim); }
+        .toggle-row button {
+            flex: 1;
+            margin: 0 4px;
+            padding: 12px 0;
+            background: #153a83;
+            border: 1px solid #296dff;
+            border-radius: 8px;
+            color: #cce0ff;
+            font-size: 15px;
+            transition: .2s;
+        }
+        .toggle-row button:hover {
+            background: #1f54c9;
+            transform: scale(1.03);
+        }
 
-    #btnBuild { background: #003370; color:white; border:2px solid #001a33; }
+        /* Chat bubble button */
+        #chat-open {
+            position: fixed;
+            bottom: 22px;
+            right: 20px;
+            width: 64px;
+            height: 64px;
+            background: #144aa0;
+            border-radius: 50%;
+            color: white;
+            font-size: 32px;
+            text-align: center;
+            line-height: 64px;
+            cursor: pointer;
+            box-shadow: 0 0 12px rgba(0,0,0,0.6);
+        }
 
-    /* Token list links */
-    .tokenLink {
-        display: block;
-        margin: 10px 0;
-        padding: 12px;
-        background: #003370;
-        color: #9ad3ff;
-        border-radius: 6px;
-        font-size: 17px;
-        font-weight: bold;
-        text-decoration: none;
-    }
+        /* Hidden Chat Window */
+        #chat-window {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 320px;
+            height: 420px;
+            background: #0e214c;
+            border: 2px solid #296dff;
+            border-radius: 14px;
+            display: none;
+            padding: 10px;
+            box-shadow: 0 0 16px #1a3e7f;
+        }
 
-    /* Toggle buttons */
-    .toggleBar {
-        margin-top: 10px;
-        display: flex;
-        gap: 10px;
-    }
+        #chat-log {
+            width: 100%;
+            height: 340px;
+            background: #0b1b3e;
+            border: 1px solid #1b3f91;
+            border-radius: 8px;
+            overflow-y: auto;
+            padding: 8px;
+            color: #d4e6ff;
+            font-size: 14px;
+        }
 
-    .toggleBtn {
-        padding: 10px;
-        border-radius: 6px;
-        border: none;
-        background: #004aad;
-        color: white;
-        font-size: 15px;
-        cursor: pointer;
-    }
+        #chat-input {
+            width: 100%;
+            margin-top: 6px;
+            padding: 10px;
+            background: #0b1c44;
+            border: 1px solid #296dff;
+            border-radius: 6px;
+            color: #d4e6ff;
+        }
 
-    /* Token builder terminal */
-    .terminal {
-        background: #001a33;
-        color: #9ad3ff;
-        padding: 15px;
-        border-radius: 8px;
-        margin-top: 20px;
-    }
+        /* Intro modal */
+        #intro-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width:100%;
+            height:100%;
+            background: rgba(0,0,0,0.78);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5000;
+        }
 
-    textarea {
-        width: 100%;
-        height: 120px;
-        border-radius: 6px;
-        border: 1px solid #003370;
-        padding: 10px;
-        margin-top: 5px;
-    }
+        #intro-card {
+            background: #0d2249;
+            width: 88%;
+            max-width: 460px;
+            padding: 24px;
+            border-radius: 14px;
+            border: 2px solid #296dff;
+            color: #d9ecff;
+            text-align: left;
+            box-shadow: 0 0 18px #1a3e7f;
+        }
 
-</style>
+        #intro-card h2 {
+            margin-top:0;
+            color:#7bb9ff;
+        }
+
+        .intro-btn {
+            display:block;
+            width:100%;
+            margin-top:20px;
+            padding:12px;
+            background:#153a83;
+            border-radius:10px;
+            color:white;
+            font-weight:bold;
+            text-align:center;
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<div class="header">Infinity OS Portal</div>
-
-<!-- ============================================================
-INTRO PAGE (Pewpi Security Info)
-=============================================================== -->
-<div id="pageIntro" class="page show">
-    <h2>Welcome to Infinity OS</h2>
-    <p>This system uses the Infinity color logic:</p>
-
-    <ul>
-        <li><span style="color:var(--eng)">Green</span> = Engineer (construction)</li>
-        <li><span style="color:var(--ceo)">Orange</span> = CEO (value, decisions)</li>
-        <li><span style="color:var(--import)">Blue</span> = Import (profitable inputs)</li>
-        <li><span style="color:var(--investigate)">Pink</span> = Investigate (PI intelligence)</li>
-        <li><span style="color:var(--routes)">Red</span> = Routes (better paths)</li>
-        <li><span style="color:var(--data)">Yellow</span> = Data (downloads/resources)</li>
-        <li><span style="color:var(--assim)">Purple</span> = Assimilation (shared builder content)</li>
-    </ul>
-
-    <label><input type="checkbox" id="hideIntro"> Don't show again</label><br><br>
-    <button class="toggleBtn" onclick="continueFromIntro()">Continue</button>
+<!-- Intro Modal -->
+<div id="intro-modal">
+    <div id="intro-card">
+        <h2>Welcome to Infinity Portal</h2>
+        <p>This system uses color-coded research logic: Engineer (green), CEO (orange), Import (blue), Investigate (pink), Routes (red), Data (yellow), Assimilation (purple).</p>
+        <p>Your actions create tokens, build pages, grow research, and expand Infinity itself.</p>
+        <label>
+            <input type="checkbox" id="dont-show" />
+            Don’t show again
+        </label>
+        <div id="intro-close" class="intro-btn">Enter</div>
+    </div>
 </div>
 
-<!-- ============================================================
-LOGIN PAGE
-=============================================================== -->
-<div id="pageLogin" class="page">
-    <h2>Login</h2>
-    <p style="color:red">Warning: Your account is IP-locked. Do not switch networks.</p>
 
-    <input id="loginUser" placeholder="Username" style="width:100%;padding:10px;margin:5px 0">
-    <input id="loginPass" placeholder="Password" type="password" style="width:100%;padding:10px;margin:5px 0">
+<div class="topbar">∞ Infinity Research Portal ∞</div>
 
-    <button class="toggleBtn" onclick="login()">Login</button>
-    <button class="toggleBtn" onclick="createAccount()">Create Account</button>
-</div>
+<div class="container">
 
-<!-- ============================================================
-DASHBOARD
-=============================================================== -->
-<div id="pageDash" class="page">
-    <h2 id="dashWelcome"></h2>
-    <div id="tokenBar" style="font-size:18px;margin-bottom:20px;">Tokens: 0</div>
-
-    <button id="btnEng" class="button" onclick="openCategory('engineer')">Engineer</button>
-    <button id="btnCEO" class="button" onclick="openCategory('ceo')">CEO</button>
-    <button id="btnImport" class="button" onclick="openCategory('import')">Import</button>
-    <button id="btnInvestigate" class="button" onclick="openCategory('investigate')">Investigate</button>
-    <button id="btnRoutes" class="button" onclick="openCategory('routes')">Routes</button>
-    <button id="btnData" class="button" onclick="openCategory('data')">Data</button>
-    <button id="btnAssim" class="button" onclick="openCategory('assimilation')">Assimilation</button>
-
-    <button id="btnBuild" class="button" onclick="openTokenBuilder()">⚒️ Build New Token</button>
-</div>
-
-<!-- ============================================================
-CATEGORY PAGE
-=============================================================== -->
-<div id="pageCategory" class="page">
-    <h2 id="catTitle"></h2>
-    <div id="catList"></div>
-    <button class="toggleBtn" onclick="backToDash()">Back</button>
-</div>
-
-<!-- ============================================================
-RESEARCH PAGE
-=============================================================== -->
-<div id="pageResearch" class="page">
-    <h2 id="researchHash"></h2>
-
-    <div class="toggleBar">
-        <button class="toggleBtn" onclick="setMode('sentence')">Sentence</button>
-        <button class="toggleBtn" onclick="setMode('word')">Word</button>
-        <button class="toggleBtn" onclick="setMode('plain')">Plain</button>
+    <!-- MAIN BUTTONS -->
+    <div>
+        <button class="oct-btn" onclick="openCategory('engineer')">Engineer (Green)</button>
+        <button class="oct-btn" onclick="openCategory('ceo')">CEO (Orange)</button>
+        <button class="oct-btn" onclick="openCategory('import')">Import (Blue)</button>
+        <button class="oct-btn" onclick="openCategory('investigate')">Investigate (Pink)</button>
+        <button class="oct-btn" onclick="openCategory('routes')">Routes (Red)</button>
+        <button class="oct-btn" onclick="openCategory('data')">Data (Yellow)</button>
+        <button class="oct-btn" onclick="openCategory('assimilation')">Assimilation (Purple)</button>
     </div>
 
-    <div id="researchContent" style="margin-top:20px;font-size:17px;line-height:1.5"></div>
+    <!-- RESEARCH OUTPUT -->
+    <div id="research-area" class="research-box" style="display:none;"></div>
 
-    <div class="terminal">
-        <h3>Build Token From This Page</h3>
-        <input type="file" id="fileInput"><br><br>
-        <textarea id="tokenInput" placeholder="Paste content here..."></textarea>
-        <button class="toggleBtn" onclick="generateUserToken()">Generate Token</button>
-        <div id="tokenOutput" style="margin-top:10px;"></div>
+    <!-- Toggle Buttons -->
+    <div id="toggle-section" class="toggle-row" style="display:none;">
+        <button onclick="setMode('sentence')">Sentence</button>
+        <button onclick="setMode('word')">Word</button>
+        <button onclick="setMode('plain')">Plain</button>
     </div>
 
-    <button class="toggleBtn" onclick="backToCategory()">Back</button>
 </div>
+
+<!-- CHAT BUTTON -->
+<div id="chat-open">💬</div>
+
+<!-- CHAT WINDOW -->
+<div id="chat-window">
+    <div id="chat-log"></div>
+    <input id="chat-input" type="text" placeholder="Write content → generate token…" />
+</div>
+
+
+<!-- LOADING APP.JS -->
+<script src="app.js"></script>
+
+</body>
+<!-- === PEWPI PAT PANEL === -->
+<div id="pewpi-panel"
+     style="position:fixed; top:20px; left:20px; background:#0b1e45; 
+            border:2px solid #296dff; border-radius:10px; padding:14px; 
+            display:none; z-index:9000; width:260px;">
+    <h3 style="margin-top:0; color:#7bb9ff;">Pewpi Login</h3>
+    <p style="font-size:14px; color:#d4e6ff;">
+        Enter your GitHub PAT once.  
+        It will be <b>locally encrypted</b> and saved only on your device.
+    </p>
+
+    <input id="pewpi-input" 
+           type="password"
+           placeholder="Enter PAT…"
+           style="width:100%; padding:8px; margin-bottom:8px; 
+                  background:#0a1c3f; border:1px solid #296dff; 
+                  border-radius:6px; color:#cce0ff;" />
+
+    <button onclick="savePewpiPAT()"
+            style="width:100%; padding:10px; background:#153a83; color:white; 
+                   border:none; border-radius:8px; font-weight:bold;">
+        Save PAT
+    </button>
+
+    <button onclick="closePewpi()"
+            style="width:100%; padding:10px; margin-top:6px; background:#662a2a; color:white; 
+                   border:none; border-radius:8px; font-weight:bold;">
+        Close
+    </button>
+</div>
+
+<!-- BUTTON TO OPEN PAT PANEL -->
+<div onclick="openPewpi()"
+     style="position:fixed; top:20px; right:20px; padding:10px 16px; 
+            background:#144aa0; color:white; border-radius:8px; 
+            font-size:14px; cursor:pointer; box-shadow:0 0 8px #0a162f;">
+    Pewpi
+</div>
+
 
 <script>
-/* ============================================================
-INTRO HANDLING
-============================================================ */
-if (localStorage.getItem("hideIntroForever") === "true") {
-    document.getElementById("pageIntro").classList.remove("show");
-    document.getElementById("pageLogin").classList.add("show");
-}
-
-function continueFromIntro() {
-    if (document.getElementById("hideIntro").checked) {
-        localStorage.setItem("hideIntroForever", "true");
+/* ================================
+   INTRO MODAL CONTROL
+===================================*/
+window.onload = function() {
+    if (localStorage.getItem("infinity_intro_hidden") === "yes") {
+        document.getElementById("intro-modal").style.display = "none";
     }
-    document.getElementById("pageIntro").classList.remove("show");
-    document.getElementById("pageLogin").classList.add("show");
-}
+};
 
-/* ============================================================
-LOGIN / ACCOUNT (local only for now)
-============================================================ */
-function createAccount() {
-    let u = loginUser.value.trim();
-    let p = loginPass.value.trim();
-    if (!u || !p) return alert("Enter username & password.");
+document.getElementById("intro-close").onclick = function() {
+    if (document.getElementById("dont-show").checked) {
+        localStorage.setItem("infinity_intro_hidden", "yes");
+    }
+    document.getElementById("intro-modal").style.display = "none";
+};
 
-    if (localStorage.getItem("acc_"+u)) return alert("User already exists.");
 
-    localStorage.setItem("acc_"+u, JSON.stringify({
-        pass: p,
-        tokens: 0,
-        ip: "locked"
-    }));
-
-    alert("Account created.");
-}
-
-function login() {
-    let u = loginUser.value.trim();
-    let p = loginPass.value.trim();
-
-    let data = localStorage.getItem("acc_"+u);
-    if (!data) return alert("No such user.");
-
-    data = JSON.parse(data);
-    if (data.pass !== p) return alert("Wrong password.");
-
-    // IP Lock logic placeholder
-    // (For now always allow)
-    localStorage.setItem("currentUser", u);
-
-    openDash();
-}
-
-/* ============================================================
-DASHBOARD
-============================================================ */
-function openDash() {
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("show"));
-    document.getElementById("pageDash").classList.add("show");
-
-    let u = localStorage.getItem("currentUser");
-    let data = JSON.parse(localStorage.getItem("acc_"+u));
-
-    dashWelcome.innerText = "Welcome, " + u;
-    tokenBar.innerText = "Tokens: " + data.tokens;
-}
-
-/* ============================================================
-CATEGORY PAGE
-============================================================ */
+/* ================================
+   CATEGORY OPEN HANDLER
+===================================*/
 function openCategory(cat) {
-    currentCategory = cat;
+    document.getElementById("research-area").style.display = "block";
+    document.getElementById("toggle-section").style.display = "flex";
 
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("show"));
-    document.getElementById("pageCategory").classList.add("show");
-
-    catTitle.innerText = cat.toUpperCase();
-
-    // Placeholder dummy token pages
-    catList.innerHTML = "";
-    for (let i=0; i<5; i++) {
-        let hash = "TOKEN_"+cat+"_"+i;
-        let link = document.createElement("a");
-        link.className = "tokenLink";
-        link.innerText = "Research: " + cat + " #" + (i+1);
-        link.href = "javascript:openResearch('"+hash+"')";
-        catList.appendChild(link);
-    }
+    loadCategory(cat);
 }
 
-function backToDash() {
-    openDash();
+
+/* ================================
+   LOAD CATEGORY RESEARCH
+===================================*/
+function loadCategory(cat) {
+    let area = document.getElementById("research-area");
+
+    // placeholder content until app.js loads dynamic pages
+    area.innerHTML = `
+        <h3 style="color:#7bb9ff; margin-top:0;">${cat.toUpperCase()}</h3>
+        <p>Loading research pages…</p>
+    `;
 }
 
-/* ============================================================
-RESEARCH PAGE
-============================================================ */
+
+/* ================================
+   MODE TOGGLER
+===================================*/
 let currentMode = "sentence";
-
-function openResearch(hash) {
-    currentResearchHash = hash;
-
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("show"));
-    document.getElementById("pageResearch").classList.add("show");
-
-    researchHash.innerText = "Token: "+hash;
-
-    let content = "Hydrogen reacts with CO2 to create a new pathway for energy conversion. This requires further construction to perfect. Enemies may interfere with progress, so investigations are needed.";
-
-    window.originalContent = content;
-    renderResearch();
-}
 
 function setMode(m) {
     currentMode = m;
-    renderResearch();
+    let area = document.getElementById("research-area");
+    let raw = area.dataset.rawtext || "";
+
+    if (raw.length <= 2) return;
+
+    renderResearch(raw);
 }
 
-function renderResearch() {
-    let t = window.originalContent;
+
+/* ================================
+   RENDER RESEARCH TEXT
+===================================*/
+let colorLogic = {
+    "engineer": "#00ff7a",
+    "ceo": "#ffa64d",
+    "import": "#4da6ff",
+    "investigate": "#ff66cc",
+    "routes": "#ff4d4d",
+    "data": "#ffeb3b",
+    "assimilation": "#c266ff"
+};
+
+function renderResearch(text) {
+    let area = document.getElementById("research-area");
+    let activeColor = area.dataset.color || "#d4e6ff";
 
     if (currentMode === "plain") {
-        researchContent.innerText = t;
+        area.innerHTML = `<pre>${text}</pre>`;
         return;
     }
 
     if (currentMode === "sentence") {
-        let sentences = t.split(". ");
-        researchContent.innerHTML = "";
+        let sentences = text.split(".");
+        let html = "";
+
         sentences.forEach(s => {
-            let color = sentenceColor(s);
-            let span = `<span style="color:${color}">${s}.</span><br><br>`;
-            researchContent.innerHTML += span;
+            let trimmed = s.trim();
+            if (trimmed.length === 0) return;
+            html += `<p style="color:${activeColor};">${trimmed}.</p>`;
         });
+
+        area.innerHTML = html;
         return;
     }
 
     if (currentMode === "word") {
-        let words = t.split(" ");
-        researchContent.innerHTML = "";
+        let words = text.split(" ");
+        let html = "";
+
         words.forEach(w => {
-            let color = wordColor(w);
-            let link = `<span style="color:${color};cursor:pointer" onclick="openNextShard('${w}')">${w}</span> `;
-            researchContent.innerHTML += link;
+            let cleaned = w.trim();
+            if (cleaned.length === 0) return;
+            html += `<span style="color:${activeColor}; margin-right:6px; cursor:pointer;">${cleaned}</span>`;
         });
+
+        area.innerHTML = html;
+        return;
     }
 }
 
-/* ============================================================
-COLOR LOGIC (Infinity Contextual System)
-============================================================ */
-function sentenceColor(s) {
-    s = s.toLowerCase();
-    if (s.includes("construct") || s.includes("co2") || s.includes("energy"))
-        return "var(--eng)";
-    if (s.includes("value") || s.includes("growth"))
-        return "var(--ceo)";
-    if (s.includes("upload") || s.includes("input"))
-        return "var(--import)";
-    if (s.includes("enemy") || s.includes("investig"))
-        return "var(--investigate)";
-    if (s.includes("path") || s.includes("route"))
-        return "var(--routes)";
-    if (s.includes("data") || s.includes("download"))
-        return "var(--data)";
-    if (s.includes("merge") || s.includes("assim"))
-        return "var(--assim)";
-    return "var(--neutral)";
+
+/* ================================
+   CHAT BUBBLE LOGIC
+===================================*/
+let chatOpen = false;
+
+document.getElementById("chat-open").onclick = function() {
+    chatOpen = !chatOpen;
+    document.getElementById("chat-window").style.display = chatOpen ? "block" : "none";
+};
+
+document.getElementById("chat-input").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        let val = this.value.trim();
+        if (val.length < 1) return;
+        this.value = "";
+        addToChat("You: " + val);
+        generateTokenFromUser(val);
+    }
+});
+
+function addToChat(msg) {
+    let log = document.getElementById("chat-log");
+    log.innerHTML += `<div>${msg}</div>`;
+    log.scrollTop = log.scrollHeight;
 }
 
-function wordColor(w) {
-    w = w.toLowerCase();
-    if (["co2","react","energy","construct"].some(k => w.includes(k)))
-        return "var(--eng)";
-    if (["value","profit"].some(k => w.includes(k)))
-        return "var(--ceo)";
-    if (["input","import","upload"].some(k => w.includes(k)))
-        return "var(--import)";
-    if (["enemy","spy","invest"].some(k => w.includes(k)))
-        return "var(--investigate)";
-    if (["path","route","upgrade"].some(k => w.includes(k)))
-        return "var(--routes)";
-    if (["data","file","resource"].some(k => w.includes(k)))
-        return "var(--data)";
-    if (["merge","assim","share"].some(k => w.includes(k)))
-        return "var(--assim)";
-    return "var(--neutral)";
+
+/* ================================
+   PEWPI CIPHER (LOCAL ONLY)
+===================================*/
+function pewpiEncrypt(str) {
+    let out = "";
+    for (let i = 0; i < str.length; i++) {
+        out += String.fromCharCode(str.charCodeAt(i) + 7);
+    }
+    return btoa(out);
 }
 
-/* ============================================================
-TOKEN BUILDER
-============================================================ */
-function generateUserToken() {
-    let u = localStorage.getItem("currentUser");
-    let data = JSON.parse(localStorage.getItem("acc_"+u));
-
-    data.tokens += 1;
-    localStorage.setItem("acc_"+u, JSON.stringify(data));
-
-    tokenOutput.innerText = "Token created. Total: "+data.tokens;
-    tokenBar.innerText = "Tokens: "+data.tokens;
+function pewpiDecrypt(str) {
+    try {
+        let decoded = atob(str);
+        let out = "";
+        for (let i = 0; i < decoded.length; i++) {
+            out += String.fromCharCode(decoded.charCodeAt(i) - 7);
+        }
+        return out;
+    } catch {
+        return "";
+    }
 }
 
-function backToCategory() {
-    openCategory(currentCategory);
+function openPewpi() {
+    document.getElementById("pewpi-panel").style.display = "block";
 }
 
-function openNextShard(word) {
-    alert("Opening shard for "+word+" (placeholder)");
+function closePewpi() {
+    document.getElementById("pewpi-panel").style.display = "none";
 }
 
-function openTokenBuilder() {
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("show"));
-    document.getElementById("pageResearch").classList.add("show");
+function savePewpiPAT() {
+    let raw = document.getElementById("pewpi-input").value.trim();
+    if (raw.length < 5) return alert("Invalid PAT.");
 
-    researchHash.innerText = "Build Token From Scratch";
-    window.originalContent = "Upload files or paste content below.";
-    renderResearch();
+    let encrypted = pewpiEncrypt(raw);
+    localStorage.setItem("pewpi_pat", encrypted);
+
+    alert("PAT saved securely through Pewpi.");
+    closePewpi();
+}
+
+
+/* ================================
+   GITHUB WRITE (CALLS APP.JS)
+===================================*/
+function generateTokenFromUser(raw) {
+    if (typeof generateToken === "function") {
+        generateToken(raw);
+    } else {
+        addToChat("System: app.js not yet loaded.");
+    }
 }
 
 </script>
