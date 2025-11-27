@@ -50,6 +50,68 @@
       font-size: 0.95rem;
       box-shadow: 0 0 12px rgba(70, 130, 255, 0.75);
     }
+    /* Auth buttons container */
+    .auth-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .auth-btn {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(100, 200, 100, 0.8);
+      background: radial-gradient(circle at top left, rgba(80, 200, 120, 0.35), #041226);
+      color: #e5fff0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(80, 200, 120, 0.6);
+      transition: all 0.15s ease-out;
+    }
+    .auth-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 16px rgba(80, 200, 120, 0.9);
+    }
+    .auth-btn.logout {
+      border-color: rgba(255, 100, 100, 0.8);
+      background: radial-gradient(circle at top left, rgba(255, 100, 100, 0.35), #041226);
+      color: #ffe5e5;
+      box-shadow: 0 0 10px rgba(255, 100, 100, 0.6);
+    }
+    .auth-btn.logout:hover {
+      box-shadow: 0 0 16px rgba(255, 100, 100, 0.9);
+    }
+    .auth-btn.build-token {
+      border-color: rgba(255, 200, 50, 0.8);
+      background: radial-gradient(circle at top left, rgba(255, 200, 50, 0.35), #041226);
+      color: #fffde5;
+      box-shadow: 0 0 10px rgba(255, 200, 50, 0.6);
+    }
+    .auth-btn.build-token:hover {
+      box-shadow: 0 0 16px rgba(255, 200, 50, 0.9);
+    }
+    .auth-btn.hidden { display: none; }
+    /* User info display */
+    .user-info {
+      background: rgba(0, 50, 100, 0.5);
+      border: 1px solid rgba(100, 180, 255, 0.6);
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+      display: none;
+    }
+    .user-info.visible { display: block; }
+    .user-info .username {
+      font-weight: 700;
+      color: #9fd4ff;
+    }
+    .user-info .token-count {
+      color: #7fff7f;
+      font-weight: 600;
+    }
     .role-button {
       width: 100%;
       margin: 8px 0;
@@ -344,6 +406,196 @@
       .shell { padding-inline: 8px; }
       .link-list { max-height: 220px; }
     }
+
+    /* Login Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      width: 90%;
+      max-width: 360px;
+      background: radial-gradient(circle at top, #071736, #020712);
+      border-radius: 20px;
+      border: 1px solid rgba(100, 200, 100, 0.8);
+      box-shadow: 0 0 30px rgba(100, 200, 100, 0.7);
+      padding: 20px;
+    }
+    .modal-box h2 {
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+      color: #9fd4ff;
+    }
+    .modal-input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(100, 180, 255, 0.6);
+      background: #030814;
+      color: #e5f1ff;
+      font-size: 0.9rem;
+    }
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .modal-btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .modal-btn.primary {
+      background: linear-gradient(135deg, #2f7bff, #6fd0ff);
+      color: #020713;
+    }
+    .modal-btn.secondary {
+      background: rgba(100, 100, 100, 0.3);
+      color: #e5f1ff;
+      border: 1px solid rgba(100, 100, 100, 0.5);
+    }
+    .modal-error {
+      color: #ff6b6b;
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+      display: none;
+    }
+    .modal-error.visible { display: block; }
+
+    /* Token Builder Terminal */
+    .terminal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 25;
+    }
+    .terminal-overlay.open { display: flex; }
+    .terminal-box {
+      width: 95%;
+      max-width: 500px;
+      max-height: 85vh;
+      background: #0a0a0a;
+      border-radius: 12px;
+      border: 2px solid #00ff00;
+      box-shadow: 0 0 40px rgba(0, 255, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .terminal-header {
+      padding: 8px 14px;
+      background: #1a1a1a;
+      border-bottom: 1px solid #00ff00;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .terminal-title {
+      color: #00ff00;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+    .terminal-close {
+      background: transparent;
+      border: none;
+      color: #ff4444;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .terminal-body {
+      flex: 1;
+      padding: 12px;
+      overflow-y: auto;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #00ff00;
+      line-height: 1.5;
+    }
+    .terminal-line {
+      margin-bottom: 4px;
+    }
+    .terminal-line.system { color: #00aaff; }
+    .terminal-line.error { color: #ff4444; }
+    .terminal-line.success { color: #00ff00; }
+    .terminal-line.value { color: #ffaa00; font-weight: bold; }
+    .terminal-input-area {
+      padding: 10px;
+      border-top: 1px solid #333;
+      background: #0d0d0d;
+    }
+    .terminal-textarea {
+      width: 100%;
+      height: 80px;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: #00ff00;
+      font-family: monospace;
+      font-size: 0.85rem;
+      padding: 8px;
+      resize: none;
+    }
+    .terminal-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .terminal-btn {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #00ff00;
+      background: rgba(0, 255, 0, 0.1);
+      color: #00ff00;
+      font-family: monospace;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .terminal-btn:hover {
+      background: rgba(0, 255, 0, 0.2);
+    }
+    .terminal-btn.mega {
+      border-color: #ffaa00;
+      color: #ffaa00;
+      background: rgba(255, 170, 0, 0.1);
+    }
+    .terminal-btn.mega:hover {
+      background: rgba(255, 170, 0, 0.2);
+    }
+    .file-input-hidden {
+      display: none;
+    }
+    .token-result {
+      background: rgba(0, 255, 0, 0.1);
+      border: 1px solid #00ff00;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .token-result .hash {
+      font-size: 0.75rem;
+      word-break: break-all;
+    }
+    .token-result .value {
+      font-size: 1.1rem;
+      color: #ffaa00;
+      margin-top: 6px;
+    }
   </style>
 </head>
 <body>
@@ -354,6 +606,19 @@
         <span>Infinity Research Portal</span>
       </div>
       <div class="badge">Pewpi</div>
+    </div>
+
+    <!-- AUTH BUTTONS -->
+    <div class="auth-row">
+      <button class="auth-btn" id="signInBtn">Sign In</button>
+      <button class="auth-btn logout hidden" id="logoutBtn">Logout</button>
+      <button class="auth-btn build-token" id="buildTokenBtn">Build Your Own Token</button>
+    </div>
+
+    <!-- USER INFO DISPLAY -->
+    <div class="user-info" id="userInfo">
+      Welcome, <span class="username" id="displayUsername"></span> | 
+      Token Count: <span class="token-count" id="displayTokenCount">0</span>
     </div>
 
     <!-- ROLE BUTTONS -->
@@ -418,6 +683,61 @@
       <div class="chat-footer">
         <input class="chat-input" id="chat-input" type="text" placeholder="Ask Rogers about this channel..." />
         <button class="chat-send-btn" id="chat-send">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-box">
+      <h2>∞ Pewpi Sign In</h2>
+      <div class="modal-error" id="loginError"></div>
+      <input type="text" class="modal-input" id="loginUsername" placeholder="Username" />
+      <input type="password" class="modal-input" id="loginPassword" placeholder="Password" />
+      <div class="modal-actions">
+        <button class="modal-btn secondary" id="loginCancel">Cancel</button>
+        <button class="modal-btn secondary" id="showRegister">Register</button>
+        <button class="modal-btn primary" id="loginSubmit">Sign In</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal-overlay" id="registerModal">
+    <div class="modal-box">
+      <h2>∞ Register New User</h2>
+      <div class="modal-error" id="registerError"></div>
+      <input type="text" class="modal-input" id="registerUsername" placeholder="Choose Username" />
+      <input type="password" class="modal-input" id="registerPassword" placeholder="Choose Password" />
+      <input type="password" class="modal-input" id="registerConfirm" placeholder="Confirm Password" />
+      <div class="modal-actions">
+        <button class="modal-btn secondary" id="registerCancel">Cancel</button>
+        <button class="modal-btn primary" id="registerSubmit">Register</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Token Builder Terminal -->
+  <div class="terminal-overlay" id="terminalOverlay">
+    <div class="terminal-box">
+      <div class="terminal-header">
+        <span class="terminal-title">∞ BUILD YOUR OWN TOKEN ∞</span>
+        <button class="terminal-close" id="terminalClose">×</button>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="terminal-line system">[SYSTEM] Token Builder v1.0 initialized</div>
+        <div class="terminal-line system">[SYSTEM] Paste text, upload file, or enter content below</div>
+        <div class="terminal-line system">[SYSTEM] Token values range: $90 - $964,590,650,869,860,860.97</div>
+        <div class="terminal-line">---</div>
+      </div>
+      <div class="terminal-input-area">
+        <textarea class="terminal-textarea" id="terminalInput" placeholder="Enter or paste your content here..."></textarea>
+        <input type="file" class="file-input-hidden" id="fileUpload" accept=".txt,.md,.json,.csv,.xml,.html" />
+        <div class="terminal-actions">
+          <button class="terminal-btn" id="uploadFileBtn">📁 Upload</button>
+          <button class="terminal-btn" id="buildTokenSubmit">⚡ Build Token</button>
+          <button class="terminal-btn mega" id="megaHashBtn">🔗 Mega Hash</button>
+        </div>
       </div>
     </div>
   </div>
@@ -615,6 +935,556 @@
     });
 
     loadIndex();
+
+    // ==================== PEWPI LOGIN SYSTEM ====================
+    const SESSION_KEY = 'pewpi_session';
+    const USERS_KEY = 'pewpi_users';
+
+    // DOM Elements - Auth
+    const signInBtn = document.getElementById('signInBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const buildTokenBtn = document.getElementById('buildTokenBtn');
+    const userInfo = document.getElementById('userInfo');
+    const displayUsername = document.getElementById('displayUsername');
+    const displayTokenCount = document.getElementById('displayTokenCount');
+
+    // Login Modal
+    const loginModal = document.getElementById('loginModal');
+    const loginUsername = document.getElementById('loginUsername');
+    const loginPassword = document.getElementById('loginPassword');
+    const loginSubmit = document.getElementById('loginSubmit');
+    const loginCancel = document.getElementById('loginCancel');
+    const loginError = document.getElementById('loginError');
+    const showRegister = document.getElementById('showRegister');
+
+    // Register Modal
+    const registerModal = document.getElementById('registerModal');
+    const registerUsername = document.getElementById('registerUsername');
+    const registerPassword = document.getElementById('registerPassword');
+    const registerConfirm = document.getElementById('registerConfirm');
+    const registerSubmit = document.getElementById('registerSubmit');
+    const registerCancel = document.getElementById('registerCancel');
+    const registerError = document.getElementById('registerError');
+
+    // Terminal
+    const terminalOverlay = document.getElementById('terminalOverlay');
+    const terminalClose = document.getElementById('terminalClose');
+    const terminalBody = document.getElementById('terminalBody');
+    const terminalInput = document.getElementById('terminalInput');
+    const fileUpload = document.getElementById('fileUpload');
+    const uploadFileBtn = document.getElementById('uploadFileBtn');
+    const buildTokenSubmit = document.getElementById('buildTokenSubmit');
+    const megaHashBtn = document.getElementById('megaHashBtn');
+
+    // Helpers
+    function hashString(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+      }
+      return Math.abs(hash).toString(16).padStart(16, '0');
+    }
+
+    function sha256(message) {
+      // Simple hash for demo - in production use crypto.subtle
+      const msgBuffer = new TextEncoder().encode(message + Date.now());
+      let hash = 0x811c9dc5;
+      for (let i = 0; i < msgBuffer.length; i++) {
+        hash ^= msgBuffer[i];
+        hash = Math.imul(hash, 0x01000193);
+      }
+      return Math.abs(hash).toString(16).padStart(64, '0').slice(0, 64);
+    }
+
+    // Storage functions
+    function getUsers() {
+      const stored = localStorage.getItem(USERS_KEY);
+      return stored ? JSON.parse(stored) : {};
+    }
+
+    function saveUsers(users) {
+      localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    }
+
+    function getSession() {
+      const stored = sessionStorage.getItem(SESSION_KEY);
+      return stored ? JSON.parse(stored) : null;
+    }
+
+    function saveSession(session) {
+      if (session) {
+        sessionStorage.setItem(SESSION_KEY, JSON.stringify(session));
+      } else {
+        sessionStorage.removeItem(SESSION_KEY);
+      }
+    }
+
+    // Auth functions
+    function registerUser(username, password) {
+      const users = getUsers();
+      if (users[username]) {
+        return { success: false, error: 'Username already exists' };
+      }
+      users[username] = {
+        passwordHash: hashString(password),
+        tokenCount: 0,
+        tokensCreated: [],
+        megaHashes: [],
+        createdAt: new Date().toISOString()
+      };
+      saveUsers(users);
+      return { success: true };
+    }
+
+    function signIn(username, password) {
+      const users = getUsers();
+      if (!users[username]) {
+        return { success: false, error: 'User not found' };
+      }
+      if (users[username].passwordHash !== hashString(password)) {
+        return { success: false, error: 'Invalid password' };
+      }
+      const session = {
+        username,
+        token: sha256(username + Date.now()),
+        loginTime: new Date().toISOString()
+      };
+      saveSession(session);
+      return { success: true, session };
+    }
+
+    function logout() {
+      saveSession(null);
+      updateUI();
+    }
+
+    function getCurrentUser() {
+      const session = getSession();
+      if (!session) return null;
+      const users = getUsers();
+      return users[session.username] || null;
+    }
+
+    function updateTokenCount(increment = 1) {
+      const session = getSession();
+      if (!session) return;
+      const users = getUsers();
+      if (users[session.username]) {
+        users[session.username].tokenCount += increment;
+        saveUsers(users);
+        updateUI();
+      }
+    }
+
+    function addUserToken(tokenHash, value) {
+      const session = getSession();
+      if (!session) return;
+      const users = getUsers();
+      if (users[session.username]) {
+        users[session.username].tokensCreated.push({
+          hash: tokenHash,
+          value: value,
+          createdAt: new Date().toISOString()
+        });
+        users[session.username].tokenCount++;
+        saveUsers(users);
+        updateUI();
+      }
+    }
+
+    function addMegaHash(megaHash, value, components) {
+      const session = getSession();
+      if (!session) return;
+      const users = getUsers();
+      if (users[session.username]) {
+        users[session.username].megaHashes.push({
+          hash: megaHash,
+          value: value,
+          components: components,
+          createdAt: new Date().toISOString()
+        });
+        saveUsers(users);
+      }
+    }
+
+    // UI Update
+    function updateUI() {
+      const session = getSession();
+      const user = getCurrentUser();
+
+      if (session && user) {
+        signInBtn.classList.add('hidden');
+        logoutBtn.classList.remove('hidden');
+        userInfo.classList.add('visible');
+        displayUsername.textContent = session.username;
+        displayTokenCount.textContent = user.tokenCount;
+      } else {
+        signInBtn.classList.remove('hidden');
+        logoutBtn.classList.add('hidden');
+        userInfo.classList.remove('visible');
+      }
+    }
+
+    // Modal handlers
+    function showError(element, message) {
+      element.textContent = message;
+      element.classList.add('visible');
+    }
+
+    function clearError(element) {
+      element.textContent = '';
+      element.classList.remove('visible');
+    }
+
+    signInBtn.addEventListener('click', () => {
+      loginModal.classList.add('open');
+      clearError(loginError);
+      loginUsername.value = '';
+      loginPassword.value = '';
+      setTimeout(() => loginUsername.focus(), 100);
+    });
+
+    loginCancel.addEventListener('click', () => {
+      loginModal.classList.remove('open');
+    });
+
+    loginModal.addEventListener('click', (e) => {
+      if (e.target === loginModal) loginModal.classList.remove('open');
+    });
+
+    showRegister.addEventListener('click', () => {
+      loginModal.classList.remove('open');
+      registerModal.classList.add('open');
+      clearError(registerError);
+      registerUsername.value = '';
+      registerPassword.value = '';
+      registerConfirm.value = '';
+      setTimeout(() => registerUsername.focus(), 100);
+    });
+
+    loginSubmit.addEventListener('click', () => {
+      const username = loginUsername.value.trim();
+      const password = loginPassword.value;
+      if (!username || !password) {
+        showError(loginError, 'Please fill in all fields');
+        return;
+      }
+      const result = signIn(username, password);
+      if (result.success) {
+        loginModal.classList.remove('open');
+        updateUI();
+        terminalLog('system', `[AUTH] User "${username}" signed in successfully`);
+      } else {
+        showError(loginError, result.error);
+      }
+    });
+
+    registerCancel.addEventListener('click', () => {
+      registerModal.classList.remove('open');
+    });
+
+    registerModal.addEventListener('click', (e) => {
+      if (e.target === registerModal) registerModal.classList.remove('open');
+    });
+
+    registerSubmit.addEventListener('click', () => {
+      const username = registerUsername.value.trim();
+      const password = registerPassword.value;
+      const confirm = registerConfirm.value;
+      if (!username || !password || !confirm) {
+        showError(registerError, 'Please fill in all fields');
+        return;
+      }
+      if (password !== confirm) {
+        showError(registerError, 'Passwords do not match');
+        return;
+      }
+      if (password.length < 4) {
+        showError(registerError, 'Password must be at least 4 characters');
+        return;
+      }
+      const result = registerUser(username, password);
+      if (result.success) {
+        registerModal.classList.remove('open');
+        signIn(username, password);
+        updateUI();
+        terminalLog('success', `[AUTH] User "${username}" registered and signed in`);
+      } else {
+        showError(registerError, result.error);
+      }
+    });
+
+    logoutBtn.addEventListener('click', () => {
+      const session = getSession();
+      if (session) {
+        terminalLog('system', `[AUTH] User "${session.username}" logged out`);
+      }
+      logout();
+    });
+
+    // ==================== TOKEN BUILDER ====================
+    const BOOST_KEYWORDS = {
+      'quantum': 500, 'hydrogen': 500, 'fusion': 500, 'einstein': 500,
+      'relativity': 500, 'infinity': 500, 'neural': 450, 'photon': 450,
+      'plasma': 450, 'electron': 450, 'vector': 300, 'tensor': 300,
+      'gravity': 300, 'reactor': 300, 'lattice': 300, 'thermodynamics': 300,
+      'entropy': 300, 'ai': 150, 'algorithm': 150, 'compute': 150,
+      'research': 150, 'discovery': 150, 'patent': 150, 'proprietary': 150,
+      'data': 75, 'analysis': 75, 'model': 75, 'theory': 75, 'experiment': 75,
+      'kris': 10000, 'pewpi': 10000, 'hydra': 8000, 'osprey': 8000,
+      'classified': 15000, 'secret': 12000
+    };
+
+    const MIN_VALUE = 90;
+    const MAX_VALUE = 964590650869860860.97;
+
+    function scoreContent(text) {
+      const textLower = text.toLowerCase();
+      const words = textLower.split(/\s+/);
+      let score = 0;
+      const analysis = {
+        wordCount: words.length,
+        charCount: text.length,
+        keywordMatches: {}
+      };
+
+      // Base scores
+      score += text.length * 0.5;
+      score += words.length * 2;
+
+      // Keyword matching
+      for (const [keyword, bonus] of Object.entries(BOOST_KEYWORDS)) {
+        const count = (textLower.match(new RegExp(keyword, 'g')) || []).length;
+        if (count > 0) {
+          score += count * bonus;
+          analysis.keywordMatches[keyword] = { count, bonus: count * bonus };
+        }
+      }
+
+      // Depth bonus
+      if (text.length > 100) {
+        const depth = Math.floor(Math.log2(text.length) * 100);
+        score += depth;
+        analysis.depthBonus = depth;
+      }
+
+      // Complexity bonus
+      if (words.length > 0) {
+        const uniqueRatio = new Set(words).size / words.length;
+        const complexity = Math.floor(uniqueRatio * 1000);
+        score += complexity;
+        analysis.complexityBonus = complexity;
+      }
+
+      // Line count bonus
+      const lines = text.split('\n').length;
+      if (lines > 5) {
+        score += lines * 10;
+      }
+
+      return { score, analysis };
+    }
+
+    function calculateValue(score) {
+      if (score < 100) return MIN_VALUE + (score * 0.5);
+      if (score < 500) return 100 + (score * 2);
+      if (score < 2000) return 1000 + (score * 10);
+      if (score < 10000) return 20000 + (score * 100);
+      if (score < 100000) return 1000000 + (score * 5000);
+      if (score < 1000000) return 500000000 + (score * 100000);
+      
+      const base = 100000000000;
+      const multiplier = Math.log10(score) * 100000000000;
+      return Math.min(base + multiplier * (score / 1000000), MAX_VALUE);
+    }
+
+    function formatValue(value) {
+      if (value >= 1000000000000) return '$' + value.toLocaleString('en-US', { maximumFractionDigits: 2 });
+      if (value >= 1000000000) return '$' + (value / 1000000000).toFixed(2) + 'B';
+      if (value >= 1000000) return '$' + (value / 1000000).toFixed(2) + 'M';
+      if (value >= 1000) return '$' + (value / 1000).toFixed(2) + 'K';
+      return '$' + value.toFixed(2);
+    }
+
+    function generateTokenHash(text) {
+      return sha256(text + Date.now() + Math.random());
+    }
+
+    let createdTokens = [];
+
+    function buildToken(text, sourceType = 'text', filename = null) {
+      const tokenHash = generateTokenHash(text);
+      const { score, analysis } = scoreContent(text);
+      const value = calculateValue(score);
+
+      const token = {
+        hash: tokenHash,
+        timestamp: new Date().toISOString(),
+        sourceType,
+        filename,
+        score,
+        value,
+        valueFormatted: formatValue(value),
+        analysis
+      };
+
+      createdTokens.push(token);
+      addUserToken(tokenHash, value);
+
+      return token;
+    }
+
+    function generateMegaHash(tokenHashes) {
+      if (tokenHashes.length < 2) {
+        return { error: 'Need at least 2 tokens to create a mega hash' };
+      }
+
+      const selectedTokens = createdTokens.filter(t => tokenHashes.includes(t.hash));
+      if (selectedTokens.length < 2) {
+        return { error: 'Could not find enough matching tokens' };
+      }
+
+      let totalScore = selectedTokens.reduce((sum, t) => sum + t.score, 0);
+      const combinationBonus = tokenHashes.length * 1000000;
+      const synergyBonus = Math.pow(tokenHashes.length, 3) * 10000000;
+      const megaScore = totalScore + combinationBonus + synergyBonus;
+
+      const baseMegaValue = 963000000000; // $963 billion base
+      const scaleFactor = megaScore / 1000;
+      const megaValue = Math.min(baseMegaValue + (scaleFactor * 1000000000), MAX_VALUE);
+
+      const megaHash = sha256(tokenHashes.join('') + 'MEGA' + Date.now());
+
+      const mega = {
+        megaHash,
+        componentHashes: tokenHashes,
+        componentCount: tokenHashes.length,
+        combinedScore: megaScore,
+        value: megaValue,
+        valueFormatted: formatValue(megaValue),
+        type: 'MEGA_HASH'
+      };
+
+      addMegaHash(megaHash, megaValue, tokenHashes);
+
+      return mega;
+    }
+
+    // Terminal functions
+    function terminalLog(type, message) {
+      const line = document.createElement('div');
+      line.className = 'terminal-line ' + type;
+      line.textContent = message;
+      terminalBody.appendChild(line);
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+
+    function showTokenResult(token) {
+      const resultDiv = document.createElement('div');
+      resultDiv.className = 'token-result';
+      resultDiv.innerHTML = `
+        <div class="hash">HASH: ${token.hash}</div>
+        <div>Score: ${token.score} | Words: ${token.analysis.wordCount} | Chars: ${token.analysis.charCount}</div>
+        <div class="value">VALUE: ${token.valueFormatted}</div>
+      `;
+      terminalBody.appendChild(resultDiv);
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+
+    function showMegaResult(mega) {
+      const resultDiv = document.createElement('div');
+      resultDiv.className = 'token-result';
+      resultDiv.style.borderColor = '#ffaa00';
+      resultDiv.innerHTML = `
+        <div class="hash">MEGA HASH: ${mega.megaHash}</div>
+        <div>Components: ${mega.componentCount} | Combined Score: ${mega.combinedScore}</div>
+        <div class="value">MEGA VALUE: ${mega.valueFormatted}</div>
+      `;
+      terminalBody.appendChild(resultDiv);
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+
+    // Terminal event handlers
+    buildTokenBtn.addEventListener('click', () => {
+      terminalOverlay.classList.add('open');
+      setTimeout(() => terminalInput.focus(), 100);
+    });
+
+    terminalClose.addEventListener('click', () => {
+      terminalOverlay.classList.remove('open');
+    });
+
+    terminalOverlay.addEventListener('click', (e) => {
+      if (e.target === terminalOverlay) terminalOverlay.classList.remove('open');
+    });
+
+    uploadFileBtn.addEventListener('click', () => {
+      fileUpload.click();
+    });
+
+    fileUpload.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      terminalLog('system', `[FILE] Reading: ${file.name}`);
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const content = event.target.result;
+        terminalInput.value = content;
+        terminalLog('success', `[FILE] Loaded ${content.length} characters from ${file.name}`);
+      };
+      reader.onerror = () => {
+        terminalLog('error', '[FILE] Error reading file');
+      };
+      reader.readAsText(file);
+      fileUpload.value = '';
+    });
+
+    buildTokenSubmit.addEventListener('click', () => {
+      const text = terminalInput.value.trim();
+      if (!text) {
+        terminalLog('error', '[ERROR] No content provided');
+        return;
+      }
+
+      terminalLog('system', '[PROCESS] Analyzing content...');
+      terminalLog('system', `[PROCESS] Content length: ${text.length} characters`);
+
+      const token = buildToken(text, 'text');
+
+      terminalLog('success', '[SUCCESS] Token generated!');
+      showTokenResult(token);
+
+      terminalInput.value = '';
+    });
+
+    megaHashBtn.addEventListener('click', () => {
+      if (createdTokens.length < 2) {
+        terminalLog('error', '[ERROR] Need at least 2 tokens to create a Mega Hash');
+        terminalLog('system', '[INFO] Current tokens: ' + createdTokens.length);
+        return;
+      }
+
+      terminalLog('system', '[MEGA] Combining ' + createdTokens.length + ' tokens...');
+
+      const hashes = createdTokens.map(t => t.hash);
+      const mega = generateMegaHash(hashes);
+
+      if (mega.error) {
+        terminalLog('error', '[ERROR] ' + mega.error);
+        return;
+      }
+
+      terminalLog('success', '[SUCCESS] MEGA HASH generated!');
+      terminalLog('value', '[VALUE] ' + mega.valueFormatted + ' (Minimum $963B+)');
+      showMegaResult(mega);
+    });
+
+    // Initialize UI
+    updateUI();
   </script>
 </body>
 </html>
