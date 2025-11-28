@@ -1,0 +1,26 @@
+{
+  "hash": "446b6fcfff28433aa7717fc183c7a6e2",
+  "source": "https://en.wikipedia.org/wiki/Thermoelectric_effect",
+  "title": "THERMOELECTRIC EFFECT \u2013 RESEARCH PAGE",
+  "timestamp": "2025-11-28 05:45:23 UTC",
+  "sentences": [
+    "The thermoelectric effect is the direct conversion of temperature differences to electric voltage and vice versa via a thermocouple .",
+    "[ 1 ] A thermoelectric device creates a voltage when there is a different temperature on each side.",
+    "Conversely, when a voltage is applied to it, heat is transferred from one side to the other, creating a temperature difference.",
+    "[ 2 ] This effect can be used to generate electricity , measure temperature or change the temperature of objects.",
+    "Because the direction of heating and cooling is affected by the applied voltage, thermoelectric devices can be used as temperature controllers.",
+    "The term \"thermoelectric effect\" encompasses three separately identified effects: the Seebeck effect (temperature differences cause electromotive forces), the Peltier effect (thermocouples create temperature differences), and the Thomson effect (the Seebeck coefficient varies with temperature).",
+    "The Seebeck and Peltier effects are different manifestations of the same physical process; textbooks may refer to this process as the Peltier\u2013Seebeck effect (the separation derives from the independent discoveries by Jean Charles Athanase Peltier and Thomas Johann Seebeck ).",
+    "The Thomson effect is an extension of the Peltier\u2013Seebeck model and is credited to Lord Kelvin .",
+    "Joule heating , the heat that is generated whenever a current is passed through a conductive material, is not generally termed a thermoelectric effect.",
+    "The Peltier\u2013Seebeck and Thomson effects are thermodynamically reversible , [ 3 ] whereas Joule heating is not.",
+    "At the atomic scale, a temperature gradient causes charge carriers in the material to diffuse from the hot side to the cold side.",
+    "This is due to charge carrier particles having higher mean velocities (and thus kinetic energy ) at higher temperatures, leading them to migrate on average towards the colder side, in the process carrying heat across the material.",
+    "[ 4 ] Depending on the material properties and nature of the charge carriers (whether they are positive holes in a bulk material or electrons of negative charge), heat can be carried in either direction with respect to voltage.",
+    "Semiconductors of n-type and p-type are often combined in series as they have opposite directions for heat transport, as specified by the sign of their Seebeck coefficients ."
+  ],
+  "approx_token_count": 463,
+  "value": 1157,
+  "tier": "PREMIER",
+  "notes": "A life-supporting zone: It is a relatively thin layer on Earth's surface that extends from the deepest ocean trenches to high mountaintops and a few kilometers into the atmosphere."
+}
