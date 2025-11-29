@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>  <title>[2401.00002] Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023</title>
+<head>  <title>[2401.00005] Consciousness as a logically consistent and prognostic model of reality</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" sizes="180x180" href="/static/browse/0.3.4/images/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/browse/0.3.4/images/icons/favicon-32x32.png">
@@ -16,28 +16,28 @@
   <script language="javascript" src="/static/browse/0.3.4/js/accordion.js" ></script>
   <script language="javascript" src="/static/browse/0.3.4/js/optin-modal.js?v=20250819"></script>
   
-  <link rel="canonical" href="https://arxiv.org/abs/2401.00002"/>
-  <meta name="description" content="Abstract page for arXiv paper 2401.00002: Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023"><meta property="og:type" content="website" />
+  <link rel="canonical" href="https://arxiv.org/abs/2401.00005"/>
+  <meta name="description" content="Abstract page for arXiv paper 2401.00005: Consciousness as a logically consistent and prognostic model of reality"><meta property="og:type" content="website" />
 <meta property="og:site_name" content="arXiv.org" />
-<meta property="og:title" content="Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023" />
-<meta property="og:url" content="https://arxiv.org/abs/2401.00002v1" />
+<meta property="og:title" content="Consciousness as a logically consistent and prognostic model of reality" />
+<meta property="og:url" content="https://arxiv.org/abs/2401.00005v1" />
 <meta property="og:image" content="/static/browse/0.3.4/images/arxiv-logo-fb.png" />
 <meta property="og:image:secure_url" content="/static/browse/0.3.4/images/arxiv-logo-fb.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="700" />
 <meta property="og:image:alt" content="arXiv logo"/>
-<meta property="og:description" content="We show evidence of particle acceleration at GEV energies associated directly with protons from the prompt emission of a long-duration M6-class solar flare on July 17, 2023, rather than from protons acceleration by shocks from its associated Coronal Mass Ejection (CME), which erupted with a speed of 1342 km/s. Solar Energetic Particles (SEP) accelerated by the blast have reached Earth, up to an almost S3 (strong) category of a radiation storm on the NOAA scale. Also, we show a temporal correlation between the fast rising of GOES-16 proton and muon excess at ground level in the count rate of the New-Tupi muon detector at the central SAA region. A Monte Carlo spectral analysis based on muon excess at New-Tupi is consistent with the acceleration of electrons and protons (ions) up to relativistic energies (GeV energy range) in the impulsive phase of the flare. In addition, we present another two marginal particle excesses (with low confidence) at ground-level detectors in correlation with the solar flare prompt emission."/>
+<meta property="og:description" content="The work demonstrates that brain might reflect the external world causal relationships in the form of a logically consistent and prognostic model of reality, which shows up as consciousness. The paper analyses and solves the problem of statistical ambiguity and provides a formal model of causal relationships as probabilistic maximally specific rules. We suppose that brain makes all possible inferences from causal relationships. We prove that the suggested formal model has a property of an unambiguous inference: from consistent premises we infer a consistent conclusion. It enables a set of all inferences to form a consistent model of the perceived world. Causal relationships may create fixed points of cyclic inter-predictable properties. We consider the &#34;natural&#34; classification introduced by John St. Mill and demonstrate that a variety of fixed points of the objects&#39; attributes forms a &#34;natural&#34; classification of the external world. Then we consider notions of &#34;natural&#34; categories and causal models of categories, introduced by Eleanor Rosch and Bob Rehder and demonstrate that fixed points of causal relationships between objects attributes, which we perceive, formalize these notions. If the &#34;natural&#34; classification describes the objects of the external world, and &#34;natural&#34; concepts the perception of these objects, then the theory of integrated information, introduced by G. Tononi, describes the information processes of the brain for &#34;natural&#34; concepts formation that reflects the &#34;natural&#34; classification. We argue that integrated information provides high accuracy of the objects identification. A computer-based experiment is provided that illustrates fixed points formation for coded digits."/>
 <meta name="twitter:site" content="@arxiv"/>
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Prompt emission of relativistic protons up to GeV energies from..."/>
-<meta name="twitter:description" content="We show evidence of particle acceleration at GEV energies associated directly with protons from the prompt emission of a long-duration M6-class solar flare on July 17, 2023, rather than from..."/>
+<meta name="twitter:title" content="Consciousness as a logically consistent and prognostic model of reality"/>
+<meta name="twitter:description" content="The work demonstrates that brain might reflect the external world causal relationships in the form of a logically consistent and prognostic model of reality, which shows up as consciousness. The..."/>
 <meta name="twitter:image" content="https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"/>
 <meta name="twitter:image:alt" content="arXiv logo"/>
   <link rel="stylesheet" media="screen" type="text/css" href="/static/browse/0.3.4/css/tooltip.css"/><link rel="stylesheet" media="screen" type="text/css" href="https://static.arxiv.org/js/bibex-dev/bibex.css?20200709"/>  <script src="/static/browse/0.3.4/js/mathjaxToggle.min.js" type="text/javascript"></script>  <script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <script src="//cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" type="text/javascript"></script>
   <script src="//cdn.jsdelivr.net/npm/dompurify@2.3.5/dist/purify.min.js"></script>
   <script src="/static/browse/0.3.4/js/toggle-labs.js?20241022" type="text/javascript"></script>
-  <script src="/static/browse/0.3.4/js/cite.js" type="text/javascript"></script><meta name="citation_title" content="Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023" /><meta name="citation_author" content="Navia, Carlos" /><meta name="citation_author" content="Oliveira, Marcel" /><meta name="citation_author" content="Nepomuceno, Andre" /><meta name="citation_doi" content="10.1007/s13538-024-01629-1" /><meta name="citation_date" content="2023/11/28" /><meta name="citation_online_date" content="2023/11/28" /><meta name="citation_pdf_url" content="https://arxiv.org/pdf/2401.00002" /><meta name="citation_arxiv_id" content="2401.00002" /><meta name="citation_abstract" content="We show evidence of particle acceleration at GEV energies associated directly with protons from the prompt emission of a long-duration M6-class solar flare on July 17, 2023, rather than from protons acceleration by shocks from its associated Coronal Mass Ejection (CME), which erupted with a speed of 1342 km/s. Solar Energetic Particles (SEP) accelerated by the blast have reached Earth, up to an almost S3 (strong) category of a radiation storm on the NOAA scale. Also, we show a temporal correlation between the fast rising of GOES-16 proton and muon excess at ground level in the count rate of the New-Tupi muon detector at the central SAA region. A Monte Carlo spectral analysis based on muon excess at New-Tupi is consistent with the acceleration of electrons and protons (ions) up to relativistic energies (GeV energy range) in the impulsive phase of the flare. In addition, we present another two marginal particle excesses (with low confidence) at ground-level detectors in correlation with the solar flare prompt emission." />
+  <script src="/static/browse/0.3.4/js/cite.js" type="text/javascript"></script><meta name="citation_title" content="Consciousness as a logically consistent and prognostic model of reality" /><meta name="citation_author" content="Vityaev, Evgenii" /><meta name="citation_doi" content="10.1016/j.cogsys.2019.09.021" /><meta name="citation_date" content="2023/12/10" /><meta name="citation_online_date" content="2023/12/10" /><meta name="citation_pdf_url" content="https://arxiv.org/pdf/2401.00005" /><meta name="citation_arxiv_id" content="2401.00005" /><meta name="citation_abstract" content="The work demonstrates that brain might reflect the external world causal relationships in the form of a logically consistent and prognostic model of reality, which shows up as consciousness. The paper analyses and solves the problem of statistical ambiguity and provides a formal model of causal relationships as probabilistic maximally specific rules. We suppose that brain makes all possible inferences from causal relationships. We prove that the suggested formal model has a property of an unambiguous inference: from consistent premises we infer a consistent conclusion. It enables a set of all inferences to form a consistent model of the perceived world. Causal relationships may create fixed points of cyclic inter-predictable properties. We consider the &#34;natural&#34; classification introduced by John St. Mill and demonstrate that a variety of fixed points of the objects&#39; attributes forms a &#34;natural&#34; classification of the external world. Then we consider notions of &#34;natural&#34; categories and causal models of categories, introduced by Eleanor Rosch and Bob Rehder and demonstrate that fixed points of causal relationships between objects attributes, which we perceive, formalize these notions. If the &#34;natural&#34; classification describes the objects of the external world, and &#34;natural&#34; concepts the perception of these objects, then the theory of integrated information, introduced by G. Tononi, describes the information processes of the brain for &#34;natural&#34; concepts formation that reflects the &#34;natural&#34; classification. We argue that integrated information provides high accuracy of the objects identification. A computer-based experiment is provided that illustrates fixed points formation for coded digits." />
 </head>
 
 <body  class="with-cu-identity">
@@ -59,7 +59,7 @@
       <div id="header" class="is-hidden-mobile">
 <a aria-hidden="true" tabindex="-1" href="/IgnoreMe"></a>
   <div class="header-breadcrumbs is-hidden-mobile">
-    <a href="/"><img src="/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg" alt="arxiv logo" style="height:40px;"/></a> <span>&gt;</span> <a href="/list/astro-ph/recent">astro-ph</a> <span>&gt;</span> arXiv:2401.00002
+    <a href="/"><img src="/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg" alt="arxiv logo" style="height:40px;"/></a> <span>&gt;</span> <a href="/list/cs/recent">cs</a> <span>&gt;</span> arXiv:2401.00005
   </div>
 
         <div class="columns is-vcentered is-mobile" style="justify-content: flex-end;">
@@ -148,60 +148,59 @@ rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:dc="http://purl.org/dc/elements/1.1/"
          xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
     <rdf:Description
-        rdf:about="/abs/2401.00002"
-        dc:identifier="/abs/2401.00002"
-        dc:title="Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023"
-        trackback:ping="/trackback/2401.00002" />
+        rdf:about="/abs/2401.00005"
+        dc:identifier="/abs/2401.00005"
+        dc:title="Consciousness as a logically consistent and prognostic model of reality"
+        trackback:ping="/trackback/2401.00005" />
     </rdf:RDF>
 --><div id="abs-outer">
 
   <div class="leftcolumn">
     <div class="subheader">
-      <h1>Astrophysics > Solar and Stellar Astrophysics</h1>
+      <h1>Computer Science > Artificial Intelligence</h1>
     </div>
 
     <div class="header-breadcrumbs-mobile">
-      <strong>arXiv:2401.00002</strong> (astro-ph)
+      <strong>arXiv:2401.00005</strong> (cs)
     </div>
 <link rel="stylesheet" type="text/css" href="/static/base/1.0.1/css/abs.css">
 <div id="content-inner">
   <div id="abs">
     <div class="dateline">
-  [Submitted on 28 Nov 2023]</div>
-    <h1 class="title mathjax"><span class="descriptor">Title:</span>Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023</h1>
-    <div class="authors"><span class="descriptor">Authors:</span><a href="https://arxiv.org/search/astro-ph?searchtype=author&amp;query=Navia,+C" rel="nofollow">Carlos Navia</a>, <a href="https://arxiv.org/search/astro-ph?searchtype=author&amp;query=Oliveira,+M" rel="nofollow">Marcel Oliveira</a>, <a href="https://arxiv.org/search/astro-ph?searchtype=author&amp;query=Nepomuceno,+A" rel="nofollow">Andre Nepomuceno</a></div>            <div id="download-button-info" hidden>View a PDF of the paper titled Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023, by Carlos Navia and 2 other authors</div>
-    <a class="mobile-submission-download" href="/pdf/2401.00002">View PDF</a>
-    <a class="mobile-submission-download" href="https://arxiv.org/html/2401.00002v1">HTML (experimental)</a>
+  [Submitted on 10 Dec 2023]</div>
+    <h1 class="title mathjax"><span class="descriptor">Title:</span>Consciousness as a logically consistent and prognostic model of reality</h1>
+    <div class="authors"><span class="descriptor">Authors:</span><a href="https://arxiv.org/search/cs?searchtype=author&amp;query=Vityaev,+E" rel="nofollow">Evgenii Vityaev</a></div>            <div id="download-button-info" hidden>View a PDF of the paper titled Consciousness as a logically consistent and prognostic model of reality, by Evgenii Vityaev</div>
+    <a class="mobile-submission-download" href="/pdf/2401.00005">View PDF</a>
 
 
 
     <blockquote class="abstract mathjax">
-            <span class="descriptor">Abstract:</span>We show evidence of particle acceleration at GEV energies associated directly with protons from the prompt emission of a long-duration M6-class solar flare on July 17, 2023, rather than from protons acceleration by shocks from its associated Coronal Mass Ejection (CME), which erupted with a speed of 1342 km/s. Solar Energetic Particles (SEP) accelerated by the blast have reached Earth, up to an almost S3 (strong) category of a radiation storm on the NOAA scale. Also, we show a temporal correlation between the fast rising of GOES-16 proton and muon excess at ground level in the count rate of the New-Tupi muon detector at the central SAA region. A Monte Carlo spectral analysis based on muon excess at New-Tupi is consistent with the acceleration of electrons and protons (ions) up to relativistic energies (GeV energy range) in the impulsive phase of the flare. In addition, we present another two marginal particle excesses (with low confidence) at ground-level detectors in correlation with the solar flare prompt emission.
+            <span class="descriptor">Abstract:</span>The work demonstrates that brain might reflect the external world causal relationships in the form of a logically consistent and prognostic model of reality, which shows up as consciousness. The paper analyses and solves the problem of statistical ambiguity and provides a formal model of causal relationships as probabilistic maximally specific rules. We suppose that brain makes all possible inferences from causal relationships. We prove that the suggested formal model has a property of an unambiguous inference: from consistent premises we infer a consistent conclusion. It enables a set of all inferences to form a consistent model of the perceived world. Causal relationships may create fixed points of cyclic inter-predictable properties. We consider the &#34;natural&#34; classification introduced by John St. Mill and demonstrate that a variety of fixed points of the objects&#39; attributes forms a &#34;natural&#34; classification of the external world. Then we consider notions of &#34;natural&#34; categories and causal models of categories, introduced by Eleanor Rosch and Bob Rehder and demonstrate that fixed points of causal relationships between objects attributes, which we perceive, formalize these notions. If the &#34;natural&#34; classification describes the objects of the external world, and &#34;natural&#34; concepts the perception of these objects, then the theory of integrated information, introduced by G. Tononi, describes the information processes of the brain for &#34;natural&#34; concepts formation that reflects the &#34;natural&#34; classification. We argue that integrated information provides high accuracy of the objects identification. A computer-based experiment is provided that illustrates fixed points formation for coded digits.
     </blockquote>
 
     <!--CONTEXT-->
     <div class="metatable">
       <table summary="Additional metadata">        <tr>
           <td class="tablecell label">Comments:</td>
-          <td class="tablecell comments mathjax">8 pages,8 figures</td>
+          <td class="tablecell comments mathjax">22 pages</td>
         </tr>
 <tr>
           <td class="tablecell label">Subjects:</td>
           <td class="tablecell subjects">
-            <span class="primary-subject">Solar and Stellar Astrophysics (astro-ph.SR)</span>; High Energy Astrophysical Phenomena (astro-ph.HE)</td>
+            <span class="primary-subject">Artificial Intelligence (cs.AI)</span></td>
         </tr><tr>
           <td class="tablecell label">Cite as:</td>
-          <td class="tablecell arxivid"><span class="arxivid"><a href="https://arxiv.org/abs/2401.00002">arXiv:2401.00002</a> [astro-ph.SR]</span></td>
+          <td class="tablecell arxivid"><span class="arxivid"><a href="https://arxiv.org/abs/2401.00005">arXiv:2401.00005</a> [cs.AI]</span></td>
         </tr>
         <tr>
           <td class="tablecell label">&nbsp;</td>
           <td class="tablecell arxividv">(or <span class="arxivid">
-              <a href="https://arxiv.org/abs/2401.00002v1">arXiv:2401.00002v1</a> [astro-ph.SR]</span> for this version)
+              <a href="https://arxiv.org/abs/2401.00005v1">arXiv:2401.00005v1</a> [cs.AI]</span> for this version)
           </td>
         </tr>
         <tr>
           <td class="tablecell label">&nbsp;</td>
-          <td class="tablecell arxivdoi">              <a href="https://doi.org/10.48550/arXiv.2401.00002"  id="arxiv-doi-link">https://doi.org/10.48550/arXiv.2401.00002</a><div class="button-and-tooltip">
+          <td class="tablecell arxivdoi">              <a href="https://doi.org/10.48550/arXiv.2401.00005"  id="arxiv-doi-link">https://doi.org/10.48550/arXiv.2401.00005</a><div class="button-and-tooltip">
               <button class="more-info" aria-describedby="more-info-desc-1">
                 <svg height="15" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z" class=""></path></svg>
                 <span class="visually-hidden">Focus to learn more</span>
@@ -212,14 +211,10 @@ rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             </div>
           </td>
         </tr>        <tr>
-          <td class="tablecell label">Journal&nbsp;reference:</td>
-          <td class="tablecell jref">Braz J Phys 54, 249 (2024)</td>
-        </tr>
-        <tr>
           <td class="tablecell label">
             <abbr title="Digital Object Identifier">Related DOI</abbr>:
           </td>
-          <td class="tablecell doi"><a href="https://doi.org/10.1007/s13538-024-01629-1" data-doi="10.1007/s13538-024-01629-1" class="link-https link-external" rel="external noopener nofollow">https://doi.org/10.1007/s13538-024-01629-1</a>
+          <td class="tablecell doi"><a href="https://doi.org/10.1016/j.cogsys.2019.09.021" data-doi="10.1016/j.cogsys.2019.09.021" class="link-https link-external" rel="external noopener nofollow">https://doi.org/10.1016/j.cogsys.2019.09.021</a>
 
             <!-- accessible tooltip example -->
             <div class="button-and-tooltip">
@@ -240,8 +235,8 @@ rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   </div>
 </div>
     <div class="submission-history">
-      <h2>Submission history</h2> From: Andre Nepomuceno Asevedo [<a href="/show-email/6c813fde/2401.00002" rel="nofollow">view email</a>]      <br/>    <strong>[v1]</strong>
-        Tue, 28 Nov 2023 14:55:21 UTC (3,723 KB)<br/>
+      <h2>Submission history</h2> From: Evgenii Vityaev [<a href="/show-email/b50f2b74/2401.00005" rel="nofollow">view email</a>]      <br/>    <strong>[v1]</strong>
+        Sun, 10 Dec 2023 14:07:20 UTC (1,175 KB)<br/>
 </div>
   </div>
   <!--end leftcolumn-->
@@ -251,35 +246,33 @@ rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       <h2>Access Paper:</h2>
       <ul>
   <div id="download-button-info" hidden>
-View a PDF of the paper titled Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023, by Carlos Navia and 2 other authors</div><li><a href="/pdf/2401.00002" aria-describedby="download-button-info" accesskey="f" class="abs-button download-pdf">View PDF</a></li><li><a href="https://arxiv.org/html/2401.00002v1" class="abs-button" id="latexml-download-link">HTML (experimental)</a></li><li><a href="/src/2401.00002" class="abs-button download-eprint">TeX Source
- </a></li></ul>
-      <div class="abs-license"><a href="http://creativecommons.org/licenses/by/4.0/" title="Rights to this article" class="has_license">
-          <img alt="license icon" role="presentation" src="https://arxiv.org/icons/licenses/by-4.0.png"/>
+View a PDF of the paper titled Consciousness as a logically consistent and prognostic model of reality, by Evgenii Vityaev</div><li><a href="/pdf/2401.00005" aria-describedby="download-button-info" accesskey="f" class="abs-button download-pdf">View PDF</a></li></ul>
+      <div class="abs-license"><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" title="Rights to this article" class="has_license">
+          <img alt="license icon" role="presentation" src="https://arxiv.org/icons/licenses/by-nc-nd-4.0.png"/>
           <span>view license</span>
         </a></div>
     </div>
     <!--end full-text-->    <div class="browse">
-    Current browse context: <div class="current">astro-ph.SR</div>
+    Current browse context: <div class="current">cs.AI</div>
 
   <div class="prevnext">
 <span class="arrow">
-      <a class="abs-button prev-url" href="/prevnext?id=2401.00002&amp;function=prev&amp;context=astro-ph.SR"
-         accesskey="p" title="previous in astro-ph.SR (accesskey p)" rel="nofollow">&lt;&nbsp;prev</a>
+      <a class="abs-button prev-url" href="/prevnext?id=2401.00005&amp;function=prev&amp;context=cs.AI"
+         accesskey="p" title="previous in cs.AI (accesskey p)" rel="nofollow">&lt;&nbsp;prev</a>
     </span>
     <span class="is-hidden-mobile">&nbsp; | &nbsp;</span>    <span class="arrow">
-      <a class="abs-button next-url" href="/prevnext?id=2401.00002&amp;function=next&amp;context=astro-ph.SR" accesskey="n"
-         title="next in astro-ph.SR (accesskey n)"  rel="nofollow">next&nbsp;&gt;</a>
+      <a class="abs-button next-url" href="/prevnext?id=2401.00005&amp;function=next&amp;context=cs.AI" accesskey="n"
+         title="next in cs.AI (accesskey n)"  rel="nofollow">next&nbsp;&gt;</a>
     </span><br/>
   </div><div class="list">
-    <a class="abs-button abs-button-grey abs-button-small context-new" href="/list/astro-ph.SR/new"  rel="nofollow">new</a>
+    <a class="abs-button abs-button-grey abs-button-small context-new" href="/list/cs.AI/new"  rel="nofollow">new</a>
     <span class="is-hidden-mobile"> | </span>
-    <a class="abs-button abs-button-grey abs-button-small context-recent" href="/list/astro-ph.SR/recent" rel="nofollow">recent</a>
-    <span class="is-hidden-mobile"> | </span><a class="abs-button abs-button-grey abs-button-small context-id" href="/list/astro-ph.SR/2024-01" rel="nofollow">2024-01</a>
+    <a class="abs-button abs-button-grey abs-button-small context-recent" href="/list/cs.AI/recent" rel="nofollow">recent</a>
+    <span class="is-hidden-mobile"> | </span><a class="abs-button abs-button-grey abs-button-small context-id" href="/list/cs.AI/2024-01" rel="nofollow">2024-01</a>
   </div><div class="abs-switch-cat">
     Change to browse by:
     <div class="switch context-change">
-        <a href="/abs/2401.00002?context=astro-ph" rel="nofollow">astro-ph</a><br class="is-hidden-mobile">
-        <a class="subclass" href="/abs/2401.00002?context=astro-ph.HE" rel="nofollow">astro-ph.HE</a><br class="is-hidden-mobile">
+        <a href="/abs/2401.00005?context=cs" rel="nofollow">cs</a><br class="is-hidden-mobile">
     </div>
   </div>
 
@@ -287,11 +280,8 @@ View a PDF of the paper titled Prompt emission of relativistic protons up to GeV
       <div class="extra-ref-cite">
         <h3>References &amp; Citations</h3>
         <ul>
-            <li>
-              <a class="abs-button abs-button-small cite-inspire" href="https://inspirehep.net/arxiv/2401.00002">INSPIRE HEP</a><br/>
-            </li>
-          <li><a  class="abs-button abs-button-small cite-ads" href="https://ui.adsabs.harvard.edu/abs/arXiv:2401.00002">NASA ADS</a></li><li><a  class="abs-button abs-button-small cite-google-scholar" href="https://scholar.google.com/scholar_lookup?arxiv_id=2401.00002" target="_blank" rel="noopener">Google Scholar</a></li>
-          <li><a  class="abs-button abs-button-small cite-semantic-scholar" href="https://api.semanticscholar.org/arXiv:2401.00002" target="_blank" rel="noopener">Semantic Scholar</a></li>
+          <li><a  class="abs-button abs-button-small cite-ads" href="https://ui.adsabs.harvard.edu/abs/arXiv:2401.00005">NASA ADS</a></li><li><a  class="abs-button abs-button-small cite-google-scholar" href="https://scholar.google.com/scholar_lookup?arxiv_id=2401.00005" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a  class="abs-button abs-button-small cite-semantic-scholar" href="https://api.semanticscholar.org/arXiv:2401.00005" target="_blank" rel="noopener">Semantic Scholar</a></li>
         </ul>
         <div style="clear:both;"></div>
       </div>
@@ -316,12 +306,12 @@ View a PDF of the paper titled Prompt emission of relativistic protons up to GeV
         </div>
     </div>
 </div><div class="bookmarks">
-  <div><h3>Bookmark</h3></div><a class="abs-button abs-button-grey abs-button-small" href="http://www.bibsonomy.org/BibtexHandler?requTask=upload&amp;url=https://arxiv.org/abs/2401.00002&amp;description=Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023"
+  <div><h3>Bookmark</h3></div><a class="abs-button abs-button-grey abs-button-small" href="http://www.bibsonomy.org/BibtexHandler?requTask=upload&amp;url=https://arxiv.org/abs/2401.00005&amp;description=Consciousness as a logically consistent and prognostic model of reality"
      title="Bookmark on BibSonomy">
     <img src="/static/browse/0.3.4/images/icons/social/bibsonomy.png"
          alt="BibSonomy logo"/>
   </a>
-  <a class="abs-button abs-button-grey abs-button-small" href="https://reddit.com/submit?url=https://arxiv.org/abs/2401.00002&amp;title=Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023"
+  <a class="abs-button abs-button-grey abs-button-small" href="https://reddit.com/submit?url=https://arxiv.org/abs/2401.00005&amp;title=Consciousness as a logically consistent and prognostic model of reality"
      title="Bookmark on Reddit">
     <img src="/static/browse/0.3.4/images/icons/social/reddit.png"
          alt="Reddit logo"/>
@@ -621,24 +611,7 @@ View a PDF of the paper titled Prompt emission of relativistic protons up to GeV
             <div class="column lab-name">
               <span id="label-for-core">CORE Recommender</span> <em>(<a href="https://core.ac.uk/services/recommender">What is CORE?</a>)</em>
             </div>
-          </div>          <div class="columns is-mobile lab-row">
-            <div class="column lab-switch">
-              <label class="switch">
-                <input id="iarxiv-toggle"
-                       type="checkbox"
-                       class="lab-toggle"
-                       data-script-url="/static/browse/0.3.4/js/iarxiv.js"
-                       aria-labelledby="label-for-iarxiv">
-                <span class="slider"></span>
-                <span class="is-sr-only">IArxiv recommender toggle</span>
-              </label>
-            </div>
-            <div class="column lab-name">
-              <span id="label-for-iarxiv">IArxiv Recommender</span>
-              <em>(<a href="https://iarxiv.org/about">What is IArxiv?</a>)</em>
-            </div>
-          </div>
-</div>
+          </div></div>
         <div id="influenceflower-output"></div>
         <div id="influenceflower-output-graph" style="display:none">
           <ul class="flower-tabs">
@@ -680,7 +653,7 @@ View a PDF of the paper titled Prompt emission of relativistic protons up to GeV
 </div>
 <!-- END LABS AREA -->
   <div class="endorsers">
-    <a href="/auth/show-endorsers/2401.00002" class="endorser-who" rel="nofollow">Which authors of this paper are endorsers?</a> |
+    <a href="/auth/show-endorsers/2401.00005" class="endorser-who" rel="nofollow">Which authors of this paper are endorsers?</a> |
     <a id="mathjax_toggle" href="javascript:setMathjaxCookie()">Disable MathJax</a> (<a href="https://info.arxiv.org/help/mathjax.html">What is MathJax?</a>)
     <span class="help" style="font-style: normal; float: right; margin-top: 0; margin-right: 1em;"></span>
   </div>
