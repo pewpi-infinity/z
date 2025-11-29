@@ -43,7 +43,7 @@ cp -r pewpi-infinity/z/zipcoins/* "$TARGET"/
 echo "[CHAIN] Committing to GitHub..."
 git add .
 git commit -m "Auto: Added new token $NEXT"
-git push origin main
+git push origin master
 
 echo "--------------------------------------------------"
 echo "[CHAIN] Full chain completed and pushed to GitHub."
