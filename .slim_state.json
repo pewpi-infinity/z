@@ -1,0 +1,31 @@
+{
+    "batch_index": 0,
+    "current_batch_hashes": [
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33",
+        "3b7546ed79e3e5a7907381b093c5a182cbf364c5dd0443dfa956c8cca271cc33"
+    ],
+    "processed": [
+        "zip_coin_00001",
+        "zip_coin_00002",
+        "zip_coin_00003",
+        "zip_coin_00004",
+        "zip_coin_00005",
+        "zip_coin_00006",
+        "zip_coin_00007",
+        "zip_coin_00008",
+        "zip_coin_00009",
+        "zip_coin_00010",
+        "zip_coin_00011",
+        "zip_coin_00012"
+    ]
+}
