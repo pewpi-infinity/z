@@ -1,0 +1,3 @@
+zip_coin_index: 7
+total_zipcoins: 18
+hash_label: HASH-3
