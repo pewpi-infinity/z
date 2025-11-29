@@ -3,7 +3,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
-URLS_FILE = "urls.txt"
+URL_FILE = "valid_urls.txt"
 VALID_URLS_FILE = "valid_urls.txt"
 RAW_DIR = "pewpi-infinity/z/raw_sources"
 
