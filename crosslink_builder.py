@@ -5,82 +5,84 @@ import json
 ZIP_DIR = "pewpi-infinity/z/zipcoins"
 
 def load_zipcoins():
+    """Load all zipcoin folders + metadata."""
     coins = []
-    for folder in sorted(os.listdir(ZIP_DIR)):
-        if folder.startswith("zip_coin_"):
-            path = os.path.join(ZIP_DIR, folder, "meta.json")
-            if os.path.exists(path):
-                with open(path, "r") as f:
-                    data = json.load(f)
-                coins.append({
-                    "id": data["id"],
-                    "color": data["color"],
-                    "hash": data["hash"],
-                    "folder": os.path.join(ZIP_DIR, folder)
-                })
+    if not os.path.isdir(ZIP_DIR):
+        print(f"[CROSSLINK ERROR] ZIP_DIR missing: {ZIP_DIR}")
+        return coins
+
+    for name in sorted(os.listdir(ZIP_DIR)):
+        path = os.path.join(ZIP_DIR, name)
+        if not os.path.isdir(path):
+            continue
+
+        meta_file = os.path.join(path, "meta.json")
+        if not os.path.isfile(meta_file):
+            print(f"[CROSSLINK WARNING] Missing meta.json in {name}")
+            continue
+
+        try:
+            with open(meta_file, "r", encoding="utf-8") as f:
+                meta = json.load(f)
+
+            # FIX: your meta uses "coin_id" not "id"
+            coins.append({
+                "id": meta["coin_id"],     # <‑‑ use your field
+                "folder": path,
+                "index": int(meta["coin_id"].split("_")[-1]),
+            })
+
+        except Exception as e:
+            print(f"[CROSSLINK ERROR] Bad meta.json in {name}: {e}")
+
     return coins
 
-def build_html(coin, all_coins):
-    nav_links = ""
-    for c in all_coins:
-        if c["id"] != coin["id"]:
-            nav_links += (
-                f"<div style='padding:4px;'>"
-                f"<a href='../{c['id']}/compiled.html' "
-                f"style='color: #{c['color']}; font-weight: bold;'>"
-                f"{c['id']} (#{c['color']})"
-                f"</a></div>\n"
-            )
 
-    original_path = os.path.join(coin["folder"], "original.txt")
-    with open(original_path, "r", encoding="utf-8", errors="ignore") as f:
-        body = f.read().replace("\n", "<br>")
+def build_html_for(coin, all_ids):
+    """Build HTML navigation + compiled text."""
+    compiled_file = os.path.join(coin["folder"], "compiled.txt")
+    try:
+        with open(compiled_file, "r", encoding="utf-8") as f:
+            body = f.read()
+    except:
+        body = "[NO COMPILED TEXT]"
 
-    html = f"""
-<html>
-<head>
-<title>{coin['id']}</title>
-<style>
-body {{
-    font-family: Arial;
-    padding: 20px;
-}}
-.nav {{
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-}}
-</style>
-</head>
-<body>
-<h1>{coin['id']}</h1>
-<h3>Color Key: <span style="color: #{coin['color']};">#{coin['color']}</span></h3>
-<div class="nav">
-<h3>Cross‑Links</h3>
-{nav_links}
-</div>
-<div>
-<h3>Article</h3>
-<p>{body}</p>
-</div>
-</body>
-</html>
-"""
+    nav = "<h3>Zipcoin Navigation</h3><ul>"
+    for cid in all_ids:
+        nav += f"<li><a href='../{cid}/compiled.html'>{cid}</a></li>"
+    nav += "</ul><hr>"
+
+    html = (
+        "<html><head><meta charset='utf-8'>"
+        f"<title>{coin['id']}</title></head><body>"
+        f"{nav}<pre>{body}</pre></body></html>"
+    )
+
     return html
+
 
 def main():
     print("[CROSSLINK] Loading zipcoins...")
     coins = load_zipcoins()
+    if not coins:
+        print("[CROSSLINK] No zipcoins found.")
+        return
+
+    all_ids = [c["id"] for c in coins]
+
+    print("[CROSSLINK] Building cross‑linked compiled.html...")
 
     for coin in coins:
-        html = build_html(coin, coins)
-        outpath = os.path.join(coin["folder"], "compiled.html")
-        with open(outpath, "w", encoding="utf-8", errors="ignore") as f:
+        html = build_html_for(coin, all_ids)
+        out = os.path.join(coin["folder"], "compiled.html")
+        with open(out, "w", encoding="utf-8", errors="ignore") as f:
             f.write(html)
 
         print(f"[CROSSLINK] Added navigation + compiled HTML to {coin['id']}")
 
     print("[CROSSLINK] All zipcoins updated successfully.")
 
+
 if __name__ == "__main__":
     main()
+

@@ -1,80 +1,111 @@
 #!/data/data/com.termux/files/usr/bin/python3
 import os
 import json
-import hashlib
 
+# Where the raw scraped text lives
 RAW_DIR = "pewpi-infinity/z/raw_sources"
+
+# Where we write zipcoins
 ZIP_DIR = "pewpi-infinity/z/zipcoins"
 
 os.makedirs(ZIP_DIR, exist_ok=True)
 
-def sha(text):
-    return hashlib.sha256(text.encode("utf-8", errors="ignore")).hexdigest()
 
-def build_zipcoin(index, text):
-    """Creates a structured zipcoin with:
-       - id
-       - color hash
-       - metadata
-       - article body
+def load_raw_files():
+    """Return list of (path, text) for all raw_XXXXX.txt files."""
+    files = []
+    if not os.path.isdir(RAW_DIR):
+        print(f"[ZIPCOIN ERROR] RAW_DIR missing: {RAW_DIR}")
+        return files
+
+    for name in sorted(os.listdir(RAW_DIR)):
+        if not name.startswith("raw_") or not name.endswith(".txt"):
+            continue
+        path = os.path.join(RAW_DIR, name)
+        try:
+            with open(path, "r", encoding="utf-8", errors="ignore") as f:
+                text = f.read().strip()
+        except Exception as e:
+            print(f"[ZIPCOIN ERROR] Could not read {path}: {e}")
+            continue
+
+        if not text:
+            print(f"[ZIPCOIN WARNING] Empty raw file: {path}")
+            continue
+
+        files.append((path, text))
+    return files
+
+
+def simple_compile(text: str) -> str:
     """
+    Very simple 'compiled' version of the text.
+    For now we just normalize whitespace and truncate to a sane length.
+    You can replace this with something fancier later.
+    """
+    text = " ".join(text.split())
+    # keep first ~4000 chars so files don't explode
+    return text[:4000]
 
-    coin_id = f"zip_coin_{index:05d}"
-    folder = os.path.join(ZIP_DIR, coin_id)
-    os.makedirs(folder, exist_ok=True)
 
-    # Color key based on deterministic hash of content
-    color_code = sha(text)[:6]
+def build_zipcoin(index: int, raw_path: str, text: str):
+    """Build a single zipcoin folder with original + compiled text + meta."""
+    coin_name = f"zip_coin_{index:05d}"
+    out_dir = os.path.join(ZIP_DIR, coin_name)
+    os.makedirs(out_dir, exist_ok=True)
 
-    metadata = {
-        "id": coin_id,
-        "color": color_code,
-        "source_length": len(text),
-        "hash": sha(text)
-    }
+    compiled_text = simple_compile(text)
 
-    # Save metadata
-    with open(os.path.join(folder, "meta.json"), "w") as f:
-        json.dump(metadata, f, indent=4)
+    # Very basic HTML wrapper
+    html = (
+        "<html><head><meta charset='utf-8'>"
+        f"<title>{coin_name}</title></head><body><pre>"
+        f"{compiled_text}"
+        "</pre></body></html>"
+    )
 
-    # Save raw original
-    with open(os.path.join(folder, "original.txt"), "w", encoding="utf-8", errors="ignore") as f:
+    # Save original text
+    with open(os.path.join(out_dir, "original.txt"), "w",
+              encoding="utf-8", errors="ignore") as f:
         f.write(text)
 
-    # Build compiled article
-    compiled = f"""
-# ZIP COIN {index}
+    # Save compiled text
+    with open(os.path.join(out_dir, "compiled.txt"), "w",
+              encoding="utf-8", errors="ignore") as f:
+        f.write(compiled_text)
 
-Color: #{color_code}
+    # Save compiled HTML
+    with open(os.path.join(out_dir, "compiled.html"), "w",
+              encoding="utf-8", errors="ignore") as f:
+        f.write(html)
 
----
+    # Save meta
+    meta = {
+        "coin_id": coin_name,
+        "raw_file": os.path.basename(raw_path),
+        "raw_path": raw_path,
+    }
+    with open(os.path.join(out_dir, "meta.json"), "w",
+              encoding="utf-8", errors="ignore") as f:
+        json.dump(meta, f, indent=2)
 
-{text}
-"""
+    print(f"[ZIPCOIN] Built {coin_name}")
 
-    with open(os.path.join(folder, "compiled.txt"), "w", encoding="utf-8", errors="ignore") as f:
-        f.write(compiled)
-
-    print(f"[ZIPCOIN] Built {coin_id}")
-
-def load_raw_sources():
-    files = sorted(os.listdir(RAW_DIR))
-    txts = []
-    for fname in files:
-        if fname.endswith(".txt"):
-            path = os.path.join(RAW_DIR, fname)
-            with open(path, "r", encoding="utf-8", errors="ignore") as f:
-                txts.append(f.read())
-    return txts
 
 def main():
     print("[ZIPCOIN] Building zipcoins...")
-    raw = load_raw_sources()
+    raw_files = load_raw_files()
 
-    for i, text in enumerate(raw, start=1):
-        build_zipcoin(i, text)
+    if not raw_files:
+        print("[ZIPCOIN] No raw sources found. Nothing to do.")
+        return
 
-    print("[ZIPCOIN] All zipcoins built → pewpi-infinity/z/zipcoins")
+    for idx, (path, text) in enumerate(raw_files, start=1):
+        build_zipcoin(idx, path, text)
+
+    print(f"[ZIPCOIN] All zipcoins built → {ZIP_DIR}")
+
 
 if __name__ == "__main__":
     main()
+
