@@ -2,12 +2,16 @@
 import os
 import json
 
+# Raw scraped papers go here
 RAW_DIR = "pewpi-infinity/z/raw_sources"
-ZIP_DIR = "pewpi-infinity/z/zipcoins"
 
+# New zipcoin outputs go here
+ZIP_DIR = "pewpi-infinity/z/zipcoins"
 os.makedirs(ZIP_DIR, exist_ok=True)
 
+
 def load_raw_files():
+    """Return list of (path, text) for all raw_XXXXX.txt files."""
     files = []
     if not os.path.isdir(RAW_DIR):
         print(f"[ZIPCOIN ERROR] RAW_DIR missing: {RAW_DIR}")
@@ -30,21 +34,26 @@ def load_raw_files():
             continue
 
         files.append((path, text))
+
     return files
 
 
 def simple_compile(text: str) -> str:
-    text = " ".join(text.split())
-    return text[:4000]
+    """Simple cleaner; you can replace with advanced compiler later."""
+    text = " ".join(text.split())  # normalize whitespace
+    return text[:4000]  # keep first 4k chars for safety
 
 
 def build_zipcoin(index: int, raw_path: str, text: str):
+    """Build a single zipcoin folder with original + compiled text + meta."""
     coin_name = f"zip_coin_{index:05d}"
     out_dir = os.path.join(ZIP_DIR, coin_name)
     os.makedirs(out_dir, exist_ok=True)
 
+    # Compile text
     compiled_text = simple_compile(text)
 
+    # Build HTML version
     html = (
         "<html><head><meta charset='utf-8'>"
         f"<title>{coin_name}</title></head><body><pre>"
@@ -52,26 +61,27 @@ def build_zipcoin(index: int, raw_path: str, text: str):
         "</pre></body></html>"
     )
 
+    # Save original
     with open(os.path.join(out_dir, "original.txt"), "w",
               encoding="utf-8", errors="ignore") as f:
         f.write(text)
 
+    # Save compiled
     with open(os.path.join(out_dir, "compiled.txt"), "w",
               encoding="utf-8", errors="ignore") as f:
         f.write(compiled_text)
 
+    # Save HTML
     with open(os.path.join(out_dir, "compiled.html"), "w",
               encoding="utf-8", errors="ignore") as f:
         f.write(html)
 
-    # ★★ FIXED META FORMAT ★★
+    # Save META — **THIS IS THE IMPORTANT FIX**
     meta = {
         "id": coin_name,
-        "original": "original.txt",
-        "compiled": "compiled.txt",
-        "html": "compiled.html"
+        "raw_file": os.path.basename(raw_path),
+        "raw_path": raw_path,
     }
-
     with open(os.path.join(out_dir, "meta.json"), "w",
               encoding="utf-8", errors="ignore") as f:
         json.dump(meta, f, indent=2)
