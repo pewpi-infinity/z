@@ -1,748 +1,1016 @@
-<!DOCTYPE html>
-<html lang="en">
+Audit and feedback to change diagnostic image ordering practices: A systematic review and meta-analysis | PLOS One
+Skip to main content
+Advertisement
+PLOS One
+Publish
+Submissions
+Getting Started
+Submission Guidelines
+Figures
+Tables
+Supporting Information
+LaTeX
+What We Publish
+Preprints
+Revising Your Manuscript
+Submit Now
+Calls for Papers
+Policies
+Best Practices in Research Reporting
+Human Subjects Research
+Animal Research
+Competing Interests
+Disclosure of Funding Sources
+Licenses and Copyright
+Data Availability
+Complementary Research
+Materials, Software and Code Sharing
+Ethical Publishing Practice
+Authorship
+Corrections, Expressions of Concern, and Retractions
+Manuscript Review and Publication
+Criteria for Publication
+Editorial and Peer Review Process
+Editor Center
+Resources for Editors
+Guidelines for Reviewers
+Accepted Manuscripts
+Comments
+Submit Your Manuscript
+Discover a faster, simpler path to publishing in a high-quality journal.
+PLOS ONE
+promises fair, rigorous peer review,
+  broad scope, and wide readership – a perfect fit for your research every time.
+Learn More
+Submit Now
+About
+Why Publish with PLOS ONE
+Journal Information
+Staff Editors
+Editorial Board
+Section Editors
+Advisory Groups
+Find and Read Articles
+Publishing Information
+Publication Fees
+Press and Media
+Contact
+Browse
+Search
+Search
+advanced search
+Browse Subject Areas
+?
+Click through the PLOS taxonomy to find articles in your field.
+For more information about PLOS Subject Areas, click
+here
+.
+Loading metrics
+Open Access
+Peer-reviewed
+Research Article
+Audit and feedback to change diagnostic image ordering practices: A systematic review and meta-analysis
+Oluwatosin Badejo,
+Roles
+Conceptualization,
 
-<head>  <title>[2401.00002] Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/static/browse/0.3.4/images/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/static/browse/0.3.4/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/static/browse/0.3.4/images/icons/favicon-16x16.png">
-  <link rel="manifest" href="/static/browse/0.3.4/images/icons/site.webmanifest">
-  <link rel="mask-icon" href="/static/browse/0.3.4/images/icons/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" type="text/css" media="screen" href="/static/browse/0.3.4/css/arXiv.css?v=20241206" />
-  <link rel="stylesheet" type="text/css" media="print" href="/static/browse/0.3.4/css/arXiv-print.css?v=20200611" />
-  <link rel="stylesheet" type="text/css" media="screen" href="/static/browse/0.3.4/css/browse_search.css" />
-  <script language="javascript" src="/static/browse/0.3.4/js/accordion.js" ></script>
-  <script language="javascript" src="/static/browse/0.3.4/js/optin-modal.js?v=20250819"></script>
-  
-  <link rel="canonical" href="https://arxiv.org/abs/2401.00002"/>
-  <meta name="description" content="Abstract page for arXiv paper 2401.00002: Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023"><meta property="og:type" content="website" />
-<meta property="og:site_name" content="arXiv.org" />
-<meta property="og:title" content="Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023" />
-<meta property="og:url" content="https://arxiv.org/abs/2401.00002v1" />
-<meta property="og:image" content="/static/browse/0.3.4/images/arxiv-logo-fb.png" />
-<meta property="og:image:secure_url" content="/static/browse/0.3.4/images/arxiv-logo-fb.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="700" />
-<meta property="og:image:alt" content="arXiv logo"/>
-<meta property="og:description" content="We show evidence of particle acceleration at GEV energies associated directly with protons from the prompt emission of a long-duration M6-class solar flare on July 17, 2023, rather than from protons acceleration by shocks from its associated Coronal Mass Ejection (CME), which erupted with a speed of 1342 km/s. Solar Energetic Particles (SEP) accelerated by the blast have reached Earth, up to an almost S3 (strong) category of a radiation storm on the NOAA scale. Also, we show a temporal correlation between the fast rising of GOES-16 proton and muon excess at ground level in the count rate of the New-Tupi muon detector at the central SAA region. A Monte Carlo spectral analysis based on muon excess at New-Tupi is consistent with the acceleration of electrons and protons (ions) up to relativistic energies (GeV energy range) in the impulsive phase of the flare. In addition, we present another two marginal particle excesses (with low confidence) at ground-level detectors in correlation with the solar flare prompt emission."/>
-<meta name="twitter:site" content="@arxiv"/>
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Prompt emission of relativistic protons up to GeV energies from..."/>
-<meta name="twitter:description" content="We show evidence of particle acceleration at GEV energies associated directly with protons from the prompt emission of a long-duration M6-class solar flare on July 17, 2023, rather than from..."/>
-<meta name="twitter:image" content="https://static.arxiv.org/icons/twitter/arxiv-logo-twitter-square.png"/>
-<meta name="twitter:image:alt" content="arXiv logo"/>
-  <link rel="stylesheet" media="screen" type="text/css" href="/static/browse/0.3.4/css/tooltip.css"/><link rel="stylesheet" media="screen" type="text/css" href="https://static.arxiv.org/js/bibex-dev/bibex.css?20200709"/>  <script src="/static/browse/0.3.4/js/mathjaxToggle.min.js" type="text/javascript"></script>  <script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-  <script src="//cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" type="text/javascript"></script>
-  <script src="//cdn.jsdelivr.net/npm/dompurify@2.3.5/dist/purify.min.js"></script>
-  <script src="/static/browse/0.3.4/js/toggle-labs.js?20241022" type="text/javascript"></script>
-  <script src="/static/browse/0.3.4/js/cite.js" type="text/javascript"></script><meta name="citation_title" content="Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023" /><meta name="citation_author" content="Navia, Carlos" /><meta name="citation_author" content="Oliveira, Marcel" /><meta name="citation_author" content="Nepomuceno, Andre" /><meta name="citation_doi" content="10.1007/s13538-024-01629-1" /><meta name="citation_date" content="2023/11/28" /><meta name="citation_online_date" content="2023/11/28" /><meta name="citation_pdf_url" content="https://arxiv.org/pdf/2401.00002" /><meta name="citation_arxiv_id" content="2401.00002" /><meta name="citation_abstract" content="We show evidence of particle acceleration at GEV energies associated directly with protons from the prompt emission of a long-duration M6-class solar flare on July 17, 2023, rather than from protons acceleration by shocks from its associated Coronal Mass Ejection (CME), which erupted with a speed of 1342 km/s. Solar Energetic Particles (SEP) accelerated by the blast have reached Earth, up to an almost S3 (strong) category of a radiation storm on the NOAA scale. Also, we show a temporal correlation between the fast rising of GOES-16 proton and muon excess at ground level in the count rate of the New-Tupi muon detector at the central SAA region. A Monte Carlo spectral analysis based on muon excess at New-Tupi is consistent with the acceleration of electrons and protons (ions) up to relativistic energies (GeV energy range) in the impulsive phase of the flare. In addition, we present another two marginal particle excesses (with low confidence) at ground-level detectors in correlation with the solar flare prompt emission." />
-</head>
+    Formal analysis,
 
-<body  class="with-cu-identity">
-  
-  
-  <div class="flex-wrap-footer">
-    <header>
-      <a href="#content" class="is-sr-only">Skip to main content</a>
-      <!-- start desktop header -->
-      <div class="columns is-vcentered is-hidden-mobile" id="cu-identity">
-        <div class="column" id="cu-logo">
-          <a href="https://www.cornell.edu/"><img src="/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg" alt="Cornell University" /></a>
-        </div><!-- /from April 7 at 1:00 AM to May 29 at 21:40 --><!-- /from May 2 at 1:00 AM to May 5 at 9:45 AM --><div class="column" id="support-ack">
-          <span id="support-ack-url">We gratefully acknowledge support from the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors.</span>
-          <a href="https://info.arxiv.org/about/donate.html" class="btn-header-donate">Donate</a>
-        </div>
-      </div>
+    Methodology,
 
-      <div id="header" class="is-hidden-mobile">
-<a aria-hidden="true" tabindex="-1" href="/IgnoreMe"></a>
-  <div class="header-breadcrumbs is-hidden-mobile">
-    <a href="/"><img src="/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg" alt="arxiv logo" style="height:40px;"/></a> <span>&gt;</span> <a href="/list/astro-ph/recent">astro-ph</a> <span>&gt;</span> arXiv:2401.00002
-  </div>
+    Writing – original draft,
 
-        <div class="columns is-vcentered is-mobile" style="justify-content: flex-end;">
-        </div>
+    Writing – review & editing
+Affiliation
+Primary Healthcare Research Unit, Faculty of Medicine, Memorial University of Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada
+https://orcid.org/0000-0002-9498-7947
+⨯
+Maria Saleeb,
+Roles
+Investigation,
 
-          <div class="search-block level-right">
-    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
-      <div class="field has-addons">
-        <div class="control">
-          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
-          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
-        </div>
-        <div class="control">
-          <div class="select is-small">
-            <select name="searchtype" aria-label="Field to search">
-              <option value="all" selected="selected">All fields</option>
-              <option value="title">Title</option>
-              <option value="author">Author</option>
-              <option value="abstract">Abstract</option>
-              <option value="comments">Comments</option>
-              <option value="journal_ref">Journal reference</option>
-              <option value="acm_class">ACM classification</option>
-              <option value="msc_class">MSC classification</option>
-              <option value="report_num">Report number</option>
-              <option value="paper_id">arXiv identifier</option>
-              <option value="doi">DOI</option>
-              <option value="orcid">ORCID</option>
-              <option value="author_id">arXiv author ID</option>
-              <option value="help">Help pages</option>
-              <option value="full_text">Full text</option>
-            </select>
-          </div>
-        </div>
-        <input type="hidden" name="source" value="header">
-        <button class="button is-small is-cul-darker">Search</button>
-      </div>
-    </form>
-  </div>
-     </div><!-- /end desktop header -->
+    Methodology,
 
-      <div class="mobile-header">
-        <div class="columns is-mobile">
-          <div class="column logo-arxiv"><a href="https://arxiv.org/"><img src="/static/browse/0.3.4/images/arxiv-logomark-small-white.svg" alt="arXiv logo" style="height:60px;" /></a></div>
-          <div class="column logo-cornell"><a href="https://www.cornell.edu/">
-            <picture>
-              <source media="(min-width: 501px)"
-                srcset="/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg  400w"
-                sizes="400w" />
-              <source srcset="/static/browse/0.3.4/images/icons/cu/cornell_seal_simple_black.svg 2x" />
-              <img src="/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg" alt="Cornell University Logo" />
-            </picture>
-          </a></div>
-          <div class="column nav" id="toggle-container" role="menubar">
-            <button class="toggle-control"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-white"><title>open search</title><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></button>
-            <div class="mobile-toggle-block toggle-target">
-              <form class="mobile-search-form" method="GET" action="https://arxiv.org/search">
-                <div class="field has-addons">
-                  <input class="input" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
-                  <input type="hidden" name="source" value="header">
-                  <input type="hidden" name="searchtype" value="all">
-                  <button class="button">GO</button>
-                </div>
-              </form>
-            </div>
+    Writing – original draft,
 
-            <button class="toggle-control"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-white" role="menu"><title>open navigation menu</title><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/ ></svg></button>
-            <div class="mobile-toggle-block toggle-target">
-              <nav class="mobile-menu" aria-labelledby="mobilemenulabel">
-                <h2 id="mobilemenulabel">quick links</h2>
-                <ul>
-                    <li><a href="https://arxiv.org/login">Login</a></li>
-                    <li><a href="https://info.arxiv.org/help">Help Pages</a></li>
-                    <li><a href="https://info.arxiv.org/about">About</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div><!-- /end mobile-header -->
-    </header>
+    Writing – review & editing
+Affiliation
+Primary Healthcare Research Unit, Faculty of Medicine, Memorial University of Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada
+⨯
+Amanda Hall,
+Roles
+Conceptualization,
 
-    <main>
-      <div id="content">
-<!--
-rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:dc="http://purl.org/dc/elements/1.1/"
-         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
-    <rdf:Description
-        rdf:about="/abs/2401.00002"
-        dc:identifier="/abs/2401.00002"
-        dc:title="Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023"
-        trackback:ping="/trackback/2401.00002" />
-    </rdf:RDF>
---><div id="abs-outer">
+    Methodology,
 
-  <div class="leftcolumn">
-    <div class="subheader">
-      <h1>Astrophysics > Solar and Stellar Astrophysics</h1>
-    </div>
+    Supervision,
 
-    <div class="header-breadcrumbs-mobile">
-      <strong>arXiv:2401.00002</strong> (astro-ph)
-    </div>
-<link rel="stylesheet" type="text/css" href="/static/base/1.0.1/css/abs.css">
-<div id="content-inner">
-  <div id="abs">
-    <div class="dateline">
-  [Submitted on 28 Nov 2023]</div>
-    <h1 class="title mathjax"><span class="descriptor">Title:</span>Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023</h1>
-    <div class="authors"><span class="descriptor">Authors:</span><a href="https://arxiv.org/search/astro-ph?searchtype=author&amp;query=Navia,+C" rel="nofollow">Carlos Navia</a>, <a href="https://arxiv.org/search/astro-ph?searchtype=author&amp;query=Oliveira,+M" rel="nofollow">Marcel Oliveira</a>, <a href="https://arxiv.org/search/astro-ph?searchtype=author&amp;query=Nepomuceno,+A" rel="nofollow">Andre Nepomuceno</a></div>            <div id="download-button-info" hidden>View a PDF of the paper titled Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023, by Carlos Navia and 2 other authors</div>
-    <a class="mobile-submission-download" href="/pdf/2401.00002">View PDF</a>
-    <a class="mobile-submission-download" href="https://arxiv.org/html/2401.00002v1">HTML (experimental)</a>
+    Writing – review & editing
+Affiliations
+Primary Healthcare Research Unit, Faculty of Medicine, Memorial University of Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada, 
+    Population Health and Applied Health Sciences, Faculty of Medicine, Memorial University of Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada
+⨯
+Bradley Furlong,
+Roles
+Conceptualization,
 
+    Writing – review & editing
+Affiliation
+Primary Healthcare Research Unit, Faculty of Medicine, Memorial University of Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada
+⨯
+Gabrielle S. Logan,
+Roles
+Writing – review & editing
+Affiliation
+Primary Healthcare Research Unit, Faculty of Medicine, Memorial University of Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada
+https://orcid.org/0000-0001-7007-9373
+⨯
+Zhiwei Gao,
+Roles
+Conceptualization,
 
+    Methodology,
 
-    <blockquote class="abstract mathjax">
-            <span class="descriptor">Abstract:</span>We show evidence of particle acceleration at GEV energies associated directly with protons from the prompt emission of a long-duration M6-class solar flare on July 17, 2023, rather than from protons acceleration by shocks from its associated Coronal Mass Ejection (CME), which erupted with a speed of 1342 km/s. Solar Energetic Particles (SEP) accelerated by the blast have reached Earth, up to an almost S3 (strong) category of a radiation storm on the NOAA scale. Also, we show a temporal correlation between the fast rising of GOES-16 proton and muon excess at ground level in the count rate of the New-Tupi muon detector at the central SAA region. A Monte Carlo spectral analysis based on muon excess at New-Tupi is consistent with the acceleration of electrons and protons (ions) up to relativistic energies (GeV energy range) in the impulsive phase of the flare. In addition, we present another two marginal particle excesses (with low confidence) at ground-level detectors in correlation with the solar flare prompt emission.
-    </blockquote>
+    Writing – review & editing
+Affiliation
+Population Health and Applied Health Sciences, Faculty of Medicine, Memorial University of Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada
+⨯
+Brendan Barrett,
+Roles
+Methodology,
 
-    <!--CONTEXT-->
-    <div class="metatable">
-      <table summary="Additional metadata">        <tr>
-          <td class="tablecell label">Comments:</td>
-          <td class="tablecell comments mathjax">8 pages,8 figures</td>
-        </tr>
-<tr>
-          <td class="tablecell label">Subjects:</td>
-          <td class="tablecell subjects">
-            <span class="primary-subject">Solar and Stellar Astrophysics (astro-ph.SR)</span>; High Energy Astrophysical Phenomena (astro-ph.HE)</td>
-        </tr><tr>
-          <td class="tablecell label">Cite as:</td>
-          <td class="tablecell arxivid"><span class="arxivid"><a href="https://arxiv.org/abs/2401.00002">arXiv:2401.00002</a> [astro-ph.SR]</span></td>
-        </tr>
-        <tr>
-          <td class="tablecell label">&nbsp;</td>
-          <td class="tablecell arxividv">(or <span class="arxivid">
-              <a href="https://arxiv.org/abs/2401.00002v1">arXiv:2401.00002v1</a> [astro-ph.SR]</span> for this version)
-          </td>
-        </tr>
-        <tr>
-          <td class="tablecell label">&nbsp;</td>
-          <td class="tablecell arxivdoi">              <a href="https://doi.org/10.48550/arXiv.2401.00002"  id="arxiv-doi-link">https://doi.org/10.48550/arXiv.2401.00002</a><div class="button-and-tooltip">
-              <button class="more-info" aria-describedby="more-info-desc-1">
-                <svg height="15" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z" class=""></path></svg>
-                <span class="visually-hidden">Focus to learn more</span>
-              </button>
-              <!-- tooltip description -->
-              <div role="tooltip" id="more-info-desc-1">
-                <span class="left-corner"></span>                  arXiv-issued DOI via DataCite</div>
-            </div>
-          </td>
-        </tr>        <tr>
-          <td class="tablecell label">Journal&nbsp;reference:</td>
-          <td class="tablecell jref">Braz J Phys 54, 249 (2024)</td>
-        </tr>
-        <tr>
-          <td class="tablecell label">
-            <abbr title="Digital Object Identifier">Related DOI</abbr>:
-          </td>
-          <td class="tablecell doi"><a href="https://doi.org/10.1007/s13538-024-01629-1" data-doi="10.1007/s13538-024-01629-1" class="link-https link-external" rel="external noopener nofollow">https://doi.org/10.1007/s13538-024-01629-1</a>
+    Supervision,
 
-            <!-- accessible tooltip example -->
-            <div class="button-and-tooltip">
-              <button class="more-info" aria-describedby="more-info-desc-1">
-                <svg height="15" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z" class=""></path></svg>
-                <span class="visually-hidden">Focus to learn more</span>
-              </button>
-              <!-- tooltip description -->
-              <div role="tooltip" id="more-info-desc-1">
-                <span class="left-corner"></span>
-                DOI(s) linking to related resources
-              </div>
-            </div>
-          </td>
-        </tr>
-</table>
-    </div>
-  </div>
-</div>
-    <div class="submission-history">
-      <h2>Submission history</h2> From: Andre Nepomuceno Asevedo [<a href="/show-email/6c813fde/2401.00002" rel="nofollow">view email</a>]      <br/>    <strong>[v1]</strong>
-        Tue, 28 Nov 2023 14:55:21 UTC (3,723 KB)<br/>
-</div>
-  </div>
-  <!--end leftcolumn-->
-<div class="extra-services">    <div class="full-text">
-      <a name="other"></a>
-      <span class="descriptor">Full-text links:</span>
-      <h2>Access Paper:</h2>
-      <ul>
-  <div id="download-button-info" hidden>
-View a PDF of the paper titled Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023, by Carlos Navia and 2 other authors</div><li><a href="/pdf/2401.00002" aria-describedby="download-button-info" accesskey="f" class="abs-button download-pdf">View PDF</a></li><li><a href="https://arxiv.org/html/2401.00002v1" class="abs-button" id="latexml-download-link">HTML (experimental)</a></li><li><a href="/src/2401.00002" class="abs-button download-eprint">TeX Source
- </a></li></ul>
-      <div class="abs-license"><a href="http://creativecommons.org/licenses/by/4.0/" title="Rights to this article" class="has_license">
-          <img alt="license icon" role="presentation" src="https://arxiv.org/icons/licenses/by-4.0.png"/>
-          <span>view license</span>
-        </a></div>
-    </div>
-    <!--end full-text-->    <div class="browse">
-    Current browse context: <div class="current">astro-ph.SR</div>
+    Writing – review & editing
+Affiliations
+Population Health and Applied Health Sciences, Faculty of Medicine, Memorial University of Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada, 
+    Discipline of Medicine, Faculty of Medicine, Memorial University of Newfoundland, Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada
+⨯
+Lindsay Alcock,
+Roles
+Methodology,
 
-  <div class="prevnext">
-<span class="arrow">
-      <a class="abs-button prev-url" href="/prevnext?id=2401.00002&amp;function=prev&amp;context=astro-ph.SR"
-         accesskey="p" title="previous in astro-ph.SR (accesskey p)" rel="nofollow">&lt;&nbsp;prev</a>
-    </span>
-    <span class="is-hidden-mobile">&nbsp; | &nbsp;</span>    <span class="arrow">
-      <a class="abs-button next-url" href="/prevnext?id=2401.00002&amp;function=next&amp;context=astro-ph.SR" accesskey="n"
-         title="next in astro-ph.SR (accesskey n)"  rel="nofollow">next&nbsp;&gt;</a>
-    </span><br/>
-  </div><div class="list">
-    <a class="abs-button abs-button-grey abs-button-small context-new" href="/list/astro-ph.SR/new"  rel="nofollow">new</a>
-    <span class="is-hidden-mobile"> | </span>
-    <a class="abs-button abs-button-grey abs-button-small context-recent" href="/list/astro-ph.SR/recent" rel="nofollow">recent</a>
-    <span class="is-hidden-mobile"> | </span><a class="abs-button abs-button-grey abs-button-small context-id" href="/list/astro-ph.SR/2024-01" rel="nofollow">2024-01</a>
-  </div><div class="abs-switch-cat">
-    Change to browse by:
-    <div class="switch context-change">
-        <a href="/abs/2401.00002?context=astro-ph" rel="nofollow">astro-ph</a><br class="is-hidden-mobile">
-        <a class="subclass" href="/abs/2401.00002?context=astro-ph.HE" rel="nofollow">astro-ph.HE</a><br class="is-hidden-mobile">
-    </div>
-  </div>
+    Resources,
 
-    </div>
-      <div class="extra-ref-cite">
-        <h3>References &amp; Citations</h3>
-        <ul>
-            <li>
-              <a class="abs-button abs-button-small cite-inspire" href="https://inspirehep.net/arxiv/2401.00002">INSPIRE HEP</a><br/>
-            </li>
-          <li><a  class="abs-button abs-button-small cite-ads" href="https://ui.adsabs.harvard.edu/abs/arXiv:2401.00002">NASA ADS</a></li><li><a  class="abs-button abs-button-small cite-google-scholar" href="https://scholar.google.com/scholar_lookup?arxiv_id=2401.00002" target="_blank" rel="noopener">Google Scholar</a></li>
-          <li><a  class="abs-button abs-button-small cite-semantic-scholar" href="https://api.semanticscholar.org/arXiv:2401.00002" target="_blank" rel="noopener">Semantic Scholar</a></li>
-        </ul>
-        <div style="clear:both;"></div>
-      </div>
+    Validation
+Affiliation
+Health Sciences Library, Memorial University of Newfoundland and Labrador, Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada
+⨯
+Kris Aubrey-Bassler
+Roles
+Conceptualization,
 
-<div class='extra-ref-cite'>
-    <span id='bib-cite-trigger' class="bib-cite-button abs-button">export BibTeX citation</span>
-    <span id='bib-cite-loading' hidden='true'>Loading...</span>
-</div>
+    Methodology,
 
-<div id='bib-cite-modal' class='bib-modal' hidden='true'>
-    <div class='bib-modal-content'>
-        <div class='bib-modal-title'>
-            <h2>BibTeX formatted citation</h2>
-            <span class='bib-modal-close' >&times;</span>
-        </div>
-        <div>
-            <textarea id='bib-cite-target' class="bib-citation-content" aria-label="loading the citation">loading...</textarea>
-        </div>
-        <div>
-            <span>Data provided by: </span>
-            <a id='bib-cite-source-api'></a>
-        </div>
-    </div>
-</div><div class="bookmarks">
-  <div><h3>Bookmark</h3></div><a class="abs-button abs-button-grey abs-button-small" href="http://www.bibsonomy.org/BibtexHandler?requTask=upload&amp;url=https://arxiv.org/abs/2401.00002&amp;description=Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023"
-     title="Bookmark on BibSonomy">
-    <img src="/static/browse/0.3.4/images/icons/social/bibsonomy.png"
-         alt="BibSonomy logo"/>
-  </a>
-  <a class="abs-button abs-button-grey abs-button-small" href="https://reddit.com/submit?url=https://arxiv.org/abs/2401.00002&amp;title=Prompt emission of relativistic protons up to GeV energies from M6.4-class solar flare on July 17, 2023"
-     title="Bookmark on Reddit">
-    <img src="/static/browse/0.3.4/images/icons/social/reddit.png"
-         alt="Reddit logo"/>
-  </a>
-</div>  </div>
-  <!--end extra-services-->
-<!-- LABS AREA -->
-<div id="labstabs">
-  <div class="labstabs"><input type="radio" name="tabs" id="tabone"checked="checked">
-    <label for="tabone">Bibliographic Tools</label>
-    <div class="tab labs-display-bib">
-      <h1>Bibliographic and Citation Tools</h1>
-      <div class="toggle">
-        <div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input id="bibex-toggle" type="checkbox" class="lab-toggle"
-                     data-script-url="/static/browse/0.3.4/bibex/bibex.js?20241202">
-              <span class="slider"></span>
-              <span class="is-sr-only">Bibliographic Explorer Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-bibex">Bibliographic Explorer</span> <em>(<a href="https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer">What is the Explorer?</a>)</em>
-          </div>
-        </div>
-        <div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input
-                id="connectedpapers-toggle"
-                type="checkbox"
-                class="lab-toggle"
-                data-script-url="/static/browse/0.3.4/js/connectedpapers.js"
-                aria-labelledby="label-for-connected-papers">
-              <span class="slider"></span>
-              <span class="is-sr-only">Connected Papers Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-connected-papers">Connected Papers</span> <em>(<a href="https://www.connectedpapers.com/about" target="_blank">What is Connected Papers?</a>)</em>
-          </div>
-        </div><div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input
-                id="litmaps-toggle"
-                type="checkbox"
-                class="lab-toggle"
-                data-script-url="/static/browse/0.3.4/js/litmaps.js?20210617"
-                aria-labelledby="label-for-litmaps">
-              <span class="slider"></span>
-              <span class="is-sr-only">Litmaps Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-litmaps">Litmaps</span> <em>(<a href="https://www.litmaps.co/" target="_blank">What is Litmaps?</a>)</em>
-          </div>
-        </div>
-        <div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input
-                id="scite-toggle"
-                type="checkbox"
-                class="lab-toggle"
-                data-script-url="/static/browse/0.3.4/js/scite.js?20210617"
-                aria-labelledby="label-for-scite">
-              <span class="slider"></span>
-              <span class="is-sr-only">scite.ai Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-scite">scite Smart Citations</span> <em>(<a href="https://www.scite.ai/" target="_blank">What are Smart Citations?</a>)</em>
-          </div>
-        </div>
-      </div>
-        <div class="labs-content-placeholder labs-display" style="display: none;"></div>
-        <div style="min-height: 15px" id="connectedpapers-output"></div>
-        <div style="min-height: 15px" id="litmaps-open-in"></div>
-        <div style="min-height: 15px" id="scite-open-in"></div>
-    </div>
+    Supervision,
 
+    Writing – original draft,
 
-    <input type="radio" name="tabs" id="tabtwo">
-    <label for="tabtwo">Code, Data, Media</label>
-    <div class="tab">
-      <h1>Code, Data and Media Associated with this Article</h1>
-      <div class="toggle">
-        <div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input
-                id="alphaxiv-toggle"
-                data-script-url="/static/browse/0.3.4/js/alphaxiv.js"
-                type="checkbox" class="lab-toggle" aria-labelledby="label-for-alphaxiv">
-              <span class="slider"></span>
-              <span class="is-sr-only">alphaXiv Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-alphaxiv">alphaXiv</span> <em>(<a href="https://alphaxiv.org/" target="_blank">What is alphaXiv?</a>)</em>
-          </div>
-        </div>
-
-        <div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input        
-                id="catalyzex-toggle"
-                data-script-url="/static/browse/0.3.4/js/catalyzex.js"
-                type="checkbox" class="lab-toggle" aria-labelledby="label-for-cx">
-              <span class="slider"></span>
-              <span class="is-sr-only">Links to Code Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-cx">CatalyzeX Code Finder for Papers</span> <em>(<a href="https://www.catalyzex.com" target="_blank">What is CatalyzeX?</a>)</em>
-          </div>
-        </div>
-
-        <div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input
-                id="dagshub-toggle"
-                data-script-url="/static/browse/0.3.4/js/dagshub.js"
-                type="checkbox" class="lab-toggle" aria-labelledby="label-for-dagshub">
-              <span class="slider"></span>
-              <span class="is-sr-only">DagsHub Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-dagshub">DagsHub</span> <em>(<a href="https://dagshub.com/" target="_blank">What is DagsHub?</a>)</em>
-          </div>
-        </div>
-  
-        <div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input
-                id="gotitpub-toggle"
-                data-script-url="/static/browse/0.3.4/js/gotitpub.js"
-                type="checkbox" class="lab-toggle" aria-labelledby="label-for-gotitpub">
-              <span class="slider"></span>
-              <span class="is-sr-only">GotitPub Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-gotitpub">Gotit.pub</span> <em>(<a href="http://gotit.pub/faq" target="_blank">What is GotitPub?</a>)</em>
-          </div>
-        </div>
-
-        <div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input
-                id="huggingface-toggle"
-                data-script-url="/static/browse/0.3.4/js/huggingface.js"
-                type="checkbox" class="lab-toggle" aria-labelledby="label-for-huggingface">
-              <span class="slider"></span>
-              <span class="is-sr-only">Huggingface Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-huggingface">Hugging Face</span> <em>(<a href="https://huggingface.co/huggingface" target="_blank">What is Huggingface?</a>)</em>
-          </div>
-        </div>
-
-        <div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input
-                id="paperwithcode-toggle"
-                data-script-url="/static/browse/0.3.4/js/paperswithcode.js"
-                type="checkbox" class="lab-toggle" aria-labelledby="label-for-pwc">
-              <span class="slider"></span>
-              <span class="is-sr-only">Links to Code Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-pwc">Papers with Code</span> <em>(<a href="https://paperswithcode.com/" target="_blank">What is Papers with Code?</a>)</em>
-          </div>
-        </div>
-
-
-        <div class="columns is-mobile lab-row">
-          <div class="column lab-switch">
-            <label class="switch">
-              <input
-                id="sciencecast-toggle"
-                data-script-url="/static/browse/0.3.4/js/sciencecast.js"
-                type="checkbox" class="lab-toggle" aria-labelledby="label-for-sciencecast">
-              <span class="slider"></span>
-              <span class="is-sr-only">ScienceCast Toggle</span>
-            </label>
-          </div>
-          <div class="column lab-name">
-            <span id="label-for-sciencecast">ScienceCast</span> <em>(<a href="https://sciencecast.org/welcome" target="_blank">What is ScienceCast?</a>)</em>
-          </div>
-        </div>
-      </div>
-
-      <div id="alphaxiv-output" style="display:none"></div>
-      <div id="catalyzex-output" style="display:none"></div>
-      <div id="dagshub-output" style="display:none"></div>
-      <div id="gotitpub-output" style="display:none"></div>
-      <div id="pwc-output" style="display:none"></div>
-      <div id="pwc-data-output" style="display:none"></div>
-      <div id="sciencecast-output" style="display:none"></div>
-      <div id="huggingface-output" style="display:none"></div>
-    </div>
-
-
-      <input type="radio" name="tabs" id="labstabs-demos-input">
-      <label for="labstabs-demos-input" id="labstabs-demos-label">Demos</label>
-      <div class="tab">
-        <h1>Demos</h1>
-        <div class="toggle">
-          <div class="columns is-mobile lab-row">
-            <div class="column lab-switch">
-              <label class="switch">
-                <input
-                  id="replicate-toggle"
-                  data-script-url="/static/browse/0.3.4/js/replicate.js"
-                  type="checkbox" class="lab-toggle" aria-labelledby="label-for-replicate">
-                <span class="slider"></span>
-                <span class="is-sr-only">Replicate Toggle</span>
-              </label>
-            </div>
-            <div class="column lab-name">
-              <span id="label-for-replicate">Replicate</span> <em>(<a href="https://replicate.com/docs/arxiv/about" target="_blank">What is Replicate?</a>)</em>
-            </div>
-          </div>
-          <div class="columns is-mobile lab-row">
-            <div class="column lab-switch">
-              <label class="switch">
-                <input
-                  id="spaces-toggle"
-                  data-script-url="/static/browse/0.3.4/js/spaces.js"
-                  type="checkbox" class="lab-toggle" aria-labelledby="label-for-spaces">
-                <span class="slider"></span>
-                <span class="is-sr-only">Spaces Toggle</span>
-              </label>
-            </div>
-            <div class="column lab-name">
-              <span id="label-for-spaces">Hugging Face Spaces</span> <em>(<a href="https://huggingface.co/docs/hub/spaces" target="_blank">What is Spaces?</a>)</em>
-            </div>
-          </div>
-          <div class="columns is-mobile lab-row">
-            <div class="column lab-switch">
-              <label class="switch">
-                <input
-                  id="txyz-toggle"
-                  data-script-url="/static/browse/0.3.4/js/txyz.js"
-                  type="checkbox" class="lab-toggle" aria-labelledby="label-for-txyz">
-                <span class="slider"></span>
-                <span class="is-sr-only">Spaces Toggle</span>
-              </label>
-            </div>
-            <div class="column lab-name">
-              <span id="label-for-txyz">TXYZ.AI</span> <em>(<a href="https://txyz.ai" target="_blank">What is TXYZ.AI?</a>)</em>
-            </div>
-          </div>
-        </div>
-        <div id="replicate-output"></div>
-        <div id="spaces-output"></div>
-        <div id="txyz-output"></div>
-      </div>
-      <input type="radio" name="tabs" id="tabfour">
-      <label for="tabfour">Related Papers</label>
-      <div class="tab">
-        <h1>Recommenders and Search Tools</h1>
-        <div class="toggle">
-          <div class="columns is-mobile lab-row">
-            <div class="column lab-switch">
-              <label class="switch">
-                <input id="influenceflower-toggle"
-                data-script-url="/static/browse/0.3.4/js/influenceflower.js"
-                type="checkbox" class="lab-toggle" aria-labelledby="label-for-influenceflower">
-                <span class="slider"></span>
-                <span class="is-sr-only">Link to Influence Flower</span>
-              </label>
-            </div>
-            <div class="column lab-name">
-              <span id="label-for-influenceflower">Influence Flower</span> <em>(<a href="https://influencemap.cmlab.dev/" target="_blank">What are Influence Flowers?</a>)</em>
-            </div>
-          </div>
-          <div class="columns is-mobile lab-row">
-            <div class="column lab-switch">
-              <label class="switch">
-                <input id="core-recommender-toggle" type="checkbox" class="lab-toggle" aria-labelledby="label-for-core">
-                <span class="slider"></span>
-                <span class="is-sr-only">Core recommender toggle</span>
-              </label>
-            </div>
-            <div class="column lab-name">
-              <span id="label-for-core">CORE Recommender</span> <em>(<a href="https://core.ac.uk/services/recommender">What is CORE?</a>)</em>
-            </div>
-          </div>          <div class="columns is-mobile lab-row">
-            <div class="column lab-switch">
-              <label class="switch">
-                <input id="iarxiv-toggle"
-                       type="checkbox"
-                       class="lab-toggle"
-                       data-script-url="/static/browse/0.3.4/js/iarxiv.js"
-                       aria-labelledby="label-for-iarxiv">
-                <span class="slider"></span>
-                <span class="is-sr-only">IArxiv recommender toggle</span>
-              </label>
-            </div>
-            <div class="column lab-name">
-              <span id="label-for-iarxiv">IArxiv Recommender</span>
-              <em>(<a href="https://iarxiv.org/about">What is IArxiv?</a>)</em>
-            </div>
-          </div>
-</div>
-        <div id="influenceflower-output"></div>
-        <div id="influenceflower-output-graph" style="display:none">
-          <ul class="flower-tabs">
-            <li class="active"><a class="btn tab-btn" onclick="openTab(event, 'tab-author')">Author</a></li>
-            <li><a class="btn tab-btn" onclick="openTab(event, 'tab-venue')">Venue</a></li>
-            <li><a class="btn tab-btn" onclick="openTab(event, 'tab-inst')">Institution</a></li>
-            <li><a class="btn tab-btn" onclick="openTab(event, 'tab-topic')">Topic</a></li>
-          </ul>
-          <div class="flower-tab-content">
-            <div class="tab-flower active" id="tab-author"><svg id="flower-graph-author"></svg></div>
-            <div class="tab-flower" id="tab-venue"><svg id="flower-graph-venue"></svg></div>
-            <div class="tab-flower" id="tab-inst"><svg id="flower-graph-inst"></svg></div>
-            <div class="tab-flower" id="tab-topic"><svg id="flower-graph-topic"></svg></div>
-          </div>
-        </div>
-        <div id="coreRecommenderOutput"></div>
-        <div id="iarxivOutput"></div>
-      </div>
-
-      <input type="radio" name="tabs" id="tabfive">
-      <label for="tabfive">
-        About arXivLabs
-      </label>
-      <div class="tab">
-        <div class="columns">
-          <div class="column">
-            <h1>arXivLabs: experimental projects with community collaborators</h1>
-            <p>arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.</p>
-            <p>Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.</p>
-            <p>Have an idea for a project that will add value for arXiv's community? <a href="https://info.arxiv.org/labs/index.html"><strong>Learn more about arXivLabs</strong></a>.</p>
-          </div>
-          <div class="column is-narrow is-full-mobile">
-            <p class="icon-labs"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 635.572 811"><path d="M175.6 676v27h-27v-27zm-54 27v27h27v-27zm-27 27v27h27v-27zm396-54v27h-27v-27zm0 27v27h27v-27zm27 27v27h27v-27zm-27-414h27v27h-27zm27 0h27v-27h-27zm27-27h27v-27h-27zm-396 45h-27v-27h27zm-27-54h-27v27h27zm-27-27h-27v27h27z"/><path d="M94.6 730v27h-27v-27zm477 0v27h-27v-27zm-27-495h27v27h-27zm-450 18h-27v-27h27zm477 9h27v27h-27zm-54 495h27v27h-27zm-423 0h27v27h-27zm-54-504h27v27h-27z" fill="#666"/><path d="M67.6 730v27h-27v-27zm54 54v27h-27v-27zm0-108v27h27v-27zm-27 27v27h27v-27zm-81 0v27h27v-27zm585 27v27h-27v-27zm-108-54v27h27v-27zm27 27v27h27v-27zm81 0v27h27v-27zm-54-495h27v27h-27zm-54 108h27v-27h-27zm27-27h27v-27h-27zm0-81h27v-27h-27zm-423 18h-27v-27h27zm54 54h-27v27h27zm-27-27h-27v27h27zm0-81h-27v27h27zm423 612v27h-27v-27zm81-522v27h-27v-27zm-585-9v27h-27v-27z" fill="#999"/><path d="M94.6 784v27h-27v-27zm-27-27v27h27v-27zm-27-54v27h27v-27zm27 0v27h27v-27zm0-27v27h27v-27zm27 0v27h27v-27zm0-27v27h27v-27zm27 0v27h27v-27zm-108 81v27h27v-27zm558 54v27h-27v-27zm-27-27v27h27v-27zm27-54v27h27v-27zm-27 0v27h27v-27zm0-27v27h27v-27zm-27 0v27h27v-27zm0-27v27h27v-27zm-27 0v27h27v-27zm108 81v27h27v-27zm0-495h27v27h-27zm-27 27h27v-27h-27zm-54-27h27v-27h-27zm0 27h27v-27h-27zm-27 0h27v-27h-27zm0 27h27v-27h-27zm-27 0h27v-27h-27zm0 27h27v-27h-27zm81-108h27v-27h-27zm-504 45h-27v-27h27zm27-27h-27v27h27zm54-27h-27v27h27zm0 27h-27v27h27zm27 0h-27v27h27zm0 27h-27v27h27zm27 0h-27v27h27zm0 27h-27v27h27zm-81-108h-27v27h27z" fill="#ccc"/><path d="M598.6 665.1H41.5C-76.5 667 176 280.2 176 280.2h53a46.5 46.5 0 0162.8-56.3 29.2 29.2 0 1128.5 35.9h-1a46.5 46.5 0 01-1.5 20.3l142.5-.1s255.3 387 138.3 385.1zM291 181a29.3 29.3 0 10-29.2-29.3A29.3 29.3 0 00291 181zm65.4-66.8a22.4 22.4 0 10-22.5-22.4 22.4 22.4 0 0022.5 22.4z" fill="#fc0"/><path d="M245.5 172V10h153v162s324 495 198 495h-558c-126 0 207-495 207-495zm126 54h56m-13 72h56m-9 72h56m-20 72h56m-22 72h56m-29 72h56m-457-45c20.8 41.7 87.3 81 160.7 81 72.1 0 142.1-38.2 163.4-81" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="20"/><path d="M273.3 421.7c0 31-9.8 56.3-21.9 56.3s-21.8-25.2-21.8-56.3 9.8-56.3 21.8-56.3 21.9 25.2 21.9 56.3zm114.4-56.3c-12 0-21.8 25.2-21.8 56.3s9.7 56.3 21.8 56.3 21.9-25.2 21.9-56.3-9.8-56.3-21.9-56.3zM150.1 526.6c-18.2 6.7-27.5 22.9-23.2 30.2s14.8-5.5 33-12.2 37.4-4.9 33-12.2-24.5-12.6-42.8-5.8zm296 5.8c-4.2 7.3 14.9 5.5 33.1 12.2s28.7 19.5 33 12.2-5-23.5-23.2-30.2-38.5-1.5-42.8 5.8z"/></svg></p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-</div>
-<!-- END LABS AREA -->
-  <div class="endorsers">
-    <a href="/auth/show-endorsers/2401.00002" class="endorser-who" rel="nofollow">Which authors of this paper are endorsers?</a> |
-    <a id="mathjax_toggle" href="javascript:setMathjaxCookie()">Disable MathJax</a> (<a href="https://info.arxiv.org/help/mathjax.html">What is MathJax?</a>)
-    <span class="help" style="font-style: normal; float: right; margin-top: 0; margin-right: 1em;"></span>
-  </div>
-  <script type="text/javascript" language="javascript">mathjaxToggle();</script>
-</div>
-      </div>
-    </main>
-
-    <footer style="clear: both;">
-      <div class="columns is-desktop" role="navigation" aria-label="Secondary" style="margin: -0.75em -0.75em 0.75em -0.75em">
-        <!-- Macro-Column 1 -->
-        <div class="column" style="padding: 0;">
-          <div class="columns">
-            <div class="column">
-              <ul style="list-style: none; line-height: 2;">
-                <li><a href="https://info.arxiv.org/about">About</a></li>
-                <li><a href="https://info.arxiv.org/help">Help</a></li>
-              </ul>
-            </div>
-            <div class="column">
-              <ul style="list-style: none; line-height: 2;">
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
-                  <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
-                </li>
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
-                  <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- End Macro-Column 1 -->
-        <!-- Macro-Column 2 -->
-        <div class="column" style="padding: 0;">
-          <div class="columns">
-            <div class="column">
-              <ul style="list-style: none; line-height: 2;">
-                <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
-                <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
-              </ul>
-            </div>
-            <div class="column sorry-app-links">
-              <ul style="list-style: none; line-height: 2;">
-                <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
-                <li>
-                  <p class="help">
-                    <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> <!-- end MetaColumn 2 -->
-        <!-- End Macro-Column 2 -->
-      </div>
-    </footer>
-  </div>
-
-  <script src="/static/base/1.0.1/js/member_acknowledgement.js"></script>
-
-</body>
-
-</html>
+    Writing – review & editing
+* E-mail:
+kaubrey@mun.ca
+Affiliations
+Primary Healthcare Research Unit, Faculty of Medicine, Memorial University of Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada, 
+    Population Health and Applied Health Sciences, Faculty of Medicine, Memorial University of Newfoundland and Labrador, St. John’s, Newfoundland and Labrador, Canada
+https://orcid.org/0000-0001-8680-6838
+⨯
+Audit and feedback to change diagnostic image ordering practices: A systematic review and meta-analysis
+Oluwatosin Badejo,
+Maria Saleeb,
+Amanda Hall,
+Bradley Furlong,
+Gabrielle S. Logan,
+Zhiwei Gao,
+Brendan Barrett,
+Lindsay Alcock,
+Kris Aubrey-Bassler
+x
+Published: June 5, 2024
+https://doi.org/10.1371/journal.pone.0300001
+Article
+Authors
+Metrics
+Comments
+Media Coverage
+Peer Review
+Reader Comments
+Figures
+Figures
+Abstract
+Background
+Up to 30% of diagnostic imaging (DI) tests may be unnecessary, leading to increased healthcare costs and the possibility of patient harm. The primary objective of this systematic review was to assess the effect of audit and feedback (AF) interventions directed at healthcare providers on reducing image ordering. The secondary objective was to examine the effect of AF on the appropriateness of DI ordering.
+Methods
+Studies were identified using MEDLINE, EMBASE, CINAHL, Cochrane Central Register of Controlled Trials and ClinicalTrials.gov registry on December 22
+nd
+, 2022. Studies were included if they were randomized control trials (RCTs), targeted healthcare professionals, and studied AF as the sole intervention or as the core component of a multi-faceted intervention. Risk of bias for each study was evaluated using the Cochrane risk of bias tool. Meta-analyses were completed using RevMan software and results were displayed in forest plots.
+Results
+Eleven RCTs enrolling 4311 clinicians or practices were included. AF interventions resulted in 1.5 fewer image test orders per 1000 patients seen than control interventions (95% confidence interval (CI) for the difference -2.6 to -0.4, p-value = 0.009). The effect of AF on appropriateness was not statistically significant, with a 3.2% (95% CI -1.5 to 7.7%, p-value = 0.18) greater likelihood of test orders being considered appropriate with AF vs control interventions. The strength of evidence was rated as moderate for the primary objective but was very low for the appropriateness outcome because of risk of bias, inconsistency in findings, indirectness, and imprecision.
+Conclusion
+AF interventions are associated with a modest reduction in total DI ordering with moderate certainty, suggesting some benefit of AF. Individual studies document effects of AF on image order appropriateness ranging from a non-significant trend toward worsening to a highly significant improvement, but the weighted average effect size from the meta-analysis is not statistically significant with very low certainty.
+Citation:
+Badejo O, Saleeb M, Hall A, Furlong B, Logan GS, Gao Z, et al.  (2024) Audit and feedback to change diagnostic image ordering practices: A systematic review and meta-analysis. PLoS ONE 19(6):
+           e0300001.
+        
+        https://doi.org/10.1371/journal.pone.0300001
+Editor:
+Joshua Robert Zadro, The University of Sydney, AUSTRALIA
+Received:
+October 24, 2023;
+Accepted:
+February 19, 2024;
+Published:
+June 5, 2024
+Copyright:
+© 2024 Badejo et al. This is an open access article distributed under the terms of the
+Creative Commons Attribution License
+, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+Data Availability:
+All relevant data are within the manuscript and its
+Supporting information
+files.
+Funding:
+O.B received the Memorial University of Newfoundland’s NL SUPPORT – Support for People and Patient Oriented Research and Trials Grant (
+https://www.mun.ca/nlcahr/nlcahr-funding-programs/nl-support/nl-support-patient-oriented-research-grant/
+). There is no grant number associated with this award. The funder played no role in the study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+Competing interests:
+No authors have competing interests.
+Introduction
+Up to thirty percent of diagnostic imaging (DI) tests may be unnecessary [
+1
+,
+2
+] and this excess use increases healthcare costs, wait times, and the likelihood of patient harm [
+3
+]. Unwarranted DI testing often leads to incidental findings which can in turn lead to a cascade of further unnecessary tests and treatments [
+4
+,
+5
+]. For example, more liberal use of imaging for back pain has been associated with higher rates of surgery and other procedures and higher healthcare costs, as well as longer absence from work [
+6
+]. Incidental findings can lead to increased patient anxiety, financial burden, and ultimately delays in necessary treatment [
+5
+,
+7
+], while also exacerbating long wait times for patients who do require these tests [
+8
+]. Physical harm to patients is also important to consider, as some types of imaging such as computed tomography (CT) involve exposure to high doses of ionizing radiation, which may lead to an increased risk of iatrogenic cancers [
+9
+,
+10
+].
+Audit and feedback (AF) has been implemented in healthcare settings as a strategy to modify behaviours in delivering health care services, including DI test ordering [
+11
+]. AF provides summaries of clinical performance over a specified period to health care providers, with the aim of motivating behaviour change. A Cochrane review of 70 randomized trials in healthcare settings revealed moderate quality evidence that AF has a moderate effect (dichotomous outcome: median adjusted risk difference of 4.3%, IQR 0.5% to 16% (49 studies); continuous outcome: median adjusted percent change of 1.3% (interquartile range (IQR) 1.3% to 28.9% (26 studies)) on increasing health professional compliance with desired behaviour when compared to usual practice [
+11
+]. This review included 4363 providers or provider groups from 49 trials that examined dichotomous outcomes and 1266 providers or provider groups from 21 trials that examined continuous outcomes. However, this review examined AF that targeted multiple issues, including the management of diabetes mellitus, blood pressure control, inappropriate antibiotic prescribing, X-ray utilization rates and more. The large range of topics addressed in this review and the heterogeneity in outcomes make it difficult to draw conclusions about the effect of AF on DI ordering, and the effect estimate for this area was not provided [
+11
+].
+The objective of the current review was to determine the effect of AF interventions on DI ordering rates and DI ordering appropriateness. We also completed a comprehensive description of DI AF interventions using the template for intervention description and replication (TIDieR) checklist [
+12
+].
+Materials and methods
+Our review protocol was developed in line with recommendations from the Cochrane Effective Practice and Organization of Care (EPOC) group [
+13
+] and was prospectively registered with Open Science Framework (
+https://osf.io/5dczr
+) [
+14
+]. Although this group is no longer active, the resources are still published online [
+13
+] and additional information can be found in the Cochrane handbook [
+15
+]. Initially, we proposed to include both randomized controlled trials (RCTs) and some observational designs; however, our literature search discovered a sufficient number of RCTs and a discrepancy in results between the RCTs and the observational studies. The primary analyses were therefore limited to RCTs due to higher quality evidence, and the findings of the observational studies are reported in the
+S1 Appendix
+. We also proposed to compare AF interventions to a different active intervention, but elected to remove this comparison to simplify interpretation of the findings. Finally, the original protocol included only the appropriateness of image orders as the sole outcome, but we elected to add a total DI orders outcome because it directly aligned with the purpose of this review.
+Data sources
+We identified studies using a systematic search of MEDLINE (PubMed), EMBASE, CINAHL, the Cochrane Central Register of Controlled Trials and the ClinicalTrials.gov registry. Our search strategy was modelled after that of the Cochrane review [
+11
+], but it was adapted by an information specialist to ensure it included sufficient terms related to diagnostic imaging (
+S1 Appendix
+). These search strategies also underwent peer review using the Peer Review of Electronic Search Strategy (PRESS) guidelines [
+16
+]. We searched for full-text articles available up to December 20th, 2022 with no earlier date restriction. These database searches were supplemented with electronic and manual searches, including forward tracking to identify papers that cited the studies already included in the review.
+Inclusion and exclusion criteria
+Study design.
+RCTs with no restriction on language, geographic setting or year of publication were included in the primary analyses. We planned to translate articles published in a language other than English using Google Translate (
+https://translate.google.com/
+) which is as accurate as human translators for the languages commonly used for science [
+17
+]. The results of controlled before-after, non-randomized controlled studies and interrupted time series analyses are included in the
+S1 Appendix
+. Uncontrolled studies, case series and case reports were excluded.
+Population.
+We included studies targeting health-care professionals who order DI in the routine management of their patients. Studies were excluded if the target population was healthcare professionals who do not normally order imaging tests such as pharmacists, radiologists, technicians, and medical students.
+Intervention and comparator.
+Studies that provided feedback on individual clinician or clinician group ordering compared to a target recommended by local, regional or national guidelines, or a benchmark such as test ordering among peer clinicians were included. Studies that examined AF as the sole strategy or AF as the integral part of a multi-faceted intervention were included. Similar to the Cochrane review of AF [
+11
+], we considered AF to be “integral” if the other features of the intervention were unlikely to be offered without AF or if other components of the intervention were optional and therefore not necessarily received or used by subjects in the intervention group. For example, we included studies of AF combined with an educational session, but we excluded a comparison of AF combined with an electronic, point-of-care decision support tool vs usual practice from this sub-analysis.
+We were primarily interested in the comparison of AF to a usual practice control group. We did not consider the provision of paper or digital clinical practice guidelines to be an active intervention as provision of guidelines alone is rarely associated with measurable behaviour change [
+18
+]. Thus, groups receiving guidelines together with AF were categorized as “AF alone,” and those receiving guidelines alone were categorized as “usual practice.” If comparison groups were not explicitly defined, they were assumed to be usual practice. Some papers studied AF combined with another intervention verses the other intervention alone, which we included in a separate subgroup of the meta-analyses as the effect of adding AF to another intervention may be different than the effect of AF alone.
+Studies were excluded if audits occurred without feedback, if they occurred during a patient visit, or if feedback was given in real time during or shortly after a patient encounter. If feedback was given for hypothetical situations or was a reminder without reference to specific ordering behaviour, it was also excluded. We were also exclusively interested in the effect of AF on
+diagnostic
+imaging and we therefore excluded studies that focussed on
+screening
+tests such as mammograms.
+Outcome.
+The primary outcome of this review was the total number of DI tests ordered and the secondary outcome was the appropriateness of test orders. Appropriateness was measured as the total number or proportion of imaging tests that were classified as concordant with a standard of care, such as clinical practice guidelines, according to the individual study authors. Some papers examined AF of non-DI tests in addition to DI orders, but only the DI-specific outcome data were included.
+When studies reported more than one measure of the same outcome, we extracted (in order of preference): post-intervention continuous measure adjusted for baseline values, change from baseline continuous measure, post-intervention continuous measure (no adjustment for baseline values), then post-intervention dichotomous measure. Odds ratios for dichotomous outcomes were converted to continuous outcomes as described in the Cochrane Handbook [
+15
+, Section 10.6] to be included in the continuous meta-analyses.
+Study selection
+We uploaded the identified citations to the web-based systematic review software platform, Covidence [
+19
+]. Duplicates were identified automatically by Covidence or manually during screening. The titles and abstracts of all articles were screened independently by two review authors and screening conflicts were resolved by a third reviewer (OB, MS, AH, KAB). Pilot screening of 10 studies was undertaken to ensure uniformity in screening procedure. Full-text screening followed the same process of review and conflict resolution.
+Data extraction and quality assessment
+We extracted information on study characteristics, population, intervention and outcome from each of the included studies according to the TIDieR recommendations [
+12
+]. We also extracted all data relating to the outcomes described above including raw numbers, proportions and effect estimates where provided using a modified version of the Cochrane Effective Practice and Organization of Care (EPOC) data collection checklist [
+20
+]. Data were extracted independently by two reviewers and discrepancies in the extracted data were resolved by discussion or involvement of a third reviewer (OB, MS, AH, KAB).
+The risk of bias for each included study was independently reviewed by two authors as high, low, or unclear using the Cochrane risk of bias tool version 1 (OB, BF, MS, KAB) [
+21
+], which has since been updated [
+22
+,
+23
+] but was the version in use at the time this study was originally conceptualized. Studies with high risk of bias in at least one of the domains for assessment received an overall judgment of high risk. Studies with baseline imbalances in study group characteristics that were greater than would be expected due to chance were classified as high risk. Blinding study participants to AF interventions is not possible and the primary outcome was objective, so studies were not classified as high risk in this domain if investigators treated all study groups equally (e.g. both intervention and comparator groups were aware they were participating in a study). In addition, because our primary outcome was objective, the unavailability of a pre-published protocol was not considered an indicator of selective reporting. Discrepancies in ratings were resolved through discussion or by involvement of a third reviewer.
+Data synthesis and analysis
+All studies identified the individual clinician or clinical team as the unit of study participation. While some studies reported outcomes at the clinician or team level, some studies only reported results at the patient level (e.g., proportion of patient visits at which a DI test was ordered) or at the study group level (e.g., total DI orders in the group), without mentioning any adjustment for clustering of observations. Others reported results at the study participant level (e.g., mean number of DI orders per clinician), and other studies reported both. Although effect estimates measured at the study group or individual patient level are representative, variance is likely underestimated unless the analyses adjust for correlated observations. Therefore, we preferentially extracted data at the participating clinician level. We included data that did not appear to be adjusted for clustering but noted this when evaluating risk of bias and in our results.
+Where possible, the means of multiple outcomes from the same paper (e.g. DI ordering for different imaging types) were included in the meta-analyses as recommended in the Cochrane Handbook [
+15
+, Section 6.5.2.10]. When it was not possible to determine the mean of outcomes (e.g., only odds ratios and 95% CIs reported), we included data for the more frequent outcome. Data were compiled into meta-analyses and forest plots, and heterogeneity was estimated using I
+2
+and Chi
+2
+statistics using Review Manager (RevMan) software [
+24
+]. Potential sources of heterogeneity are explored qualitatively in Results and Discussion. We considered presenting data in subgroups by imaging modality or by target organ, but there are few studies and heterogeneity exists primarily within potential subgroups rather than between subgroups so we elected to present data without such grouping. Because of variability in the continuous outcome measures used between studies, we combined results using the standardized mean difference (SMD). We then rescaled the summary SMD from the total imaging orders meta-analysis into units of the mean difference between intervention and control in the number of DI tests ordered per 1000 patient consultations, which was the outcome used across a plurality of studies in the meta-analysis, including the largest. This conversion of SMD to natural units is recommended by the Cochrane Collaboration to enhance interpretability of the SMD [
+25
+,
+26
+]. SMD measures outcomes in units of the standard deviation; therefore, to convert the summary SMD and its confidence interval (CI) into natural units, we chose the weighted (by trial sample size) average of the SDs from each of the studies that used the DI tests per 1000 patients outcome. We also expressed this outcome as a percentage of the weighted average of the baseline, pre-intervention DI tests per 1000 patients from each of these same studies. The SMDs from the secondary outcome meta-analysis were similarly converted into the difference between intervention and control in the percentage of image test orders that were considered to be appropriate.
+Summary of findings and GRADE strength of evidence
+Two authors (OB, MS), with resolution of disagreement by a third author (KAB), applied the Grading of Recommendations Assessment, Development and Evaluation (GRADE) approach to summarize our findings and rate the strength of evidence [
+15
+, Chapter 14]. The GRADE approach uses risk of bias, inconsistency, indirectness, imprecision, and evidence of publication bias to assign a level of certainty to the body of evidence regarding each outcome or comparison. Because this analysis was restricted to RCTs, we began with an assumption of high certainty evidence. Evidence was downgraded if a majority of studies in a given comparison were considered to be at unclear or high risk of bias. Inconsistency was assessed using I
+2
+values, with downgrading of one level for comparisons with an I
+2
+greater than or equal to 60%. To determine indirectness, factors such as population, the interventions and co-interventions, as well as the DI modality were considered. As the primary objective was to study the effect of AF on all diagnostic imaging utilization (X-ray, ultrasound, echocardiogram, CT, MRI), evidence was downgraded for indirectness if a comparison included two or fewer DI modalities. There is relatively little guidance in the literature on how to assess imprecision in reviews that use SMD as an outcome measure and when there is no clear consensus on what is considered a minimally important difference. We elected to follow the convention that a standardized mean difference (SMD) between 0.5 and 0.8 indicates a moderately effective intervention. If a CI was greater than the midpoint of that range, 0.65 units, we downgraded the certainty of evidence by one level [
+15
+]. For context, an SMD of 0.65 units in our primary analysis translates into a 14.3% reduction in DI ordering when converted into natural units as described above. Finally, to assess publication bias, we subjectively assessed the symmetry of the funnel plots (S3 and S4 Figs in
+S1 Appendix
+) and elected to downgrade evidence if there was clear asymmetry.
+Results
+Eleven RCTs met the inclusion criteria from an initial literature search that identified 4493 papers (
+Fig 1
+) [
+27
+–
+37
+]. One non-randomized controlled trial (NRCT) [
+38
+] and 5 observational studies were included in the Appendix (S1-S4 Tables and S1, S2 Figs in
+S1 Appendix
+) [
+39
+–
+44
+]. All of these studies included at least one comparison that met our inclusion criteria. Some of the studies examined additional interventions which did not meet our inclusion criteria, and comparisons involving these other interventions were excluded. While the certainty of evidence for most comparisons was judged to be very low to low based on risk of bias, indirectness and imprecision (
+Table 1
+), we considered the evidence for the effect of AF on our primary outcome of all DI orders (both subgroups) to be of moderate certainty. The rationale for these certainty of evidence ratings is provided in the footnotes of
+Table 1
+and the included studies are described in
+Table 2
+.
+Download:
+PPT
+PowerPoint slide
+PNG
+larger image
+TIFF
+original image
+Fig 1.
+PRISMA diagram for study identification, screening, and exclusions.
+https://doi.org/10.1371/journal.pone.0300001.g001
+Download:
+PPT
+PowerPoint slide
+PNG
+larger image
+TIFF
+original image
+Table 1.
+Summary of findings.
+https://doi.org/10.1371/journal.pone.0300001.t001
+Download:
+PPT
+PowerPoint slide
+PNG
+larger image
+TIFF
+original image
+Table 2.
+Summary characteristics of included RCTs.
+https://doi.org/10.1371/journal.pone.0300001.t002
+Intervention fidelity, bias, and certainty of evidence
+The AF interventions are described in
+Table 3
+. One study directly assessed if AF reports had been opened by tracking logins to an online system and found that 61% of participants logged in at least once [
+28
+]. Verstappen et al. reported that 100% of study participants attended an in-person education session at which AF reports were discussed [
+35
+] and O’Connor et al. reported the percentage of AF reports sent by post that were returned unopened was 4.9%-14.7%, dependent on which intervention they received [
+32
+]. However, the lack of a returned envelope was not considered sufficient proof of an AF receipt so we indicated “Not reported” for this variable. No other studies clearly reported AF receipt or other measures of intervention fidelity (
+Table 3
+).
+Download:
+PPT
+PowerPoint slide
+PNG
+larger image
+TIFF
+original image
+Table 3.
+Description of AF interventions according to TiDIER recommendations.
+https://doi.org/10.1371/journal.pone.0300001.t003
+The risk of bias was judged to be unclear in a majority of studies and only two studies were thought to be at low risk of bias (
+Table 4
+) [
+32
+,
+35
+]. Nine of the eleven studies did not report on the concealment of study group allocation, but almost all studies were downgraded based on more than just that item. Zafar et al. [
+37
+] used hierarchical regression to adjust for clustering in some of their analyses; however, those results were not suitable for this meta-analysis. The data that are suitable for synthesis from this study do not appear to be adjusted for correlated observations and it was therefore reported as high risk for this reason. A risk of bias table was not included for the secondary outcome as evaluations were similar.
+Download:
+PPT
+PowerPoint slide
+PNG
+larger image
+TIFF
+original image
+Table 4.
+Risk of bias for each domain and overall judgement for risk of bias for each included RCT.
+https://doi.org/10.1371/journal.pone.0300001.t004
+The effect of AF on the total number of DI requests (
+Fig 2
+)
+Ten trials examined the effect of AF on the number of diagnostic imaging requests, nine of which are presented in the forest plots (
+Fig 2
+). Six trials used a control group that did not receive any intervention or only received practice guidelines [
+27
+,
+28
+,
+30
+,
+31
+,
+32
+,
+35
+] and three additional studies measured the effect of adding AF to another intervention [
+29
+,
+33
+,
+37
+]. The remaining study describes baseline imbalances between the control and intervention groups which results in very similar post-intervention outcomes (not shown) [
+36
+]. However, the authors of this study report a 4% reduction in test ordering over the study period in the intervention group (p-value = 0.11), but they don’t report control group data and we were therefore not able to include these results in the meta-analysis. The post-intervention values were not included in the meta-analysis because of bias due to the baseline imbalance [
+36
+]. Although there was a fair degree of heterogeneity in the types of imaging that were addressed by the AF interventions (
+Table 3
+), results for the pooled analyses of the primary outcome were only moderately heterogeneous (I
+2
+= 45%, p = 0.08) and heterogeneity existed mostly within potential subgroups (e.g. Bhatia 2014, 2017 and Dudzinski, 2016, all of which examined echocardiography), rather than between subgroups. We therefore decided not to pool our results by imaging modality and/or target organ.
+Download:
+PPT
+PowerPoint slide
+PNG
+larger image
+TIFF
+original image
+Fig 2.
+Effect of audit and feedback on the number of diagnostic imaging requests.
+The AF groups in this figure include audit and feedback alone and audit and feedback as the main component of a multi-faceted intervention. The control group includes usual care or the provision of paper guidelines only (subgroup 1) or an active control group that was compared against the same intervention with the addition of AF (subgroup 2). Note that the results from Raja et al and Zafar et al may not be adjusted for correlated observations.
+https://doi.org/10.1371/journal.pone.0300001.g002
+The meta-analysis demonstrates a statistically significant reduction in total DI test ordering (SMD = -0.22, 95% CI = -0.38 to -0.06, p-value = 0.009), which translates into 1.5 fewer image test orders per 1000 patients seen (95% CI -2.6 to -0.4) in the intervention vs the control groups. The GRADE quality of evidence for this summary effect was rated as moderate, but the rating for each subgroup was very low to low (
+Table 1
+). The weighted mean average number of DI tests ordered during the pre-intervention period of the three studies that used this outcome was 31.3 orders per 1000 patients seen [
+30
+,
+32
+,
+33
+]. Thus, audit and feedback was associated with a 4.9% (95% CI 1.3 to 8.4) greater reduction in test ordering than control. This finding is driven primarily by a single study which includes almost 70% of the participants in the meta-analysis [
+32
+]; however, the results of most other studies were similar (I
+2
+= 45%, p-value = 0.08). Only one study, which examined the effect of AF on echocardiogram ordering practices showed a higher rate of ordering in the AF vs the usual practice group, though this difference was not significant [
+27
+]. Interestingly, two other studies on echocardiogram ordering from the same research group showed the opposite, non-significant trend towards reduced ordering in the AF group [
+28
+,
+29
+].
+In the first subgroup of
+Fig 2A
+, Kerry et al., Eccles et al., and O’Connor et al. examined AF alone [
+30
+–
+32
+]. The remaining studies in this subgroup examined AF as the core part of a multi-faceted intervention, including a discussion or education session [
+27
+,
+35
+], or an education session together with the provision of a mobile application to assist with decision-making [
+28
+]. In the second subgroup included in
+Fig 2A
+, the studies examined AF added to electronic clinical decision support [
+33
+] or an educational session [
+29
+]. The results of the two subgroups in this analysis were similar (I
+2
+= 0%, p-value = 0.83) suggesting that the effect of AF is similar when implemented on its own or when added to another intervention, although only 2 studies were included in the second subgroup. The additional study included in
+Fig 2B
+(dichotomous outcome), which investigated the effect of AF added to real-time alerts implemented at the point of electronic ordering [
+37
+], reports similar findings.
+The effect of AF on the appropriateness of diagnostic imaging requests (
+Fig 3
+)
+Whereas a decrease in total imaging was considered favorable, an increase in appropriateness was considered favorable. Thus, studies favoring AF are presented on opposite sides of the vertical axis in the forest plots for each of these outcomes (Figs
+2
+and
+3
+). Four studies evaluated the effect of AF on the appropriateness of DI requests compared to usual practice, [
+27
+,
+28
+,
+30
+,
+34
+] and two additional studies evaluated AF added to electronic clinical decision support [
+33
+] or an educational session [
+29
+]. All studies included in this section were also included in the primary outcome analyses (
+Fig 2A
+), with the exception of Robling et al. [
+34
+]. Results for the appropriateness outcome were mixed compared to the total imaging outcome, but overall, AF had no significant effect on appropriateness (SMD = 0.27, 95% CI = -0.13, 0.66, p-value = 0.18), with a high degree of heterogeneity (I
+2
+= 70%, p-value = 0.005). This SMD translates into a 3.1% (95% CI -1.5 to 7.7%) higher proportion of image orders that were considered to be appropriate in the AF vs the comparator groups. Three of the six studies that examined appropriateness were deemed to be at high risk and the remainder were deemed to be at unclear risk of bias.
+Download:
+PPT
+PowerPoint slide
+PNG
+larger image
+TIFF
+original image
+Fig 3.
+Effect of audit and feedback on the appropriateness of diagnostic imaging requests.
+The AF groups in this figure include audit and feedback alone and audit and feedback as the main component of a multi-faceted intervention. The control group includes usual care or the provision of paper guidelines only (subgroup 1) or an active control group that was compared against the same intervention with the addition of AF (subgroup 2). Although Dudzinski et al and Bhatia et al (2017) papers found no significant difference in the appropriateness outcome analyzed in our meta-analysis, both papers found a significant reduction in “rarely appropriate” echocardiograms in their AF intervention group (Odds Ratio (OR) = 0.59, 95% CI 0.39–0.88, p = 0.01 and OR = 0.75, 95% CI 0.57–0.99, p = 0.039, respectively). Note that favors AF is on the right side of the axis.
+https://doi.org/10.1371/journal.pone.0300001.g003
+The two studies that examined AF added to another intervention were consistent (I
+2
+= 0%, p-value = 0.48) in finding that AF improved appropriateness (SMD = 0.60, 95% CI = 0.22, 0.99, p-value = 0.002), despite substantial differences in the co-interventions examined in those two studies.
+The effect of AF alone vs the effect of AF added to another intervention (subgroup 1 vs subgroup 2)
+The effect of AF alone is presented in subgroup 1 and the effect of AF added to another intervention is presented in subgroup 2 of Figs
+2
+and
+3
+. Although one might expect that co-interventions would “dilute” the effectiveness of AF, our findings suggest that may not be the case, albeit on the basis of a limited number of studies. The SMD for AF added to another intervention for both outcomes is higher than the SMD for AF alone, although this is only significant for the appropriateness outcome.
+Results from observational studies (
+S1 Appendix
+)
+The meta-analyses of the observational study data were similar to those included in the main text, with a higher degree of variability contributing to non-significant summary results. Almost all studies were considered to be at high risk of bias (S2 Table in
+S1 Appendix
+). The single study judged to be at low risk of bias was an interrupted time series analysis of clinical data related to a national intervention to improve the management of back pain, including a reduction in the use of imaging tests [
+43
+]. This study is notable because of its strong design that mitigates many of the limitations of observational analyses, its low risk of bias and the dramatic 10.9% reduction in imaging (albeit with a high degree of imprecision: 95% posterior interval = 0.85–20.9%) after the introduction of their AF intervention, resulting in substantial cost savings [
+43
+].
+Discussion
+This review includes 11 RCTs that assessed the effect of audit and feedback on diagnostic image test ordering. Our meta-analyses demonstrated a significant, 4.9% reduction in total number of DI orders but variable and non-significant results on the appropriateness of orders. The evidence for the primary, total DI orders outcome was judged to be of moderate certainty but the evidence for all other comparisons was found to be very low to low certainty and these final results should therefore be interpreted with caution. For context, the Cochrane review on all uses of AF for healthcare found a roughly 1.3% improvement in practice associated with AF interventions [
+11
+]; thus, the effectiveness of AF appears to be larger when used on DI ordering. The two studies that were deemed to be at low risk of bias in our review contrasted in their findings, with one study finding a significant, modest reduction in DI ordering after AF [
+32
+], while the other found no significant effect [
+35
+]. Neither of these low-risk studies examined the appropriateness of DI requests; thus, the results for this outcome must be interpreted with greater caution.
+All studies that reported appropriateness expressed this outcome as a proportion of total image orders. Our finding that AF interventions result in a decrease in total image ordering but no statistically significant change in the proportion of appropriate orders, suggests that appropriate and inappropriate tests may therefore be reduced at a similar rate following AF. This may increase the risk of delayed or missed diagnoses due to a reduction in appropriate testing and disproportionately harm people who generally receive lower imaging rates, particularly minority groups and people of color[
+45
+,
+46
+]. However, DI appropriateness criteria are relatively crude measures that often do not address a substantial grey area in clinical decision-making; thus, we cannot infer that reductions in “appropriate” imaging automatically result in patient harm [
+27
+,
+29
+].
+Although our meta-analyses demonstrated no significant effect on the appropriateness outcome, several papers found a significant benefit on a related outcome. While the effect of AF on appropriateness in Dudzinski et al. and Bhatia et al. 2017 [
+28
+,
+29
+] was non-significant (
+Fig 3
+), these authors found significant effects on “rarely appropriate” (i.e., inappropriate) imaging requests. Bhatia et al. 2014 [
+27
+] found significant effects on both appropriate and rarely appropriate imaging requests. This discordance in the statistical significance of two related outcomes (appropriateness and inappropriateness) is not unexpected, especially when there is a substantial difference in the frequency of these outcomes. The work of the Cochrane collaboration demonstrates that statistical significance is more likely for less frequent outcomes [
+15
+, Section 6.4.1.5]. We chose to analyze “appropriateness” rather than “inappropriateness,” as not all papers reported both outcomes and this allowed a greater number of studies to be included in our meta-analyses.
+Recommendations to enhance the effectiveness of AF
+A meta-regression completed as part of the Cochrane AF review found that low baseline performance, repeated delivery of AF reports, a supervisor or colleague as the source of feedback, both verbal and written delivery of feedback and the provision of explicit targets and an action plan were all associated with improved effectiveness of AF [
+11
+]. While most of the studies included in our review did not comment on baseline performance, the single study with the most dramatic effect on DI ordering selectively enrolled high test-ordering clinicians [
+32
+]. This study also found that receiving two instances of AF reduced ordering to a greater degree than one report [
+32
+]. The frequency of AF provision amongst the other studies included in our review range from one to seventeen. Comparing across these studies, we did not observe an association between the numbers of reports received and reduced ordering; in fact, the largest effect sizes were observed in the studies that provided one to two reports. Our review does not support the recommendations that AF is provided by a supervisor or colleague, that AF should be provided both verbally and written, or that specific targets or action plans be provided with AF, albeit on the basis of a limited number of studies that examined these aspects. Thus, our results should be considered inconclusive regarding the effectiveness of these features in AF for DI requests.
+Although we did not find support for the recommendation that AF reports be delivered by a supervisor or colleague, presumably the value of this method is the perception of reliability and importance of the information. This factor is often considered critical when pursuing clinician behaviour change [
+47
+,
+48
+]. Additionally, having reports delivered by a supervisor may motivate clinicians to change their behavior to maintain their professional reputation with their supervisors and peers [
+49
+]. In the three studies focusing on echocardiogram ordering, the greatest benefit came in the study targeting cardiology and general internal medicine residents compared to other studies that enrolled independently practicing physicians [
+27
+–
+29
+]. While these 3 studies did not include delivery of AF reports by an individual, it may be that the clinicians in training were more likely to perceive the information as trustworthy or they were more motivated by a desire to achieve professional norms [
+48
+].
+Another factor that was not examined in the Cochrane meta-regression [
+11
+] was the effect of visual appearance on the effectiveness of AF. While the four studies in our review that included graphical elements in their AF reports do not appear to be associated with improved AF performance, O’Connor et al. compared an enhanced to a standard visual display of their AF data in their factorial design trial, and found that the enhanced display outperformed the standard version [
+32
+]. In this study, both standard and enhanced versions of the report included graphical information, but the enhanced version added highlighting to draw attention to indicators of higher utilization. Enhanced visual displays such as this could increase the effectiveness of AF, without substantially increasing costs and resource utilization.
+A final consideration is the effectiveness of AF alone verses the effect when AF is added to another intervention. The evidence is very low certainty, but our findings suggest the possibility that AF may be more effective when added to another intervention than it is when implemented alone.
+Limitations
+Most of the studies included in this review were determined to be either at high or unclear risk of bias, and the quality of evidence for most comparisons was assessed as very low to low. Although the papers included in this review examined a range of imaging modalities, six of the studies exclusively examined a single, less commonly used imaging modality, sometimes just for a specific indication such as pulmonary embolism, or knee and back pain. The effectiveness of AF may vary across different modalities or indications and therefore these findings may be hard to generalize across different modalities and indications. While all the imaging modalities are used for diagnosis, some of the tests such as echocardiogram are more commonly used to monitor for progression of previously diagnosed conditions such as valvular heart disease, congestive heart failure and aortic dilation than they are for the initial diagnosis of those conditions, which may also affect the results of an AF intervention. Because the effectiveness of AF may vary dependant on indication or imaging modality, future studies could restrict the analyses to further investigate the effect of AF on these specific indications or modalities.
+Conclusions
+This review reports moderate quality evidence that AF and AF added to other interventions likely has a small but variable effect on the total number of DI requests, but results for improvements in the appropriateness of those requests are equivocal and of very low quality. The observation that AF may reduce total imaging requests with no change in appropriateness, suggests that both clinically indicated and inappropriate tests are reduced at a similar rate, raising the possibility of adverse clinical outcomes. Future studies of AF interventions should pay careful attention to study design and reporting standards to improve the quality and reliability of evidence, and they should consider studying harm outcomes.
+Supporting information
+S1 Appendix.
+S1 Fig.
+a. Effect of audit and feedback in observational studies on the number of diagnostic imaging requests (continuous outcome) (4–6). b. Effect of audit and feedback in observational studies on the number of diagnostic imaging requests (dichotomous outcome) (7, 8).
+S2 Fig. Effect of audit and feedback in observational studies on image order appropriateness (dichotomous outcome) (7). S3 Fig. Funnel plot of RCTs analyzing the total image order outcome.
+We did not consider this figure to be indicative of publication bias. The study in the bottom right favored the control intervention, not AF.
+S4 Fig. Funnel plot of RCTS analyzing the appropriateness of image orders outcome.
+We did not consider this figure to be indicative of publication bias.
+S1 Table. Description of AF interventions using TiDIER recommendations (1).
+Abbreviations: AF, Audit and Feedback; CT, Computed Tomography; Echo, Echocardiography; GIM, General physicians; Res, residents; Gov., Government; Mm; MRI, Magnetic Resonance Imaging; N/A, not applicable; PCP, Primary care physicians (e) PCPs refers to primary care physicians and may include family, general practice and general internal medicine physicians, (f) The term residents also refers to registrars (g) Comparison provided Includes own/ peers’ previous performance, national benchmark. Note: For multifaceted interventions, we assessed the characteristics of the audit and feedback component.
+S2 Table.
+a. Risk of Bias for NRCTs using the Risk Of Bias In Non-randomized Studies—of Interventions (ROBINS-I) tool (2). b. Risk of Bias for observational studies using Effective Practice and Organisation of Care (EPOC) recommendations (3). c. Risk of Bias for interrupted time series studies using Effective Practice and Organisation of Care (EPOC) recommendations (3). Legend:
+Low risk;
+Indeterminate Risk;
+High risk.
+S3 Table. Effect of audit and feedback in a non-randomized, crossover design study on the number of diagnostic imaging request 9).
+*no p-values, standard deviations, or confidence intervals provided.
+S4 Table. Effect of audit and feedback with another intervention vs usual care in an interrupted time-series analysis (10). S1 File. EMBASE search strategy. S2 File. CINAHL search strategy. S3 File. PubMED search strategy. S4 File. References for supporting information.
+https://doi.org/10.1371/journal.pone.0300001.s001
+(ZIP)
+S1 Checklist.
+PRISMA checklist.
+https://doi.org/10.1371/journal.pone.0300001.s002
+(DOCX)
+Acknowledgments
+We would like to acknowledge Bethan Copsey from the University of Leeds for her advice on the statistical considerations for the meta-analyses.
+References
+1.
+Canadian Institute for Health Information. Unnecessary Care in Canada. Ottawa, ON: CIHI; 2017.
+2.
+Smith-Bindman R, Kwan ML, Marlow EC, Theis MK, Bolch W, Cheng SY, et al. Trends in Use of Medical Imaging in US Health Care Systems and in Ontario, Canada, 2000–2016. JAMA. 2019;322(9):843–56.  pmid:31479136
+View Article
+PubMed/NCBI
+Google Scholar
+3.
+Oren O, Kebebew E, Ioannidis JPA. Curbing Unnecessary and Wasted Diagnostic Imaging. JAMA. 2019;321(3):245–6.  pmid:30615023
+View Article
+PubMed/NCBI
+Google Scholar
+4.
+Lumbreras B, Donat L, Hernández-Aguado I. Incidental findings in imaging diagnostic tests: a systematic review. Br J Radiol. 2010;83(988):276–89.  pmid:20335439
+View Article
+PubMed/NCBI
+Google Scholar
+5.
+Ganguli I, Simpkin AL, Lupo C, Weissman A, Mainor AJ, Orav EJ, et al. Cascades of Care After Incidental Findings in a US National Survey of Physicians. JAMA Network Open. 2019;2(10):e1913325-e.
+View Article
+Google Scholar
+6.
+Lurie JD, Birkmeyer NJ, Weinstein JN. Rates of Advanced Spinal Imaging and Spine Surgery. Spine. 2003;28(6):616–20.  pmid:12642771
+View Article
+PubMed/NCBI
+Google Scholar
+7.
+Lemmers GPG, van Lankveld W, Westert GP, van der Wees PJ, Staal JB. Imaging versus no imaging for low back pain: a systematic review, measuring costs, healthcare utilization and absence from work. Eur Spine J. 2019;28(5):937–50.  pmid:30796513
+View Article
+PubMed/NCBI
+Google Scholar
+8.
+Vogel L. Nearly a third of tests and treatments are unnecessary: CIHI. Canadian Medical Association Journal. 2017;189(16):E620–E1.  pmid:28438963
+View Article
+PubMed/NCBI
+Google Scholar
+9.
+Smith-Bindman R, Lipson J, Marcus R, al e. Radiation dose associated with common computed tomography examinations and the associated lifetime attributable risk of cancer. JAMA Internal Medicine. 2009;169(22):2078–86.  pmid:20008690
+View Article
+PubMed/NCBI
+Google Scholar
+10.
+Bora A, Açıkgöz G, Yavuz A, Bulut MD. Computed tomography: Are we aware of radiation risks in computed tomography? Eastern Journal Of Medicine. 2014;19(4):164–8.
+View Article
+Google Scholar
+11.
+Ivers N, Jamtvedt G, Flottorp S, Young JM, Odgaard-Jensen J, French SD, et al. Audit and feedback: effects on professional practice and healthcare outcomes. Cochrane Database Syst Rev. 2012(6):Cd000259.  pmid:22696318
+View Article
+PubMed/NCBI
+Google Scholar
+12.
+Hoffmann TC, Glasziou PP, Boutron I, Milne R, Perera R, Moher D, et al. Better reporting of interventions: template for intervention description and replication (TIDieR) checklist and guide. BMJ: British Medical Journal. 2014;348:g1687.  pmid:24609605
+View Article
+PubMed/NCBI
+Google Scholar
+13.
+Cochrane Effective Practice and Organisation of Care Working Group. EPOC resources for review authors Oslo, Norway: Norwegian Institute of Public Health; 2021 [updated January 2022.
+https://epoc.cochrane.org/resources/epoc-resources-review-authors
+.
+14.
+Foster ED, Deardorff A. Open Science Framework (OSF). J Med Libr Assoc. 2017;105(2):203–6.
+View Article
+Google Scholar
+15.
+Cochrane Handbook for Systematic Reviews of Interventions version 6.3 (updated February 2022). 6.2 ed. Higgins JPT, Thomas J, Chandler J, Cumpston M, Li T, Page MJ, et al., editors. Chichester (UK): John Wiley & Sons; 2022.
+16.
+McGowan J, Sampson M, Salzwedel DM, Cogo E, Foerster V, Lefebvre C. PRESS Peer Review of Electronic Search Strategies: 2015 Guideline Statement. J Clin Epidemiol. 2016;75:40–6.
+View Article
+Google Scholar
+17.
+Aiken M. An Updated Evaluation of Google Translate Accuracy. Studies in Linguistics and Literature. 2019;3:p253.
+View Article
+Google Scholar
+18.
+Cabana MD, Rand CS, Powe NR, Wu AW, Wilson MH, Abboud PA, et al. Why don’t physicians follow clinical practice guidelines? A framework for improvement. Jama. 1999;282(15):1458–65.  pmid:10535437
+View Article
+PubMed/NCBI
+Google Scholar
+19.
+Covidence systematic review software Veritas Health Innovation, Melbourne, Australia [
+www.covidence.org
+.
+20.
+Cochrane Effective Practice and Organisation of Care Review Group. Data Collection Checklist Ottawa, ON: Institute of Population Health, University of Ottawa; 2002 [updated June 2002.
+https://epoc.cochrane.org/sites/epoc.cochrane.org/files/public/uploads/datacollectionchecklist.pdf
+.
+21.
+Higgins JPT, Altman DG, Gøtzsche PC, Jüni P, Moher D, Oxman AD, et al. The Cochrane Collaboration’s tool for assessing risk of bias in randomised trials. BMJ. 2011;343:d5928.  pmid:22008217
+View Article
+PubMed/NCBI
+Google Scholar
+22.
+RoB 2: A revised Cochrane risk-of-bias tool for randomized trials.
+https://methods.cochrane.org/bias/resources/rob-2-revised-cochrane-risk-bias-tool-randomized-trials
+.
+23.
+Sterne JAC, Savović J, Page MJ, Elbers RG, Blencowe NS, Boutron I, et al. RoB 2: a revised tool for assessing risk of bias in randomised trials. BMJ. 2019;366:l4898.  pmid:31462531
+View Article
+PubMed/NCBI
+Google Scholar
+24.
+Review Manager (RevMan) [Computer program]. Version 5.4. 5.4 ed: The Cochrane Collaboration; 2020.
+25.
+Guyatt GH, Thorlund K, Oxman AD, Walter SD, Patrick D, Furukawa TA, et al. GRADE guidelines: 13. Preparing Summary of Findings tables and evidence profiles-continuous outcomes. Journal of Clinical Epidemiology. 2013;66(2):173–83.  pmid:23116689
+View Article
+PubMed/NCBI
+Google Scholar
+26.
+Thorlund K, Walter SD, Johnston BC, Furukawa TA, Guyatt GH. Pooling health-related quality of life outcomes in meta-analysis-a tutorial and review of methods for enhancing interpretability. Res Synth Methods. 2011;2(3):188–203.  pmid:26061786
+View Article
+PubMed/NCBI
+Google Scholar
+27.
+Bhatia RS, Dudzinski DM, Malhotra R, Milford CE, Yoerger Sanborn DM, Picard MH, et al. Educational intervention to reduce outpatient inappropriate echocardiograms: a randomized control trial. JACC Cardiovasc Imaging. 2014;7(9):857–66.  pmid:25129520
+View Article
+PubMed/NCBI
+Google Scholar
+28.
+Bhatia RS, Ivers NM, Yin XC, Myers D, Nesbitt GC, Edwards J, et al. Improving the Appropriate Use of Transthoracic Echocardiography: The Echo WISELY Trial. J Am Coll Cardiol. 2017;70(9):1135–44.  pmid:28838362
+View Article
+PubMed/NCBI
+Google Scholar
+29.
+Dudzinski DM, Bhatia RS, Mi MY, Isselbacher EM, Picard MH, Weiner RB. Effect of Educational Intervention on the Rate of Rarely Appropriate Outpatient Echocardiograms Ordered by Attending Academic Cardiologists: A Randomized Clinical Trial. JAMA Cardiology. 2016;1(7):805–12.  pmid:27547895
+View Article
+PubMed/NCBI
+Google Scholar
+30.
+Eccles M, Steen N, Grimshaw J, Thomas L, McNamee P, Soutter J, et al. Effect of audit and feedback, and reminder messages on primary-care radiology referrals: a randomised trial. Lancet. 2001;357(9266):1406–9.  pmid:11356439
+View Article
+PubMed/NCBI
+Google Scholar
+31.
+Kerry S, Oakeshott P, Dundas D, Williams J. Influence of postal distribution of the Royal College of Radiologists’ guidelines, together with feedback on radiological referral rates, on X-ray referrals from general practice: a randomized controlled trial. Fam Pract. 2000;17(1):46–52.  pmid:10673488
+View Article
+PubMed/NCBI
+Google Scholar
+32.
+O’Connor DA, Glasziou P, Maher CG, McCaffery KJ, Schram D, Maguire B, et al. Effect of an Individualized Audit and Feedback Intervention on Rates of Musculoskeletal Diagnostic Imaging Requests by Australian General Practitioners: A Randomized Clinical Trial. Jama. 2022;328(9):850–60.  pmid:36066518
+View Article
+PubMed/NCBI
+Google Scholar
+33.
+Raja AS, Ip IK, Dunne RM, Schuur JD, Mills AM, Khorasani R. Effects of Performance Feedback Reports on Adherence to Evidence-Based Guidelines in Use of CT for Evaluation of Pulmonary Embolism in the Emergency Department: A Randomized Trial. AJR Am J Roentgenol. 2015;205(5):936–40.  pmid:26204114
+View Article
+PubMed/NCBI
+Google Scholar
+34.
+Robling MR, Houston HL, Kinnersley P, Hourihan MD, Cohen DR, Hale J, et al. General practitioners’ use of magnetic resonance imaging: an open randomized trial comparing telephone and written requests and an open randomized controlled trial of different methods of local guideline dissemination. Clin Radiol. 2002;57(5):402–7.  pmid:12014939
+View Article
+PubMed/NCBI
+Google Scholar
+35.
+Verstappen WH, van der Weijden T, Sijbrandij J, Smeele I, Hermsen J, Grimshaw J, et al. Effect of a practice-based strategy on test ordering performance of primary care physicians: a randomized trial. Jama. 2003;289(18):2407–12.  pmid:12746365
+View Article
+PubMed/NCBI
+Google Scholar
+36.
+Winkens RA, Pop P, Bugter-Maessen AM, Grol RP, Kester AD, Beusmans GH, et al. Randomised controlled trial of routine individual feedback to improve rationality and reduce numbers of test requests. Lancet. 1995;345(8948):498–502.  pmid:7861879
+View Article
+PubMed/NCBI
+Google Scholar
+37.
+Zafar HM, Ip IK, Mills AM, Raja AS, Langlotz CP, Khorasani R. Effect of Clinical Decision Support-Generated Report Cards Versus Real-Time Alerts on Primary Care Provider Guideline Adherence for Low Back Pain Outpatient Lumbar Spine MRI Orders. AJR Am J Roentgenol. 2019;212(2):386–94.  pmid:30476451
+View Article
+PubMed/NCBI
+Google Scholar
+38.
+Freeborn DK, Shye D, Mullooly JP, Eraker S, Romeo J. Primary care physicians’ use of lumbar spine imaging tests: effects of guidelines and practice pattern feedback. Journal of general internal medicine. 1997;12(10):619,Äê25.  pmid:9346458
+View Article
+PubMed/NCBI
+Google Scholar
+39.
+Berwick DM, Coltin KL. Feedback reduces test use in a health maintenance organization. Jama. 1986;255(11):1450–4. pmid:3951079
+View Article
+PubMed/NCBI
+Google Scholar
+40.
+Bhatia RS, Milford CE, Picard MH, Weiner RB. An educational intervention reduces the rate of inappropriate echocardiograms on an inpatient medical service. JACC Cardiovasc Imaging. 2013;6(5):545–55.  pmid:23582360
+View Article
+PubMed/NCBI
+Google Scholar
+41.
+Cammisa C, Partridge G, Ardans C, Buehrer K, Chapman B, Beckman H. Engaging physicians in change: results of a safety net quality improvement program to reduce overuse. Am J Med Qual. 2011;26(1):26–33.  pmid:20876341
+View Article
+PubMed/NCBI
+Google Scholar
+42.
+Halpern DJ, Clark-Randall A, Woodall J, Anderson J, Shah K. Reducing Imaging Utilization in Primary Care Through Implementation of a Peer Comparison Dashboard. J Gen Intern Med. 2021;36(1):108–13.  pmid:32885372
+View Article
+PubMed/NCBI
+Google Scholar
+43.
+Morgan T, Wu J, Ovchinikova L, Lindner R, Blogg S, Moorin R. A national intervention to reduce imaging for low back pain by general practitioners: a retrospective economic program evaluation using Medicare Benefits Schedule data. BMC Health Services Research. 2019;19(1):983.  pmid:31864352
+View Article
+PubMed/NCBI
+Google Scholar
+44.
+Salehi L, Jaskolka J, Yu H, Ossip M, Phalpher P, Valani R, et al. The impact of performance feedback reports on physician ordering behavior in the use of computed tomography pulmonary angiography (CTPA). Emerg Radiol. 2023;30(1):63–9.  pmid:36378395
+View Article
+PubMed/NCBI
+Google Scholar
+45.
+Ross AB, Kalia V, Chan BY, Li G. The influence of patient race on the use of diagnostic imaging in United States emergency departments: data from the National Hospital Ambulatory Medical Care survey. BMC Health Serv Res. 2020;20(1):840.  pmid:32894129
+View Article
+PubMed/NCBI
+Google Scholar
+46.
+Ross AB, Rother MDM, Miles RC, Flores EJ, Boakye-Ansa NK, Brown C, et al. Racial and/or Ethnic Disparities in the Use of Imaging: Results from the 2015 National Health Interview Survey. Radiology. 2022;302(1):140–2.  pmid:34726530
+View Article
+PubMed/NCBI
+Google Scholar
+47.
+Brehaut JC, Colquhoun HL, Eva KW, Carroll K, Sales A, Michie S, et al. Practice Feedback Interventions: 15 Suggestions for Optimizing Effectiveness. Ann Intern Med. 2016;164(6):435–41.  pmid:26903136
+View Article
+PubMed/NCBI
+Google Scholar
+48.
+Michie S, Johnston M, Abraham C, Lawton R, Parker D, Walker A. Making psychological theory useful for implementing evidence based practice: a consensus approach. Qual Saf Health Care. 2005;14(1):26–33.  pmid:15692000
+View Article
+PubMed/NCBI
+Google Scholar
+49.
+Korenstein D, Gillespie EF. Audit and Feedback—Optimizing a Strategy to Reduce Low-Value Care. JAMA. 2022;328(9):833–5.  pmid:36066538
+View Article
+PubMed/NCBI
+Google Scholar
+Download PDF
+Citation
+XML
+Print
+Share
+Reddit
+Facebook
+LinkedIn
+Mendeley
+Bluesky
+Email
+Advertisement
+Subject Areas
+?
+For more information about PLOS Subject Areas, click
+here
+.
+We want your feedback.
+Do these Subject Areas make sense for this article? Click the target next to the incorrect Subject Area and let us know. Thanks for your help!
+Medical risk factors
+Is the Subject Area
+"Medical risk factors"
+applicable to this article?
+Yes
+No
+Thanks for your feedback.
+Physicians
+Is the Subject Area
+"Physicians"
+applicable to this article?
+Yes
+No
+Thanks for your feedback.
+Magnetic resonance imaging
+Is the Subject Area
+"Magnetic resonance imaging"
+applicable to this article?
+Yes
+No
+Thanks for your feedback.
+Metaanalysis
+Is the Subject Area
+"Metaanalysis"
+applicable to this article?
+Yes
+No
+Thanks for your feedback.
+Randomized controlled trials
+Is the Subject Area
+"Randomized controlled trials"
+applicable to this article?
+Yes
+No
+Thanks for your feedback.
+Computed axial tomography
+Is the Subject Area
+"Computed axial tomography"
+applicable to this article?
+Yes
+No
+Thanks for your feedback.
+Echocardiography
+Is the Subject Area
+"Echocardiography"
+applicable to this article?
+Yes
+No
+Thanks for your feedback.
+X-ray radiography
+Is the Subject Area
+"X-ray radiography"
+applicable to this article?
+Yes
+No
+Thanks for your feedback.
+Publications
+PLOS Aging and Health
+PLOS Biology
+PLOS Climate
+PLOS Complex Systems
+PLOS Computational Biology
+PLOS Digital Health
+PLOS Ecosystems
+PLOS Genetics
+PLOS Global Public Health
+PLOS Medicine
+PLOS Mental Health
+PLOS Neglected Tropical Diseases
+PLOS One
+PLOS Pathogens
+PLOS Sustainability and Transformation
+PLOS Water
+Home
+Blogs
+Collections
+Give feedback
+LOCKSS
+Privacy Policy
+Terms of Use
+Advertise
+Media Inquiries
+Contact
+PLOS is a nonprofit 501(c)(3) corporation, #C2354500, based in California, US
