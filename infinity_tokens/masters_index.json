@@ -1,11 +1,11 @@
 {
-  "created_at_utc": "2025-11-29T19:39:56.539604+00:00",
+  "created_at_utc": "2025-11-29T20:08:01.552191+00:00",
   "batch_size": 10,
   "masters": [
     {
       "master_index": 1,
       "count": 10,
-      "master_hash": "65c0c0ecc013c89bb5d6a142aa6df05efc68a59a996df3802e9aaa43a44c3b55",
+      "master_hash": "085f5c3f9b7bef408f19950e222df2f91df2d87e7f8aab7fad7ca28a0738c10f",
       "master_zip": "infinity_tokens/master_0001_10.zip"
     }
   ]
