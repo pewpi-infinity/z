@@ -37,7 +37,9 @@ def scale_value(score):
     return f"${50000 + score*12}"
 
 def valuate_token(tpath):
-    obj = json.load(open(tpath))
+    # Use context manager to properly close file handles
+    with open(tpath, 'r') as f:
+        obj = json.load(f)
     text = obj["raw_text"]
 
     s = score_text(text)
@@ -46,7 +48,8 @@ def valuate_token(tpath):
     obj["value"] = v
     obj["score"] = s
 
-    json.dump(obj, open(tpath,"w"), indent=4)
+    with open(tpath, 'w') as f:
+        json.dump(obj, f, indent=4)
 
     return obj["hash"], v
 
@@ -55,7 +58,8 @@ def main():
         print("[!] No buffer found.")
         return
 
-    buf = json.load(open(BUFFER))
+    with open(BUFFER, 'r') as f:
+        buf = json.load(f)
     pending = buf.get("pending", [])
 
     if not pending:
@@ -73,7 +77,8 @@ def main():
 
     # clear buffer
     buf["pending"]=[]
-    json.dump(buf, open(BUFFER,"w"), indent=4)
+    with open(BUFFER, 'w') as f:
+        json.dump(buf, f, indent=4)
 
     print("\n[∞] Valuation complete. All tokens updated in repo.")
 

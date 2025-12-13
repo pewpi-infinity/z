@@ -1,0 +1,20 @@
+{
+    "mega_hash": "e46e810bb332b889fb3487b2d5fd38f15d81605376706558ed626849e4a76f96",
+    "component_hashes": [
+        "9dc5758b1b62f14f848f171fb987825bce63ba75edc53bc078ea3853b96cd5b8",
+        "6e6af0b8c439440c60664e63a118d4b2615bcd162572a763d295ffc3da800a3a",
+        "244e6a9acdf89db5915ee1c96a9442241178caf35711d20f8d15fc71f5b17f0e"
+    ],
+    "component_count": 3,
+    "description": "",
+    "timestamp": "2025-12-13T05:18:16.863956Z",
+    "combined_score": 273005870.0,
+    "value": 273968870000000.0,
+    "value_formatted": "$273,968,870,000,000.00",
+    "vector": {
+        "x": 0.987964,
+        "y": 0.990212,
+        "z": 0.300733
+    },
+    "type": "MEGA_HASH"
+}
