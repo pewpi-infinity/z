@@ -1,0 +1,35 @@
+{
+    "hash": "6c1614f9d9b41883462bd43b91b8722db48f7beaf8c1c511079a548926513f5a",
+    "timestamp": "2025-12-13T05:21:50.912936Z",
+    "source_type": "text",
+    "filename": null,
+    "raw_text": "Quantum research paper on fusion reactors",
+    "score": 2182.5,
+    "value": 238250.0,
+    "value_formatted": "$238.25K",
+    "vector": {
+        "x": 0.097292,
+        "y": 0.649266,
+        "z": 0.782396
+    },
+    "analysis": {
+        "word_count": 6,
+        "char_count": 41,
+        "keyword_matches": {
+            "quantum": {
+                "count": 1,
+                "bonus": 500
+            },
+            "fusion": {
+                "count": 1,
+                "bonus": 500
+            },
+            "research": {
+                "count": 1,
+                "bonus": 150
+            }
+        },
+        "depth_bonus": 0,
+        "complexity_bonus": 1000
+    }
+}
