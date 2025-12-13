@@ -12,15 +12,18 @@ BOOST_KEYWORDS = [
 ]
 
 def score_text(text):
-    base = len(text)
+    # Cache length and lowercase conversion to avoid redundant operations
+    text_len = len(text)
+    text_lower = text.lower()
+    base = text_len
 
-    # keyword bonuses
+    # keyword bonuses - compute text_lower once
     boost = 0
     for k in BOOST_KEYWORDS:
-        boost += text.lower().count(k) * 50
+        boost += text_lower.count(k) * 50
 
-    # exponential tail for long depth
-    depth = int(math.log(max(1, len(text)), 3) * 40)
+    # exponential tail for long depth - use cached length
+    depth = int(math.log(max(1, text_len), 3) * 40)
 
     return base + boost + depth
 

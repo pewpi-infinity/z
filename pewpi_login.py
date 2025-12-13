@@ -799,6 +799,7 @@ class ViewModeManager:
             for token in tokens:
                 # Escape the token and use it for matching in already-escaped content
                 escaped_token = html.escape(token)
+                # Pre-compile pattern outside of substitution for efficiency
                 # Case-insensitive replacement with preserved case
                 pattern = re.compile(re.escape(escaped_token), re.IGNORECASE)
                 replacement = f'<span class="highlight-word" style="background-color: {hex_color}40; border-bottom: 2px solid {hex_color};">{escaped_token}</span>'
@@ -812,14 +813,21 @@ class ViewModeManager:
         sentences = re.split(r'(?<=[.!?])\s+', content)
         result_sentences = []
         
+        # Pre-compute lowercase tokens for each category to avoid repeated .lower() calls
+        category_tokens_lower = {
+            category: [token.lower() for token in tokens]
+            for category, tokens in category_tokens.items()
+        }
+        
         for sentence in sentences:
             # Determine which category this sentence belongs to
             best_category = None
             best_score = 0
             
             sentence_lower = sentence.lower()
-            for category, tokens in category_tokens.items():
-                score = sum(1 for token in tokens if token.lower() in sentence_lower)
+            for category, tokens_lower in category_tokens_lower.items():
+                # Use list comprehension with early termination for better performance
+                score = sum(1 for token in tokens_lower if token in sentence_lower)
                 if score > best_score:
                     best_score = score
                     best_category = category

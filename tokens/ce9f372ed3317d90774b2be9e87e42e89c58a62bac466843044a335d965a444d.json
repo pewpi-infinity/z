@@ -1,0 +1,35 @@
+{
+    "hash": "ce9f372ed3317d90774b2be9e87e42e89c58a62bac466843044a335d965a444d",
+    "timestamp": "2025-12-13T05:15:48.345340Z",
+    "source_type": "text",
+    "filename": null,
+    "raw_text": "Neural network AI algorithm implementation",
+    "score": 1781.0,
+    "value": 18810.0,
+    "value_formatted": "$18.81K",
+    "vector": {
+        "x": 0.726179,
+        "y": 0.225122,
+        "z": 0.249389
+    },
+    "analysis": {
+        "word_count": 5,
+        "char_count": 42,
+        "keyword_matches": {
+            "neural": {
+                "count": 1,
+                "bonus": 450
+            },
+            "ai": {
+                "count": 1,
+                "bonus": 150
+            },
+            "algorithm": {
+                "count": 1,
+                "bonus": 150
+            }
+        },
+        "depth_bonus": 0,
+        "complexity_bonus": 1000
+    }
+}
