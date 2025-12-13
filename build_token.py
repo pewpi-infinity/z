@@ -69,6 +69,12 @@ BOOST_KEYWORDS = {
 MIN_VALUE = 90
 MAX_VALUE = 964_590_650_869_860_860.97
 
+# Pre-compile regex patterns for keyword matching (optimization)
+_KEYWORD_PATTERNS = {
+    keyword: re.compile(r'\b' + re.escape(keyword) + r'\b', re.IGNORECASE)
+    for keyword in BOOST_KEYWORDS.keys()
+}
+
 
 def get_timestamp():
     """Get current UTC timestamp."""
@@ -123,10 +129,11 @@ def score_content(text):
     # Word count score
     score += word_count * 2
 
-    # Keyword matching with tier bonuses - use regex for better performance
+    # Keyword matching with tier bonuses - use pre-compiled patterns for better performance
     for keyword, bonus in BOOST_KEYWORDS.items():
-        # Use word boundary matching for more accurate counts
-        count = len(re.findall(r'\b' + re.escape(keyword) + r'\b', text_lower))
+        # Use pre-compiled regex patterns for efficient word boundary matching
+        pattern = _KEYWORD_PATTERNS[keyword]
+        count = len(pattern.findall(text_lower))
         if count > 0:
             keyword_score = count * bonus
             score += keyword_score

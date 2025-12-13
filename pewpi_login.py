@@ -270,6 +270,7 @@ import logging
 import datetime
 import re
 import html
+from functools import lru_cache
 from typing import Dict, List, Optional, Tuple, Any
 
 # ------------------------------ CONFIG ------------------------------
@@ -734,6 +735,20 @@ class ButtonGenerator:
 
 
 # ------------------------------ VIEW MODE MANAGER ------------------------------
+@lru_cache(maxsize=256)
+def _compile_token_pattern(token: str) -> re.Pattern:
+    """
+    Cached compilation of regex patterns for token matching.
+    
+    Args:
+        token: Token string to compile pattern for
+    
+    Returns:
+        Compiled regex pattern
+    """
+    return re.compile(re.escape(token), re.IGNORECASE)
+
+
 class ViewModeManager:
     """Manages toggle view modes for content display."""
     
@@ -797,11 +812,9 @@ class ViewModeManager:
             hex_color = self.color_manager.get_hex_color(color)
             
             for token in tokens:
-                # Escape the token and use it for matching in already-escaped content
+                # Escape the token and use cached pattern compilation
                 escaped_token = html.escape(token)
-                # Pre-compile pattern outside of substitution for efficiency
-                # Case-insensitive replacement with preserved case
-                pattern = re.compile(re.escape(escaped_token), re.IGNORECASE)
+                pattern = _compile_token_pattern(escaped_token)
                 replacement = f'<span class="highlight-word" style="background-color: {hex_color}40; border-bottom: 2px solid {hex_color};">{escaped_token}</span>'
                 result = pattern.sub(replacement, result)
         
