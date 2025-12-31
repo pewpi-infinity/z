@@ -1,0 +1,36 @@
+{
+    "hash": "70e4e03d2d35c1bfa5a9fa4fdcfaa3c2c3990691ee39a8e6b22ab1ec718f252b",
+    "timestamp": "2025-12-31T20:50:51.891574Z",
+    "source_type": "text",
+    "filename": null,
+    "raw_text": "Integration test quantum research data",
+    "score": 1754.0,
+    "value": 18540.0,
+    "value_formatted": "$18.54K",
+    "vector": {
+        "x": 0.335005,
+        "y": 0.541599,
+        "z": 0.242054
+    },
+    "analysis": {
+        "word_count": 5,
+        "char_count": 38,
+        "keyword_matches": {
+            "quantum": {
+                "count": 1,
+                "bonus": 500
+            },
+            "research": {
+                "count": 1,
+                "bonus": 150
+            },
+            "data": {
+                "count": 1,
+                "bonus": 75
+            }
+        },
+        "depth_bonus": 0,
+        "complexity_bonus": 1000
+    },
+    "creator": null
+}
