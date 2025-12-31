@@ -1,40 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Infinity</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      background: #0b0b0b;
-      color: #e6e6e6;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .wrap {
-      text-align: center;
-    }
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-    p {
-      opacity: 0.75;
-      margin-top: 0.5rem;
-    }
-    .dot {
-      color: #00e5ff;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Infinity Research Portal - Mobile-optimized article reader with GitHub OAuth authentication">
+  <title>∞ Infinity Research Portal</title>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/static/css/index.css">
 </head>
 <body>
-  <div class="wrap">
-    <h1>∞ Infinity<span class="dot">.</span></h1>
-    <p>GitHub Pages online</p>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <a href="/" class="logo">
+          <span class="logo-symbol">∞</span>
+          <span>Infinity</span>
+        </a>
+        
+        <!-- Authentication Section -->
+        <div class="auth-container">
+          <!-- Login Section (shown when not authenticated) -->
+          <div id="login-section">
+            <button id="login-btn" class="login-btn">
+              Login with GitHub
+            </button>
+          </div>
+          
+          <!-- User Section (shown when authenticated) -->
+          <div id="user-section">
+            <div class="user-info">
+              <div class="username">
+                <span id="username-display">User</span>
+              </div>
+              <div class="token-count">
+                Tokens: <span class="token-count-value" id="token-count-display">0</span>
+              </div>
+            </div>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Filters -->
+      <div class="filters">
+        <button class="filter-btn active" data-role="all">All</button>
+        <button class="filter-btn" data-role="engineering">Engineering</button>
+        <button class="filter-btn" data-role="ceo">CEO</button>
+        <button class="filter-btn" data-role="import">Import</button>
+        <button class="filter-btn" data-role="investigate">Investigate</button>
+        <button class="filter-btn" data-role="routes">Routes</button>
+        <button class="filter-btn" data-role="data">Data</button>
+        <button class="filter-btn" data-role="assimilation">Assimilation</button>
+      </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="articles">
+      <div class="articles-header">
+        <h1 class="articles-title">Research Articles</h1>
+      </div>
+      
+      <div id="articles-container">
+        <!-- Articles will be loaded here by JavaScript -->
+        <div class="no-articles">
+          <p>Loading articles...</p>
+        </div>
+      </div>
+    </main>
+    
+    <!-- Chat Terminal (hidden by default) -->
+    <div id="chat-terminal"></div>
+    
+    <!-- Floating Action Button for Chat -->
+    <button id="chat-toggle-btn" class="fab" title="Open Mongoose OS Terminal">
+      💬
+    </button>
   </div>
+  
+  <!-- Scripts -->
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/chat.js"></script>
+  <script src="/static/js/index.js"></script>
 </body>
 </html>
