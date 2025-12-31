@@ -417,6 +417,78 @@ def update_user_tokens():
     })
 
 
+# ------------------------------ TOKEN BUILDING ENDPOINTS ------------------------------
+
+@app.route('/api/token/build', methods=['POST'])
+@require_auth
+def build_token_api():
+    """
+    Build a token with authentication.
+    Requires user to be logged in.
+    """
+    username = session.get('username')
+    data = request.get_json() or {}
+    
+    text = data.get('text', '')
+    source_type = data.get('source_type', 'text')
+    filename = data.get('filename')
+    
+    if not text or not text.strip():
+        return jsonify({
+            "success": False,
+            "error": "Text content is required"
+        }), 400
+    
+    # Sanitize inputs
+    text = str(text)[:1_000_000]  # Limit to 1MB
+    if filename:
+        filename = os.path.basename(str(filename))
+    
+    try:
+        # Import and use build_token function
+        from build_token import build_token
+        
+        token = build_token(
+            text=text,
+            source_type=source_type,
+            filename=filename,
+            username=username
+        )
+        
+        # Update user's token count
+        users_data = load_users()
+        if username in users_data["users"]:
+            users_data["users"][username]["tokens_created"].append({
+                "hash": token["hash"],
+                "value": token.get("value", 0),
+                "created_at": get_timestamp()
+            })
+            users_data["users"][username]["token_count"] += 1
+            save_users(users_data)
+        
+        # Track token build commit
+        add_login_commit(username, "token_build")
+        
+        return jsonify({
+            "success": True,
+            "token": {
+                "hash": token["hash"],
+                "value": token.get("value", 0),
+                "value_formatted": token.get("value_formatted", ""),
+                "score": token.get("score", 0),
+                "timestamp": token.get("timestamp", "")
+            },
+            "token_count": users_data["users"][username]["token_count"],
+            "message": "Token created successfully"
+        })
+    
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "error": f"Token creation failed: {str(e)}"
+        }), 500
+
+
 # ------------------------------ HEALTH CHECK ------------------------------
 
 @app.route('/health', methods=['GET'])

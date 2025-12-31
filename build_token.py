@@ -2,6 +2,9 @@
 """
 Build Your Own Token System - Token creation with content analysis and valuation
 Part of the Pewpi Login / Infinity Research Portal
+
+NOTE: When called via API, authentication is required.
+CLI usage still works for local development.
 """
 
 import os
@@ -17,6 +20,7 @@ from datetime import timezone
 Z_ROOT = os.path.abspath(os.path.dirname(__file__))
 TOKENS_DIR = os.path.join(Z_ROOT, "tokens")
 SESSION_BUFFER = os.path.join(Z_ROOT, "session_buffer.json")
+USERS_FILE = os.path.join(Z_ROOT, "users.json")
 
 os.makedirs(TOKENS_DIR, exist_ok=True)
 
@@ -209,7 +213,7 @@ def format_value(value):
         return f"${value:.2f}"
 
 
-def build_token(text, source_type="text", filename=None):
+def build_token(text, source_type="text", filename=None, username=None):
     """
     Build a token from user input.
 
@@ -217,10 +221,16 @@ def build_token(text, source_type="text", filename=None):
         text: The content to tokenize
         source_type: "text", "file", or "paste"
         filename: Original filename if from file upload
+        username: Username of the creator (for tracking)
 
     Returns:
         Token object with hash, value, and metadata
     """
+    # Sanitize inputs to prevent injection attacks
+    text = str(text)[:1_000_000]  # Limit to 1MB
+    if filename:
+        filename = os.path.basename(str(filename))  # Prevent path traversal
+    
     # Generate hash
     token_hash = infinity_hash(text + str(datetime.datetime.now(timezone.utc)))
 
@@ -241,7 +251,8 @@ def build_token(text, source_type="text", filename=None):
         "value": value,
         "value_formatted": format_value(value),
         "vector": vector_position(token_hash),
-        "analysis": analysis
+        "analysis": analysis,
+        "creator": username  # Track who created this token
     }
 
     # Save token to file
