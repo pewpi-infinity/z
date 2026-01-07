@@ -38,6 +38,9 @@ LOGIN_COMMITS_FILE = os.path.join(Z_ROOT, "login_commits.json")
 # Rate limiting storage (simple in-memory for now)
 rate_limit_store = {}
 
+# Magic link tokens storage (in-memory for now, use Redis in production)
+magic_link_tokens = {}
+
 # ------------------------------ UTILITIES ------------------------------
 
 def get_timestamp():
@@ -300,7 +303,8 @@ def auth_status():
             "error": "Invalid session"
         }), 401
     
-    username = users_data["sessions"][session_token]["username"]
+    session_data = users_data["sessions"][session_token]
+    username = session_data["username"]
     user = users_data["users"].get(username)
     
     if not user:
@@ -314,6 +318,8 @@ def auth_status():
         "success": True,
         "authenticated": True,
         "username": username,
+        "email": user.get("email", session_data.get("email", "")),
+        "provider": user.get("oauth_provider", "unknown"),
         "token_count": user.get("token_count", 0),
         "tokens_created": len(user.get("tokens_created", [])),
         "mega_hashes": len(user.get("mega_hashes", [])),
@@ -345,6 +351,183 @@ def logout():
         "success": True,
         "message": "Logged out successfully"
     })
+
+
+# ------------------------------ MAGIC LINK AUTHENTICATION ------------------------------
+
+@app.route('/auth/magic-link', methods=['POST'])
+def send_magic_link():
+    """Send a magic link for passwordless authentication."""
+    data = request.get_json()
+    
+    if not data or 'email' not in data:
+        return jsonify({
+            "success": False,
+            "error": "Email is required"
+        }), 400
+    
+    email = data['email'].strip().lower()
+    
+    # Validate email format
+    if not email or '@' not in email:
+        return jsonify({
+            "success": False,
+            "error": "Invalid email format"
+        }), 400
+    
+    # Check rate limit
+    if not check_rate_limit(email, limit_per_minute=5):
+        return jsonify({
+            "success": False,
+            "error": "Too many requests. Please try again later."
+        }), 429
+    
+    # Generate magic link token
+    token = secrets.token_urlsafe(32)
+    expiry = datetime.datetime.now(timezone.utc) + datetime.timedelta(minutes=15)
+    
+    # Store token with email and expiry
+    magic_link_tokens[token] = {
+        "email": email,
+        "expiry": expiry.isoformat(),
+        "used": False
+    }
+    
+    # Clean expired tokens
+    now = datetime.datetime.now(timezone.utc)
+    expired_tokens = [
+        t for t, data in magic_link_tokens.items()
+        if datetime.datetime.fromisoformat(data['expiry']) < now
+    ]
+    for t in expired_tokens:
+        del magic_link_tokens[t]
+    
+    # In dev mode, return the token directly
+    dev_mode = os.getenv('DEV_MODE', 'true').lower() == 'true'
+    
+    if dev_mode:
+        magic_link_url = f"http://localhost:5000/auth/magic-link/verify?token={token}"
+        return jsonify({
+            "success": True,
+            "message": "Magic link generated (dev mode)",
+            "devToken": token,
+            "devUrl": magic_link_url,
+            "email": email
+        })
+    else:
+        # In production, send email via SMTP (not implemented here)
+        # For now, just return success without exposing token
+        return jsonify({
+            "success": True,
+            "message": f"Magic link sent to {email}. Please check your inbox."
+        })
+
+
+@app.route('/auth/magic-link/verify', methods=['POST', 'GET'])
+def verify_magic_link():
+    """Verify magic link token and log in user."""
+    # Support both POST and GET for flexibility
+    if request.method == 'POST':
+        data = request.get_json()
+        token = data.get('token') if data else None
+    else:
+        token = request.args.get('token')
+    
+    if not token:
+        return jsonify({
+            "success": False,
+            "error": "Token is required"
+        }), 400
+    
+    # Check if token exists and is valid
+    if token not in magic_link_tokens:
+        return jsonify({
+            "success": False,
+            "error": "Invalid or expired token"
+        }), 400
+    
+    token_data = magic_link_tokens[token]
+    
+    # Check if token has been used
+    if token_data['used']:
+        return jsonify({
+            "success": False,
+            "error": "Token has already been used"
+        }), 400
+    
+    # Check if token has expired
+    expiry = datetime.datetime.fromisoformat(token_data['expiry'])
+    if datetime.datetime.now(timezone.utc) > expiry:
+        del magic_link_tokens[token]
+        return jsonify({
+            "success": False,
+            "error": "Token has expired"
+        }), 400
+    
+    # Mark token as used
+    token_data['used'] = True
+    
+    email = token_data['email']
+    username = email.split('@')[0]  # Use email prefix as username
+    
+    # Load or create user
+    users_data = load_users()
+    
+    if username not in users_data["users"]:
+        # Create new user
+        users_data["users"][username] = {
+            "email": email,
+            "username": username,
+            "token_count": 0,
+            "tokens_created": [],
+            "mega_hashes": [],
+            "created_at": get_timestamp(),
+            "last_login": get_timestamp(),
+            "oauth_provider": "magic_link"
+        }
+    else:
+        # Update existing user
+        users_data["users"][username]["last_login"] = get_timestamp()
+    
+    # Create session
+    session_token = generate_session_token()
+    users_data["sessions"][session_token] = {
+        "username": username,
+        "created_at": get_timestamp(),
+        "email": email,
+        "provider": "magic_link"
+    }
+    
+    save_users(users_data)
+    
+    # Set session cookies
+    session['session_token'] = session_token
+    session['username'] = username
+    session.permanent = True
+    
+    # Track login commit
+    add_login_commit(username, "magic_link_login", request.remote_addr)
+    
+    # Return success with user info
+    user = users_data["users"][username]
+    
+    response_data = {
+        "success": True,
+        "message": "Login successful",
+        "user": {
+            "username": username,
+            "email": email,
+            "provider": "magic_link",
+            "token_count": user.get("token_count", 0)
+        }
+    }
+    
+    # For GET requests, redirect to home page
+    if request.method == 'GET':
+        response = redirect('/')
+        return response
+    
+    return jsonify(response_data)
 
 
 # ------------------------------ USER ENDPOINTS ------------------------------

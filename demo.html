@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pewpi Login & Wallet Demo</title>
+  
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/src/shared/theme.css">
+  
+  <!-- Dexie from CDN -->
+  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--pewpi-bg-primary, #0a0b0d);
+      color: var(--pewpi-text-primary, #e6e7eb);
+      font-family: var(--pewpi-font-primary, sans-serif);
+      min-height: 100vh;
+    }
+    
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .demo-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .demo-title {
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem;
+      background: linear-gradient(135deg, var(--pewpi-primary), var(--pewpi-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .demo-subtitle {
+      color: var(--pewpi-text-secondary);
+      font-size: 1.125rem;
+    }
+    
+    .demo-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    @media (max-width: 768px) {
+      .demo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .demo-section {
+      background: var(--pewpi-bg-secondary);
+      border: 1px solid var(--pewpi-border-primary);
+      border-radius: var(--pewpi-radius-lg);
+      padding: 2rem;
+    }
+    
+    .section-header {
+      font-size: 1.5rem;
+      margin: 0 0 1.5rem;
+      color: var(--pewpi-text-primary);
+    }
+    
+    #wallet-container {
+      grid-column: span 2;
+    }
+    
+    @media (max-width: 768px) {
+      #wallet-container {
+        grid-column: span 1;
+      }
+    }
+    
+    .test-controls {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--pewpi-border-primary);
+    }
+    
+    .test-btn {
+      background: var(--pewpi-bg-tertiary);
+      color: var(--pewpi-text-primary);
+      border: 1px solid var(--pewpi-border-primary);
+      padding: 0.5rem 1rem;
+      border-radius: var(--pewpi-radius-md);
+      cursor: pointer;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      transition: all 0.2s;
+    }
+    
+    .test-btn:hover {
+      background: var(--pewpi-bg-hover);
+      border-color: var(--pewpi-primary);
+    }
+    
+    .status-indicator {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+    
+    .status-connected {
+      background: var(--pewpi-accent-green);
+      box-shadow: 0 0 10px var(--pewpi-accent-green);
+    }
+    
+    .status-disconnected {
+      background: var(--pewpi-text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <div class="demo-header">
+      <h1 class="demo-title">🚀 Pewpi Login & Wallet Demo</h1>
+      <p class="demo-subtitle">Production-grade authentication and token management</p>
+    </div>
+    
+    <div class="demo-grid">
+      <!-- Login Section -->
+      <div class="demo-section pewpi-login" id="login-container">
+        <h2 class="pewpi-login-title">Login</h2>
+        <p class="pewpi-login-subtitle">Choose your authentication method</p>
+        
+        <!-- Alert Messages -->
+        <div id="auth-error" class="pewpi-alert pewpi-alert-error"></div>
+        <div id="auth-success" class="pewpi-alert pewpi-alert-success"></div>
+        
+        <!-- Login Section (Not Authenticated) -->
+        <div id="login-section">
+          <form id="magic-link-form" class="pewpi-login-form">
+            <div class="pewpi-form-group">
+              <label class="pewpi-label" for="magic-link-email">Email Address</label>
+              <input 
+                type="email" 
+                id="magic-link-email" 
+                class="pewpi-input"
+                placeholder="your.email@example.com"
+                required
+              >
+            </div>
+            <button type="submit" class="pewpi-btn">
+              ✉️ Send Magic Link
+            </button>
+          </form>
+          
+          <div class="pewpi-divider">OR</div>
+          
+          <button id="github-login-btn" class="pewpi-btn pewpi-btn-github">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            Login with GitHub (Optional)
+          </button>
+          
+          <!-- Dev Mode Magic Link Section -->
+          <div id="dev-magic-link-section" style="display: none; margin-top: 1rem;">
+            <div class="pewpi-form-group">
+              <label class="pewpi-label" for="dev-token-input">Dev Mode: Enter Token</label>
+              <input 
+                type="text" 
+                id="dev-token-input" 
+                class="pewpi-input"
+                placeholder="Token will appear here"
+              >
+            </div>
+            <button id="dev-verify-btn" class="pewpi-btn pewpi-btn-secondary">
+              Verify Token
+            </button>
+          </div>
+        </div>
+        
+        <!-- User Section (Authenticated) -->
+        <div id="user-section" style="display: none;">
+          <div class="pewpi-form-group">
+            <label class="pewpi-label">Username</label>
+            <div class="pewpi-input" id="username-display" style="background: var(--pewpi-bg-hover);">-</div>
+          </div>
+          <div class="pewpi-form-group">
+            <label class="pewpi-label">Email</label>
+            <div class="pewpi-input" id="email-display" style="background: var(--pewpi-bg-hover);">-</div>
+          </div>
+          <div class="pewpi-form-group">
+            <label class="pewpi-label">Token Count</label>
+            <div class="pewpi-input" id="token-count-display" style="background: var(--pewpi-bg-hover);">0</div>
+          </div>
+          <button id="logout-btn" class="pewpi-btn pewpi-btn-secondary">
+            Logout
+          </button>
+        </div>
+      </div>
+      
+      <!-- Test Controls -->
+      <div class="demo-section">
+        <h2 class="section-header">Test Controls</h2>
+        <p style="color: var(--pewpi-text-secondary); margin-bottom: 1rem;">
+          <span class="status-indicator" id="token-service-status"></span>
+          Token Service
+        </p>
+        
+        <div class="test-controls">
+          <button class="test-btn" onclick="testCreateToken()">Create Test Token</button>
+          <button class="test-btn" onclick="testUpdateBalance()">Update Balance</button>
+          <button class="test-btn" onclick="testExportData()">Export Data</button>
+          <button class="test-btn" onclick="testClearTokens()">Clear All Tokens</button>
+        </div>
+        
+        <div style="margin-top: 1rem;">
+          <pre id="test-output" style="background: var(--pewpi-bg-primary); padding: 1rem; border-radius: var(--pewpi-radius-sm); font-size: 0.875rem; max-height: 200px; overflow-y: auto;"></pre>
+        </div>
+      </div>
+      
+      <!-- Wallet Section -->
+      <div id="wallet-container"></div>
+    </div>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="/src/shared/token-service.js"></script>
+  <script src="/src/shared/client-model.js"></script>
+  <script src="/src/components/login.js"></script>
+  <script src="/src/components/wallet.js"></script>
+  <script src="/src/shared/integration-listener.js"></script>
+  
+  <script>
+    // Initialize services
+    let tokenService;
+    let loginManager;
+    let walletUI;
+    let integrationListener;
+    
+    async function initializeApp() {
+      try {
+        // Initialize TokenService
+        tokenService = new TokenService({ dbName: 'pewpi-demo-tokens' });
+        await tokenService.init();
+        
+        // Update status indicator
+        document.getElementById('token-service-status').className = 'status-indicator status-connected';
+        
+        // Initialize LoginManager
+        loginManager = new LoginManager({ devMode: true });
+        await loginManager.init();
+        
+        // Initialize WalletUI
+        walletUI = new WalletUI(tokenService, {
+          containerId: 'wallet-container',
+          feedEnabled: true,
+          refreshInterval: 5000
+        });
+        await walletUI.init();
+        
+        // Initialize Integration Listener
+        integrationListener = new PewpiIntegrationListener({ debug: true });
+        integrationListener.init();
+        
+        // Subscribe to events
+        integrationListener.on('tokenCreated', (token) => {
+          logTest('Integration Event: Token Created', token);
+        });
+        
+        integrationListener.on('loginChanged', (data) => {
+          logTest('Integration Event: Login Changed', data);
+        });
+        
+        logTest('App Initialized', { storage: tokenService.storage });
+      } catch (error) {
+        console.error('Initialization error:', error);
+        logTest('Initialization Error', error.message);
+      }
+    }
+    
+    // Test functions
+    async function testCreateToken() {
+      try {
+        const token = await tokenService.createToken({
+          type: 'test',
+          value: Math.floor(Math.random() * 1000000),
+          owner: loginManager.isAuthenticated() ? loginManager.getUser().username : 'anonymous',
+          metadata: {
+            test: true,
+            created: new Date().toISOString()
+          }
+        });
+        logTest('Token Created', token);
+      } catch (error) {
+        logTest('Error', error.message);
+      }
+    }
+    
+    async function testUpdateBalance() {
+      try {
+        const newBalance = Math.floor(Math.random() * 10000);
+        await tokenService.updateBalance('default', newBalance);
+        logTest('Balance Updated', { balance: newBalance });
+      } catch (error) {
+        logTest('Error', error.message);
+      }
+    }
+    
+    async function testExportData() {
+      try {
+        const exported = await tokenService.exportAll();
+        logTest('Data Exported', {
+          tokens: exported.tokens.length,
+          wallets: exported.wallets.length,
+          events: exported.events.length
+        });
+        console.log('Full export:', exported);
+      } catch (error) {
+        logTest('Error', error.message);
+      }
+    }
+    
+    async function testClearTokens() {
+      if (confirm('Are you sure you want to clear all tokens?')) {
+        try {
+          await tokenService.clearAll();
+          logTest('All Tokens Cleared', {});
+          walletUI.refresh();
+        } catch (error) {
+          logTest('Error', error.message);
+        }
+      }
+    }
+    
+    function logTest(title, data) {
+      const output = document.getElementById('test-output');
+      const timestamp = new Date().toLocaleTimeString();
+      const entry = `[${timestamp}] ${title}:\n${JSON.stringify(data, null, 2)}\n\n`;
+      output.textContent = entry + output.textContent;
+    }
+    
+    // Initialize on page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeApp);
+    } else {
+      initializeApp();
+    }
+  </script>
+</body>
+</html>
