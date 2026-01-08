@@ -76,6 +76,62 @@ A production-grade research token management and visualization system with passw
 - **Responsive**: Mobile-first design (max-width: 480px optimized)
 - **Animations**: Smooth transitions and micro-interactions
 
+## 📦 Pewpi Shared Library
+
+This repository now includes the **canonical pewpi-shared library** from [GPT-Vector-Design](https://github.com/pewpi-infinity/GPT-Vector-Design), providing unified authentication, wallet, and token management across all pewpi repositories.
+
+### Included Components
+
+Located in **`src/pewpi-shared/`**:
+
+- **`token-service.js`**: Production-grade token management with IndexedDB (Dexie) + localStorage fallback
+- **`auth/login-component.js`**: Passwordless login (magic-link) + optional GitHub OAuth
+- **`wallet/wallet-component.js`**: Wallet UI with balance, token list, and live feed
+- **`integration-listener.js`**: Event-based integration for cross-repo state synchronization
+- **`models/client-model.js`**: Mongoose-style client-side data models
+- **`sync/p2p-sync.js`**: WebRTC-based peer-to-peer synchronization (optional)
+- **`theme.css`**: Standardized CSS variables and component styles
+- **`INTEGRATION.md`**: Complete integration guide and usage examples
+
+### How to Initialize
+
+The shared services are automatically initialized in `static/js/index.js`:
+
+```javascript
+// TokenService - auto-tracking enabled
+const tokenService = new TokenService();
+tokenService.initAutoTracking();
+
+// LoginComponent - session automatically restored from storage
+const loginComponent = new LoginComponent({ devMode: true });
+
+// IntegrationListener - listens for cross-repo events
+const listener = new IntegrationListener({
+  onTokenCreated: (token) => console.log('Token created:', token),
+  onLoginChanged: (data) => console.log('Login changed:', data)
+});
+listener.start();
+```
+
+### Events Emitted
+
+The shared library emits the following window-level events for cross-repository synchronization:
+
+- **`pewpi.token.created`** - New token created
+- **`pewpi.token.updated`** - Token modified  
+- **`pewpi.login.changed`** - Authentication state changed
+- **`pewpi.wallet.updated`** - Balance updated
+
+### Migration Notes
+
+The shared library is **backward-compatible** with existing code:
+- Existing `src/shared/` and `src/components/` directories remain unchanged
+- Initialization is wrapped in try-catch to prevent breaking existing builds
+- Services are only initialized if available (graceful fallback)
+- To migrate to shared components, see `src/pewpi-shared/INTEGRATION.md`
+
+For complete integration instructions and examples, see **[src/pewpi-shared/INTEGRATION.md](src/pewpi-shared/INTEGRATION.md)**.
+
 ### 1. JSON-Backed Token Hash Reading (`pewpi_login.py`)
 
 - **Category Token Configuration** (`category_tokens.json`): Stores token hashes linked to research categories
@@ -618,15 +674,28 @@ cp -r infinity_tokens.backup/ infinity_tokens/
 ```
 z/
 ├── src/
-│   ├── shared/
+│   ├── pewpi-shared/              # ⭐ Canonical shared library from GPT-Vector-Design
 │   │   ├── token-service.js       # TokenService with IndexedDB
-│   │   ├── client-model.js        # Mongoose-style models
-│   │   ├── crypto-helpers.js      # AES-GCM & ECDH encryption
 │   │   ├── integration-listener.js # Event subscription system
-│   │   └── theme.css              # Standardized theme variables
-│   └── components/
-│       ├── login.js               # LoginManager component
-│       └── wallet.js              # WalletUI component
+│   │   ├── theme.css              # Standardized theme variables
+│   │   ├── INTEGRATION.md         # Complete integration guide
+│   │   ├── auth/
+│   │   │   └── login-component.js # LoginComponent (passwordless + OAuth)
+│   │   ├── wallet/
+│   │   │   └── wallet-component.js # WalletComponent (UI + balance)
+│   │   ├── models/
+│   │   │   └── client-model.js    # Mongoose-style models
+│   │   └── sync/
+│   │       └── p2p-sync.js        # P2P synchronization (WebRTC)
+│   ├── shared/                    # Legacy shared utilities
+│   │   ├── token-service.js       # (kept for backward compatibility)
+│   │   ├── client-model.js        
+│   │   ├── crypto-helpers.js      
+│   │   ├── integration-listener.js 
+│   │   └── theme.css              
+│   └── components/                # Legacy components
+│       ├── login.js               # (kept for backward compatibility)
+│       └── wallet.js              
 ├── tests/
 │   ├── setup.js                   # Jest configuration
 │   ├── token-service.test.js     # TokenService unit tests

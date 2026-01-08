@@ -19,7 +19,8 @@
   "author": "Pewpi Infinity",
   "license": "MIT",
   "dependencies": {
-    "dexie": "^3.2.4"
+    "dexie": "^3.2.4",
+    "crypto-js": "^4.2.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.11",

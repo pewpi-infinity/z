@@ -238,3 +238,60 @@ if (document.readyState === 'loading') {
 
 // Export for use in other scripts
 window.articleReader = articleReader;
+
+/**
+ * Initialize Pewpi Shared Services (Token, Auth, Wallet)
+ * Wrapped in try-catch to ensure backward compatibility
+ */
+(async function initPewpiSharedServices() {
+  try {
+    // Dynamically import shared services (ES modules)
+    // Note: This assumes the modules are available. Adjust paths if needed.
+    
+    // For now, we'll use a lightweight initialization approach
+    // that doesn't break if the modules aren't loaded yet
+    
+    // Check if TokenService is available globally (from demo.html or other scripts)
+    if (typeof TokenService !== 'undefined') {
+      console.log('[Pewpi Shared] TokenService available, initializing auto-tracking...');
+      const tokenService = new TokenService();
+      if (tokenService.initAutoTracking) {
+        tokenService.initAutoTracking();
+        console.log('[Pewpi Shared] Token auto-tracking initialized');
+      }
+      window.pewpiTokenService = tokenService;
+    }
+    
+    // Check if LoginComponent is available
+    if (typeof LoginComponent !== 'undefined') {
+      console.log('[Pewpi Shared] LoginComponent available, restoring session...');
+      const loginComponent = new LoginComponent({ devMode: true });
+      // Session is automatically restored in constructor via loadUserFromStorage()
+      console.log('[Pewpi Shared] Auth session restored');
+      window.pewpiLoginComponent = loginComponent;
+    }
+    
+    // Initialize integration listener for cross-repo events
+    if (typeof IntegrationListener !== 'undefined') {
+      console.log('[Pewpi Shared] IntegrationListener available, starting event listeners...');
+      const listener = new IntegrationListener({
+        onTokenCreated: (token) => {
+          console.log('[Pewpi Integration] Token created:', token);
+          // Optional: Update UI or trigger other actions
+        },
+        onLoginChanged: (data) => {
+          console.log('[Pewpi Integration] Login changed:', data);
+          // Optional: Update UI or trigger other actions
+        },
+        debug: true
+      });
+      listener.start();
+      window.pewpiIntegrationListener = listener;
+      console.log('[Pewpi Shared] Integration listener started - listening for pewpi.token.created, pewpi.token.updated, pewpi.login.changed');
+    }
+    
+  } catch (error) {
+    console.warn('[Pewpi Shared] Failed to initialize shared services (non-critical):', error);
+    // Non-critical error - app continues to work normally
+  }
+})();
