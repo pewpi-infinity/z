@@ -250,6 +250,13 @@ def main():
             print("Unknown command")
 
 
+if __name__ == "__main__":
+    main()
+
+"""
+pewpi_login.py - Pewpi Infinity Research Portal Login and Token Management
+
+
 # ============================================================================
 # Extended Pewpi Login Module - Category Management and View Modes
 # ============================================================================

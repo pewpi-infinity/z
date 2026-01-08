@@ -48,3 +48,9 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Runtime data
+session_buffer.json
+
+# Auto-generated tokens (runtime)
+tokens/*.json
