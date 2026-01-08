@@ -1,0 +1,31 @@
+{
+    "hash": "4f56b5b1c470223b65976193e335e4496ac3ffc26e92f948e7704f4c9fd83d58",
+    "timestamp": "2025-11-27T08:33:06.404932Z",
+    "source_type": "text",
+    "filename": null,
+    "raw_text": "Test quantum research content for token generation.",
+    "score": 1689.5,
+    "value": 17895.0,
+    "value_formatted": "$17.89K",
+    "vector": {
+        "x": 0.247743,
+        "y": 0.479608,
+        "z": 0.809291
+    },
+    "analysis": {
+        "word_count": 7,
+        "char_count": 51,
+        "keyword_matches": {
+            "quantum": {
+                "count": 1,
+                "bonus": 500
+            },
+            "research": {
+                "count": 1,
+                "bonus": 150
+            }
+        },
+        "depth_bonus": 0,
+        "complexity_bonus": 1000
+    }
+}

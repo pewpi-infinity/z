@@ -12,8 +12,7 @@ def main():
         print("[!] No buffer found. Nothing to ingest.")
         return
 
-    with open(BUFFER, 'r') as f:
-        buf = json.load(f)
+    buf = json.load(open(BUFFER))
     pending = buf.get("pending", [])
 
     if not pending:
