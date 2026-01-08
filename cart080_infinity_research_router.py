@@ -10,13 +10,11 @@ SESSION_BUFFER = os.path.join(REPO_DIR, "session_buffer.json")
 
 def load_buffer():
     if os.path.exists(SESSION_BUFFER):
-        with open(SESSION_BUFFER, 'r') as f:
-            return json.load(f)
+        return json.load(open(SESSION_BUFFER))
     return {"pending": []}
 
 def save_buffer(buf):
-    with open(SESSION_BUFFER, 'w') as f:
-        json.dump(buf, f, indent=4)
+    json.dump(buf, open(SESSION_BUFFER,"w"), indent=4)
 
 def create_token(text):
     h = hashlib.sha256(text.encode()).hexdigest()
@@ -29,8 +27,7 @@ def create_token(text):
 
     # Store raw token data for Cart 081 + 082
     filepath = os.path.join(TOKENS_DIR, f"{h}.json")
-    with open(filepath, 'w') as f:
-        json.dump(token_obj, f, indent=4)
+    json.dump(token_obj, open(filepath,"w"), indent=4)
 
     return token_obj
 
