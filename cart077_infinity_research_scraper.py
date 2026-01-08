@@ -39,11 +39,7 @@ def vector_position(seed):
 def valuation(text):
     length = len(text)
     science_bonus = 0
-    # Pre-compute text_lower to avoid repeated .lower() calls
-    # Use set for O(1) membership checking instead of repeated string searches
-    text_lower = text.lower()
-    science_keywords = {"quantum", "hydrogen", "vector", "thermo", "ai", "physics"}
-    if any(word in text_lower for word in science_keywords):
+    if any(word in text.lower() for word in ["quantum","hydrogen","vector","thermo","ai","physics"]):
         science_bonus = random.randint(500,900_000)
 
     base = max(80, min(900 + length//150, 5000))

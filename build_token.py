@@ -2,9 +2,6 @@
 """
 Build Your Own Token System - Token creation with content analysis and valuation
 Part of the Pewpi Login / Infinity Research Portal
-
-NOTE: When called via API, authentication is required.
-CLI usage still works for local development.
 """
 
 import os
@@ -13,14 +10,12 @@ import hashlib
 import datetime
 import math
 import base64
-import re
 from datetime import timezone
 
 # ------------------------------ CONFIG ------------------------------
 Z_ROOT = os.path.abspath(os.path.dirname(__file__))
 TOKENS_DIR = os.path.join(Z_ROOT, "tokens")
 SESSION_BUFFER = os.path.join(Z_ROOT, "session_buffer.json")
-USERS_FILE = os.path.join(Z_ROOT, "users.json")
 
 os.makedirs(TOKENS_DIR, exist_ok=True)
 
@@ -73,12 +68,6 @@ BOOST_KEYWORDS = {
 MIN_VALUE = 90
 MAX_VALUE = 964_590_650_869_860_860.97
 
-# Pre-compile regex patterns for keyword matching (optimization)
-_KEYWORD_PATTERNS = {
-    keyword: re.compile(r'\b' + re.escape(keyword) + r'\b', re.IGNORECASE)
-    for keyword in BOOST_KEYWORDS.keys()
-}
-
 
 def get_timestamp():
     """Get current UTC timestamp."""
@@ -117,27 +106,22 @@ def score_content(text):
         "complexity_bonus": 0
     }
 
-    # Cache computed values to avoid redundant calculations
     text_lower = text.lower()
     words = text_lower.split()
-    char_count = len(text)
-    word_count = len(words)
 
     # Base scores
-    analysis["char_count"] = char_count
-    analysis["word_count"] = word_count
+    analysis["char_count"] = len(text)
+    analysis["word_count"] = len(words)
 
     # Character count base score
-    score += char_count * 0.5
+    score += len(text) * 0.5
 
     # Word count score
-    score += word_count * 2
+    score += len(words) * 2
 
-    # Keyword matching with tier bonuses - use pre-compiled patterns for better performance
+    # Keyword matching with tier bonuses
     for keyword, bonus in BOOST_KEYWORDS.items():
-        # Use pre-compiled regex patterns for efficient word boundary matching
-        pattern = _KEYWORD_PATTERNS[keyword]
-        count = len(pattern.findall(text_lower))
+        count = text_lower.count(keyword)
         if count > 0:
             keyword_score = count * bonus
             score += keyword_score
@@ -147,23 +131,22 @@ def score_content(text):
             }
 
     # Depth bonus - exponential scaling for long content
-    if char_count > 100:
-        depth = int(math.log(char_count, 2) * 100)
+    if len(text) > 100:
+        depth = int(math.log(len(text), 2) * 100)
         score += depth
         analysis["depth_bonus"] = depth
 
     # Complexity bonus - based on unique words ratio
-    if word_count > 0:
-        unique_ratio = len(set(words)) / word_count
+    if len(words) > 0:
+        unique_ratio = len(set(words)) / len(words)
         complexity = int(unique_ratio * 1000)
         score += complexity
         analysis["complexity_bonus"] = complexity
 
     # Line count bonus (structured content)
     lines = text.split('\n')
-    line_count = len(lines)
-    if line_count > 5:
-        score += line_count * 10
+    if len(lines) > 5:
+        score += len(lines) * 10
 
     return score, analysis
 
@@ -213,7 +196,7 @@ def format_value(value):
         return f"${value:.2f}"
 
 
-def build_token(text, source_type="text", filename=None, username=None):
+def build_token(text, source_type="text", filename=None):
     """
     Build a token from user input.
 
@@ -221,16 +204,10 @@ def build_token(text, source_type="text", filename=None, username=None):
         text: The content to tokenize
         source_type: "text", "file", or "paste"
         filename: Original filename if from file upload
-        username: Username of the creator (for tracking)
 
     Returns:
         Token object with hash, value, and metadata
     """
-    # Sanitize inputs to prevent injection attacks
-    text = str(text)[:1_000_000]  # Limit to 1MB
-    if filename:
-        filename = os.path.basename(str(filename))  # Prevent path traversal
-    
     # Generate hash
     token_hash = infinity_hash(text + str(datetime.datetime.now(timezone.utc)))
 
@@ -251,8 +228,7 @@ def build_token(text, source_type="text", filename=None, username=None):
         "value": value,
         "value_formatted": format_value(value),
         "vector": vector_position(token_hash),
-        "analysis": analysis,
-        "creator": username  # Track who created this token
+        "analysis": analysis
     }
 
     # Save token to file

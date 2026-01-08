@@ -249,18 +249,17 @@ def main():
         else:
             print("Unknown command")
 
+
+if __name__ == "__main__":
+    main()
+
 """
 pewpi_login.py - Pewpi Infinity Research Portal Login and Token Management
 
-This module provides functionality for:
-1. JSON-backed token hash reading with category associations
-2. Dynamic color-coded button generation based on research categories
-3. Toggle view modes (sentence, word, plain text) for content highlighting
-4. Comprehensive logging and error handling
 
-Usage:
-    python pewpi_login.py [--sync] [--generate-index] [--validate]
-"""
+# ============================================================================
+# Extended Pewpi Login Module - Category Management and View Modes
+# ============================================================================
 
 import os
 import sys
@@ -270,7 +269,6 @@ import logging
 import datetime
 import re
 import html
-from functools import lru_cache
 from typing import Dict, List, Optional, Tuple, Any
 
 # ------------------------------ CONFIG ------------------------------
@@ -735,20 +733,6 @@ class ButtonGenerator:
 
 
 # ------------------------------ VIEW MODE MANAGER ------------------------------
-@lru_cache(maxsize=256)
-def _compile_token_pattern(token: str) -> re.Pattern:
-    """
-    Cached compilation of regex patterns for token matching.
-    
-    Args:
-        token: Token string to compile pattern for
-    
-    Returns:
-        Compiled regex pattern
-    """
-    return re.compile(re.escape(token), re.IGNORECASE)
-
-
 class ViewModeManager:
     """Manages toggle view modes for content display."""
     
@@ -812,9 +796,10 @@ class ViewModeManager:
             hex_color = self.color_manager.get_hex_color(color)
             
             for token in tokens:
-                # Escape the token and use cached pattern compilation
+                # Escape the token and use it for matching in already-escaped content
                 escaped_token = html.escape(token)
-                pattern = _compile_token_pattern(escaped_token)
+                # Case-insensitive replacement with preserved case
+                pattern = re.compile(re.escape(escaped_token), re.IGNORECASE)
                 replacement = f'<span class="highlight-word" style="background-color: {hex_color}40; border-bottom: 2px solid {hex_color};">{escaped_token}</span>'
                 result = pattern.sub(replacement, result)
         
@@ -826,21 +811,14 @@ class ViewModeManager:
         sentences = re.split(r'(?<=[.!?])\s+', content)
         result_sentences = []
         
-        # Pre-compute lowercase tokens for each category to avoid repeated .lower() calls
-        category_tokens_lower = {
-            category: [token.lower() for token in tokens]
-            for category, tokens in category_tokens.items()
-        }
-        
         for sentence in sentences:
             # Determine which category this sentence belongs to
             best_category = None
             best_score = 0
             
             sentence_lower = sentence.lower()
-            for category, tokens_lower in category_tokens_lower.items():
-                # Use list comprehension with early termination for better performance
-                score = sum(1 for token in tokens_lower if token in sentence_lower)
+            for category, tokens in category_tokens.items():
+                score = sum(1 for token in tokens if token.lower() in sentence_lower)
                 if score > best_score:
                     best_score = score
                     best_category = category

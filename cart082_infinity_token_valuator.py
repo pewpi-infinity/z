@@ -12,18 +12,15 @@ BOOST_KEYWORDS = [
 ]
 
 def score_text(text):
-    # Cache length and lowercase conversion to avoid redundant operations
-    text_len = len(text)
-    text_lower = text.lower()
-    base = text_len
+    base = len(text)
 
-    # keyword bonuses - compute text_lower once
+    # keyword bonuses
     boost = 0
     for k in BOOST_KEYWORDS:
-        boost += text_lower.count(k) * 50
+        boost += text.lower().count(k) * 50
 
-    # exponential tail for long depth - use cached length
-    depth = int(math.log(max(1, text_len), 3) * 40)
+    # exponential tail for long depth
+    depth = int(math.log(max(1, len(text)), 3) * 40)
 
     return base + boost + depth
 
@@ -37,9 +34,7 @@ def scale_value(score):
     return f"${50000 + score*12}"
 
 def valuate_token(tpath):
-    # Use context manager to properly close file handles
-    with open(tpath, 'r') as f:
-        obj = json.load(f)
+    obj = json.load(open(tpath))
     text = obj["raw_text"]
 
     s = score_text(text)
@@ -48,8 +43,7 @@ def valuate_token(tpath):
     obj["value"] = v
     obj["score"] = s
 
-    with open(tpath, 'w') as f:
-        json.dump(obj, f, indent=4)
+    json.dump(obj, open(tpath,"w"), indent=4)
 
     return obj["hash"], v
 
@@ -58,8 +52,7 @@ def main():
         print("[!] No buffer found.")
         return
 
-    with open(BUFFER, 'r') as f:
-        buf = json.load(f)
+    buf = json.load(open(BUFFER))
     pending = buf.get("pending", [])
 
     if not pending:
@@ -77,8 +70,7 @@ def main():
 
     # clear buffer
     buf["pending"]=[]
-    with open(BUFFER, 'w') as f:
-        json.dump(buf, f, indent=4)
+    json.dump(buf, open(BUFFER,"w"), indent=4)
 
     print("\n[∞] Valuation complete. All tokens updated in repo.")
 
