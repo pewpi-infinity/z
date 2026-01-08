@@ -242,16 +242,26 @@ window.articleReader = articleReader;
 /**
  * Initialize Pewpi Shared Services (Token, Auth, Wallet)
  * Wrapped in try-catch to ensure backward compatibility
+ * 
+ * NOTE: The pewpi-shared services are ES modules and need to be loaded via script tags
+ * or dynamic imports in your HTML. This initialization checks if they're available globally.
+ * 
+ * To use pewpi-shared services in your pages, add to HTML:
+ * <script type="module">
+ *   import { TokenService } from './src/pewpi-shared/token-service.js';
+ *   import { LoginComponent } from './src/pewpi-shared/auth/login-component.js';
+ *   import { IntegrationListener } from './src/pewpi-shared/integration-listener.js';
+ *   
+ *   window.TokenService = TokenService;
+ *   window.LoginComponent = LoginComponent;
+ *   window.IntegrationListener = IntegrationListener;
+ * </script>
+ * 
+ * See demo.html for a complete working example.
  */
 (async function initPewpiSharedServices() {
   try {
-    // Dynamically import shared services (ES modules)
-    // Note: This assumes the modules are available. Adjust paths if needed.
-    
-    // For now, we'll use a lightweight initialization approach
-    // that doesn't break if the modules aren't loaded yet
-    
-    // Check if TokenService is available globally (from demo.html or other scripts)
+    // Check if TokenService is available globally (from page script tags)
     if (typeof TokenService !== 'undefined') {
       console.log('[Pewpi Shared] TokenService available, initializing auto-tracking...');
       const tokenService = new TokenService();
@@ -260,9 +270,11 @@ window.articleReader = articleReader;
         console.log('[Pewpi Shared] Token auto-tracking initialized');
       }
       window.pewpiTokenService = tokenService;
+    } else {
+      console.log('[Pewpi Shared] TokenService not loaded. To use pewpi-shared services, see src/pewpi-shared/INTEGRATION.md');
     }
     
-    // Check if LoginComponent is available
+    // Check if LoginComponent is available globally
     if (typeof LoginComponent !== 'undefined') {
       console.log('[Pewpi Shared] LoginComponent available, restoring session...');
       const loginComponent = new LoginComponent({ devMode: true });
